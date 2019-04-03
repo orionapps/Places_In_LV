@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D3E21688435B6157243298C /* Pods_Places_in_LV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */; };
 		9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */; };
-		9F4CD12D22537CA8001EBCD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12C22537CA8001EBCD2 /* ViewController.swift */; };
+		9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */; };
 		9F4CD13022537CA8001EBCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD12E22537CA8001EBCD2 /* Main.storyboard */; };
 		9F4CD13322537CA8001EBCD2 /* Places_in_LV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD13122537CA8001EBCD2 /* Places_in_LV.xcdatamodeld */; };
 		9F4CD13522537CA9001EBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD13422537CA9001EBCD2 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 		858E39007F9B1CCDEAB339AF /* Pods-Places in LV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.debug.xcconfig"; sourceTree = "<group>"; };
 		9F4CD12722537CA8001EBCD2 /* Places in LV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places in LV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F4CD12C22537CA8001EBCD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9F4CD12F22537CA8001EBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F4CD13222537CA8001EBCD2 /* Places_in_LV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Places_in_LV.xcdatamodel; sourceTree = "<group>"; };
 		9F4CD13422537CA9001EBCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		9F4CD13F22537E28001EBCD2 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
-				9F4CD12C22537CA8001EBCD2 /* ViewController.swift */,
+				9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4CD13322537CA8001EBCD2 /* Places_in_LV.xcdatamodeld in Sources */,
-				9F4CD12D22537CA8001EBCD2 /* ViewController.swift in Sources */,
+				9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */,
 				9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
