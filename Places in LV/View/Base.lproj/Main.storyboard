@@ -38,6 +38,7 @@
                                         <color key="backgroundColor" red="0.24259301511198747" green="0.28166499581615667" blue="0.68317734771573602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Dib-Go-RHZ" firstAttribute="top" secondItem="7Hi-EG-VgN" secondAttribute="top" constant="30" id="1xA-Vi-Ton"/>
+                                            <constraint firstAttribute="width" constant="133" id="DZA-cD-SSn"/>
                                             <constraint firstItem="Dib-Go-RHZ" firstAttribute="leading" secondItem="7Hi-EG-VgN" secondAttribute="leading" constant="20" id="bWY-Qr-Kgp"/>
                                             <constraint firstAttribute="trailing" secondItem="Dib-Go-RHZ" secondAttribute="trailing" constant="20" id="qok-g4-F2G"/>
                                         </constraints>
@@ -71,6 +72,7 @@
                         <outlet property="leadingConstraint" destination="SpV-AL-Cf2" id="B4b-3Y-mnl"/>
                         <outlet property="mapView" destination="Jag-Li-eLx" id="2l0-3R-RDa"/>
                         <outlet property="sideMenuView" destination="7Hi-EG-VgN" id="24d-hA-2yv"/>
+                        <outlet property="widthSideMenuConstraint" destination="DZA-cD-SSn" id="695-F0-Ns1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,7 +13,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var widthSideMenuConstraint: NSLayoutConstraint!
     
     let screenSize:CGRect = UIScreen.main.bounds
     var sideMenuWidth: CGFloat = 0
@@ -29,12 +29,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         
-        self.mapView.bringSubviewToFront(self.sideMenuView)
-        
-        sideMenuWidth = screenSize.width * 0.5
-        self.sideMenuView.frame.size.width = sideMenuWidth
-        print(sideMenuWidth)
-        self.leadingConstraint.constant = -sideMenuWidth
+        setUpSideMenuWidth()
     }
     
     
@@ -49,6 +44,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         self.locationManager.stopUpdatingLocation()
     }
+    
+    // MARK: - Side Menu bar functions and actions
 
     @IBAction func openMenuView(_ sender: UIBarButtonItem) {
         
@@ -67,6 +64,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
         
         menuShowing = !menuShowing
+    }
+    
+    func setUpSideMenuWidth() {
+        
+        self.mapView.bringSubviewToFront(self.sideMenuView)
+        
+        sideMenuWidth = screenSize.width * 0.4
+        self.widthSideMenuConstraint.constant = sideMenuWidth
+        self.leadingConstraint.constant = -sideMenuWidth
+        self.sideMenuView.layoutIfNeeded()
     }
     
 }
