@@ -76,6 +76,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
     }
-
+    
 }
 

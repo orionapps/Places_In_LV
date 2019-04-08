@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey("AIzaSyAijhLX_-CeshdTqtOO75OtUBj7yHaPf2o")
         
+        UINavigationBar.appearance().barTintColor = Helper().navigationBarBackgroundColor()
+        UINavigationBar.appearance().tintColor = Helper().navigationBarTextColor()
+        
         return true
     }
 

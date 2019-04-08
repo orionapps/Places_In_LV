@@ -31,12 +31,12 @@ class ContainerView: UIViewController {
             
             sideMenuOpen = false
             sideMenuConstraint.constant = -250
-            
-            
+        
         } else {
             
             sideMenuOpen = true
             sideMenuConstraint.constant = 0
+            
         }
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
