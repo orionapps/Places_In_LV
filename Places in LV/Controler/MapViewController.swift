@@ -10,14 +10,9 @@ import UIKit
 import GoogleMaps
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var sideMenuView: UIView!
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var widthSideMenuConstraint: NSLayoutConstraint!
-    
-    let screenSize:CGRect = UIScreen.main.bounds
-    var sideMenuWidth: CGFloat = 0
-    var menuShowing = false
+
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -29,7 +24,37 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         
-        setUpSideMenuWidth()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showCategories),
+                                               name: NSNotification.Name(rawValue: "showCategories"),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showSortBySeasons),
+                                               name: NSNotification.Name(rawValue: "showSortBySeasons"),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showSettings),
+                                               name: NSNotification.Name(rawValue: "showSettings"),
+                                               object: nil)
+        
+
+    }
+    
+    @objc func showCategories() {
+        
+        performSegue(withIdentifier: "showCategories", sender: nil)
+    }
+    
+    @objc func showSortBySeasons() {
+        
+        performSegue(withIdentifier: "showSortBySeasons", sender: nil)
+    }
+    
+    @objc func showSettings() {
+        
+        performSegue(withIdentifier: "showSettings", sender: nil)
     }
     
     
@@ -49,32 +74,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
     @IBAction func openMenuView(_ sender: UIBarButtonItem) {
         
-        if (menuShowing) {
-            self.leadingConstraint.constant = -sideMenuWidth
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
-        } else {
-            self.leadingConstraint.constant = 0
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-                })
-        }
-        
-        menuShowing = !menuShowing
+        NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
     }
-    
-    func setUpSideMenuWidth() {
-        
-        self.mapView.bringSubviewToFront(self.sideMenuView)
-        
-        sideMenuWidth = screenSize.width * 0.4
-        self.widthSideMenuConstraint.constant = sideMenuWidth
-        self.leadingConstraint.constant = -sideMenuWidth
-        self.sideMenuView.layoutIfNeeded()
-    }
-    
+
 }
 

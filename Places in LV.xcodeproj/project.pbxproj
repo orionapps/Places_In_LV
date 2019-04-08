@@ -14,6 +14,12 @@
 		9F4CD13322537CA8001EBCD2 /* Places_in_LV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD13122537CA8001EBCD2 /* Places_in_LV.xcdatamodeld */; };
 		9F4CD13522537CA9001EBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD13422537CA9001EBCD2 /* Assets.xcassets */; };
 		9F4CD13822537CA9001EBCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD13622537CA9001EBCD2 /* LaunchScreen.storyboard */; };
+		9FB93AB4225B596900360E48 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB3225B596900360E48 /* SideMenuVC.swift */; };
+		9FB93AB6225B5C8E00360E48 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB5225B5C8E00360E48 /* ContainerView.swift */; };
+		9FB93AB8225B6AC800360E48 /* SearchBySeasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */; };
+		9FB93ABA225B6AF800360E48 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB9225B6AF800360E48 /* SettingsVC.swift */; };
+		9FBBA31D22562C1600A8FD2B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBBA31C22562C1600A8FD2B /* Helper.swift */; };
+		9FBBA31F22562F9E00A8FD2B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */; };
 		9FE63C1A225497DF00F7C5BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FE63C19225497DF00F7C5BC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,12 @@
 		9F4CD13422537CA9001EBCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F4CD13722537CA9001EBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F4CD13922537CA9001EBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FB93AB3225B596900360E48 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		9FB93AB5225B5C8E00360E48 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBySeasonVC.swift; sourceTree = "<group>"; };
+		9FB93AB9225B6AF800360E48 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		9FBBA31C22562C1600A8FD2B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		9FE63C19225497DF00F7C5BC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F6BD1DBBBE92605C7FC31AD4 /* Pods-Places in LV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.release.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +97,12 @@
 		9F4CD13F22537E28001EBCD2 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
+				9FB93AB5225B5C8E00360E48 /* ContainerView.swift */,
 				9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */,
+				9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */,
+				9FB93AB3225B596900360E48 /* SideMenuVC.swift */,
+				9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */,
+				9FB93AB9225B6AF800360E48 /* SettingsVC.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -113,6 +130,7 @@
 				9F4CD13422537CA9001EBCD2 /* Assets.xcassets */,
 				9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */,
 				9F4CD13922537CA9001EBCD2 /* Info.plist */,
+				9FBBA31C22562C1600A8FD2B /* Helper.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -243,7 +261,13 @@
 			files = (
 				9F4CD13322537CA8001EBCD2 /* Places_in_LV.xcdatamodeld in Sources */,
 				9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */,
+				9FB93AB4225B596900360E48 /* SideMenuVC.swift in Sources */,
+				9FBBA31F22562F9E00A8FD2B /* CategoryTableViewController.swift in Sources */,
+				9FB93AB8225B6AC800360E48 /* SearchBySeasonVC.swift in Sources */,
 				9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */,
+				9FB93AB6225B5C8E00360E48 /* ContainerView.swift in Sources */,
+				9FBBA31D22562C1600A8FD2B /* Helper.swift in Sources */,
+				9FB93ABA225B6AF800360E48 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
