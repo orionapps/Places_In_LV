@@ -23,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = Helper().navigationBarBackgroundColor()
         UINavigationBar.appearance().tintColor = Helper().navigationBarTextColor()
         
+        //UserDefaults.standard.set(false, forKey: "didPreloadData")
+        
+        preloadData()
+        
+        print("This is the path: \(applicationDirectoryPath()) ")
+        
         return true
     }
 
@@ -49,6 +55,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func applicationDirectoryPath() -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String
+    }
+    
+    private func preloadData() {
+        
+        let preloadedDataKey = "didPreloadData"
+        
+        let preloadedDataUserDefaults = UserDefaults.standard
+        
+        if preloadedDataUserDefaults.bool(forKey: preloadedDataKey) == false {
+            
+            // Preload data
+            guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "plist") else {
+                return
+            }
+            
+            let backgrounContext = persistentContainer.newBackgroundContext()
+            persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+            
+            backgrounContext.perform {
+                if let arrayContents = NSArray(contentsOf: urlPath) as? [String] {
+                    
+                    do {
+                        
+                        
+                        for categoryName in arrayContents {
+                            
+                            let categoryObject = Categories(context: backgrounContext)
+                            categoryObject.title = categoryName
+                            categoryObject.showOnMap = true
+                        }
+                        
+                        try backgrounContext.save()
+                        preloadedDataUserDefaults.set(true, forKey: preloadedDataKey)
+                        
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+        }
+    }
 
     // MARK: - Core Data stack
 
@@ -59,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Places_in_LV")
+        let container = NSPersistentContainer(name: "DataModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
