@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,15 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey("AIzaSyAijhLX_-CeshdTqtOO75OtUBj7yHaPf2o")
+        GMSPlacesClient.provideAPIKey("AIzaSyBmH-HqtTXe-6FneivZpw4FdxhR-fr43fM")
         
         UINavigationBar.appearance().barTintColor = Helper().navigationBarBackgroundColor()
         UINavigationBar.appearance().tintColor = Helper().navigationBarTextColor()
         
         //UserDefaults.standard.set(false, forKey: "didPreloadData")
         
-        preloadData()
-        
-        print("This is the path: \(applicationDirectoryPath()) ")
+        //preloadData()
         
         return true
     }
@@ -56,50 +56,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
     
-    func applicationDirectoryPath() -> String {
-        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String
-    }
     
-    private func preloadData() {
-        
-        let preloadedDataKey = "didPreloadData"
-        
-        let preloadedDataUserDefaults = UserDefaults.standard
-        
-        if preloadedDataUserDefaults.bool(forKey: preloadedDataKey) == false {
-            
-            // Preload data
-            guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "plist") else {
-                return
-            }
-            
-            let backgrounContext = persistentContainer.newBackgroundContext()
-            persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
-            
-            backgrounContext.perform {
-                if let arrayContents = NSArray(contentsOf: urlPath) as? [String] {
-                    
-                    do {
-                        
-                        
-                        for categoryName in arrayContents {
-                            
-                            let categoryObject = Categories(context: backgrounContext)
-                            categoryObject.title = categoryName
-                            categoryObject.showOnMap = true
-                        }
-                        
-                        try backgrounContext.save()
-                        preloadedDataUserDefaults.set(true, forKey: preloadedDataKey)
-                        
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-            
-        }
-    }
+//    private func preloadData() {
+//
+//        let preloadedDataKey = "didPreloadData"
+//
+//        let preloadedDataUserDefaults = UserDefaults.standard
+//
+//        if preloadedDataUserDefaults.bool(forKey: preloadedDataKey) == false {
+//
+//            // Preload data
+//            guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "plist") else {
+//                return
+//            }
+//
+//            let backgrounContext = persistentContainer.newBackgroundContext()
+//            persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+//
+//            backgrounContext.perform {
+//                if let arrayContents = NSArray(contentsOf: urlPath) as? [String] {
+//
+//                    do {
+//
+//
+//                        for categoryName in arrayContents {
+//
+//                            let categoryObject = Categories(context: backgrounContext)
+//                            categoryObject.title = categoryName
+//                            categoryObject.showOnMap = true
+//                        }
+//
+//                        try backgrounContext.save()
+//                        preloadedDataUserDefaults.set(true, forKey: preloadedDataKey)
+//
+//                    } catch {
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//
+//        }
+//    }
 
     // MARK: - Core Data stack
 

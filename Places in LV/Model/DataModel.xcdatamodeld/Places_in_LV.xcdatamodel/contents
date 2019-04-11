@@ -3,8 +3,19 @@
     <entity name="Categories" representedClassName=".Categories" syncable="YES" codeGenerationType="class">
         <attribute name="showOnMap" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="places" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Places" inverseName="parrentCategory" inverseEntity="Places" syncable="YES"/>
+    </entity>
+    <entity name="Places" representedClassName=".Places" parentEntity="Categories" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isVisited" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="parrentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="places" inverseEntity="Categories" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Categories" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Categories" positionX="407.62109375" positionY="-77.28515625" width="128" height="88"/>
+        <element name="Places" positionX="643.67578125" positionY="-75.12890625" width="128" height="148"/>
     </elements>
 </model>

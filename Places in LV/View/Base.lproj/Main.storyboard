@@ -73,7 +73,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rza-qN-Amt">
-                                                    <rect key="frame" x="16" y="11" width="245" height="22"/>
+                                                    <rect key="frame" x="16" y="11" width="218" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by Seasons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDO-lV-8f5">
-                                                    <rect key="frame" x="16" y="11" width="245" height="22"/>
+                                                    <rect key="frame" x="16" y="11" width="218" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2m-0E-nuo">
-                                                    <rect key="frame" x="16" y="11" width="245" height="22"/>
+                                                    <rect key="frame" x="16" y="11" width="218" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -167,6 +167,7 @@
                             <constraint firstItem="fC9-tZ-gkw" firstAttribute="leading" secondItem="6BK-St-H2d" secondAttribute="leading" id="OvX-HQ-YIi"/>
                             <constraint firstItem="fC9-tZ-gkw" firstAttribute="top" secondItem="6BK-St-H2d" secondAttribute="topMargin" id="Vrf-0p-FeL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="w9I-my-HU9"/>
                     </view>
                     <navigationItem key="navigationItem" id="47H-lq-ywt">
                         <barButtonItem key="leftBarButtonItem" image="sideMenu" id="e0F-HX-nM0">
@@ -209,10 +210,41 @@
                             <outlet property="delegate" destination="axD-aM-4tl" id="Xoa-bz-M8c"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="BRt-Jm-xzV" kind="show" identifier="goToPlaces" id="FGo-h1-dAf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hC6-GN-bjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2184" y="906"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="eJB-4B-3yg">
+            <objects>
+                <tableViewController id="BRt-Jm-xzV" customClass="DetailTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mhj-H1-Ura">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placesCell" id="Imd-3A-T1H">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Imd-3A-T1H" id="gAY-kL-Yj0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BRt-Jm-xzV" id="3TX-ep-pFG"/>
+                            <outlet property="delegate" destination="BRt-Jm-xzV" id="hfB-df-UHa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwX-eU-GaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2181" y="1677"/>
         </scene>
         <!--Search By SeasonVC-->
         <scene sceneID="p7a-Oy-LeJ">

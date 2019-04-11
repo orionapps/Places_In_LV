@@ -8,12 +8,17 @@
 
 import UIKit
 import GoogleMaps
+import CoreData
+
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
 
+    // Constants
     var locationManager = CLLocationManager()
+    var locationsModel = [CategoryList]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,48 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                                                selector: #selector(showSettings),
                                                name: NSNotification.Name(rawValue: "showSettings"),
                                                object: nil)
+        
+        
+        // Preload data
+        guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "json") else {
+            return
+        }
+        
+        do {
+            let data = try Data(contentsOf: urlPath)
+            let locations = try JSONDecoder().decode(CategoryList.self, from: data)
+            locationsModel.append(locations)
+            
+            for location in locations.Sightseengs!{
+                
+                let lat = location.lat
+                let long = location.long
+                
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                marker.title = location.locationName
+                marker.map = mapView
+            }
+            
+            
+            
+            //print(locations.Sightseengs![2].locationName)
+            
+//            for allLocations in locations.Sightseengs! {
+//
+//                //print(locations.Sightseengs![0].locationName)
+//                print(allLocations.locationName)
+//            }
+
+        } catch {
+            print(error)
+        }
+        
+        
+        
+        
+ 
+        
         
 
     }
