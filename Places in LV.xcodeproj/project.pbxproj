@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D3E21688435B6157243298C /* Pods_Places_in_LV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */; };
 		9F256A84225F2A30003D459A /* PreloadedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A83225F2A30003D459A /* PreloadedData.json */; };
+		9F256A86226088C5003D459A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F256A85226088C5003D459A /* DetailVC.swift */; };
 		9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */; };
 		9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */; };
 		9F4CD13022537CA8001EBCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD12E22537CA8001EBCD2 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places_in_LV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		858E39007F9B1CCDEAB339AF /* Pods-Places in LV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.debug.xcconfig"; sourceTree = "<group>"; };
 		9F256A83225F2A30003D459A /* PreloadedData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreloadedData.json; sourceTree = "<group>"; };
+		9F256A85226088C5003D459A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		9F4CD12722537CA8001EBCD2 /* Places in LV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places in LV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */,
 				9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */,
 				9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */,
+				9F256A85226088C5003D459A /* DetailVC.swift */,
 				9FB93AB3225B596900360E48 /* SideMenuVC.swift */,
 				9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */,
 				9FB93AB9225B6AF800360E48 /* SettingsVC.swift */,
@@ -274,6 +277,7 @@
 				9F4CD13322537CA8001EBCD2 /* DataModel.xcdatamodeld in Sources */,
 				9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */,
 				9FB93AB4225B596900360E48 /* SideMenuVC.swift in Sources */,
+				9F256A86226088C5003D459A /* DetailVC.swift in Sources */,
 				9FBBA31F22562F9E00A8FD2B /* CategoryTableViewController.swift in Sources */,
 				9FB93AB8225B6AC800360E48 /* SearchBySeasonVC.swift in Sources */,
 				9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */,

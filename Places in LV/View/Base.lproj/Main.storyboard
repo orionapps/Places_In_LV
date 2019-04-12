@@ -190,7 +190,7 @@
         <!--Category Table View Controller-->
         <scene sceneID="LHU-dR-S6d">
             <objects>
-                <tableViewController id="axD-aM-4tl" customClass="CategoryTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryTableViewController" id="axD-aM-4tl" customClass="CategoryTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Qy-1R-4Tp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,13 +221,13 @@
         <!--Detail Table View Controller-->
         <scene sceneID="eJB-4B-3yg">
             <objects>
-                <tableViewController id="BRt-Jm-xzV" customClass="DetailTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetailTableViewController" id="BRt-Jm-xzV" customClass="DetailTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mhj-H1-Ura">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placesCell" id="Imd-3A-T1H">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationNameCell" id="Imd-3A-T1H">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Imd-3A-T1H" id="gAY-kL-Yj0">
@@ -241,10 +241,77 @@
                             <outlet property="delegate" destination="BRt-Jm-xzV" id="hfB-df-UHa"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="jRg-EG-FT0" kind="show" identifier="goToDetails" id="V7a-20-Q2I"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwX-eU-GaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2181" y="1677"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="aIL-H0-RW0">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" id="jRg-EG-FT0" customClass="DetailVC" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fDk-4Y-OL1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nU9-Fs-3qG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="295"/>
+                            </imageView>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-EJ-F77">
+                                <rect key="frame" x="0.0" y="423" width="414" height="473"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-JS-qHt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="width" secondItem="Spw-EJ-F77" secondAttribute="width" id="AYw-d6-tRW"/>
+                                    <constraint firstAttribute="trailing" secondItem="JHJ-JS-qHt" secondAttribute="trailing" id="emx-IC-T0Y"/>
+                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="top" secondItem="Spw-EJ-F77" secondAttribute="top" id="lzs-Go-ZGk"/>
+                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" id="vr7-hi-poI"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-vc-QlL">
+                                <rect key="frame" x="186" y="383" width="42" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ocZ-W6-gIa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gJU-0D-lHn" firstAttribute="trailing" secondItem="nU9-Fs-3qG" secondAttribute="trailing" id="4kJ-sC-kPd"/>
+                            <constraint firstItem="nU9-Fs-3qG" firstAttribute="top" secondItem="gJU-0D-lHn" secondAttribute="top" id="Hvs-W7-X9y"/>
+                            <constraint firstItem="u3o-vc-QlL" firstAttribute="centerX" secondItem="fDk-4Y-OL1" secondAttribute="centerX" id="Qma-i0-xEx"/>
+                            <constraint firstAttribute="bottom" secondItem="Spw-EJ-F77" secondAttribute="bottom" id="RXI-N2-RVw"/>
+                            <constraint firstItem="Spw-EJ-F77" firstAttribute="top" secondItem="u3o-vc-QlL" secondAttribute="bottom" id="YrE-8W-RhS"/>
+                            <constraint firstItem="Spw-EJ-F77" firstAttribute="leading" secondItem="gJU-0D-lHn" secondAttribute="leading" id="afF-ym-NRg"/>
+                            <constraint firstItem="gJU-0D-lHn" firstAttribute="trailing" secondItem="Spw-EJ-F77" secondAttribute="trailing" id="clD-BN-sSl"/>
+                            <constraint firstItem="u3o-vc-QlL" firstAttribute="top" secondItem="nU9-Fs-3qG" secondAttribute="bottom" id="ogD-r2-WtM"/>
+                            <constraint firstItem="nU9-Fs-3qG" firstAttribute="leading" secondItem="gJU-0D-lHn" secondAttribute="leading" id="rLl-QY-EBa"/>
+                            <constraint firstItem="u3o-vc-QlL" firstAttribute="centerY" secondItem="fDk-4Y-OL1" secondAttribute="centerY" multiplier="0.9" id="vho-a2-av7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gJU-0D-lHn"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationImageView" destination="nU9-Fs-3qG" id="lbC-nz-y4U"/>
+                        <outlet property="locationInfoLabel" destination="JHJ-JS-qHt" id="gJ6-2z-r5F"/>
+                        <outlet property="locationNameLabel" destination="u3o-vc-QlL" id="GiZ-y2-ook"/>
+                        <outlet property="scrollView" destination="Spw-EJ-F77" id="ErM-0R-zNl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bav-Me-sKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2179.7101449275365" y="2441.5178571428569"/>
         </scene>
         <!--Search By SeasonVC-->
         <scene sceneID="p7a-Oy-LeJ">

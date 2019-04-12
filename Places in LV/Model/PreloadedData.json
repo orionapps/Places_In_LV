@@ -1,4 +1,4 @@
-{"Sightseengs":[
+{"Sightseeings":[
 
 {
 "locationName" : "Pētera Baznīca",
@@ -33,6 +33,56 @@
 "lat" : 56.951596,
 "long" : 24.113310,
 "locationInfo": "Brīvības piemineklis ir Latvijas brīvības cīņās kritušo piemiņai celts piemineklis Brīvības laukumā Rīgas centrā. Tas ir Latvijas valstiskuma, latviešu tautas vienotības, neatkarības un brīvības simbolu. 1935. gadā atklātais piemineklis ir 42 metrus augsts un veidots no pelēka un sarkana granīta, travertīna, dzelzsbetona un vara. Pieminekļa kompozīciju veido trīspadsmit skulptūras un bareljefi, kuros attēlota Latvijas vēsture un kultūra. Pieminekļa masīvs veidots monolītām četrstūrainām formām, kas izkārtotas viena virs otras. Virzienā uz augšu pieminekļa forma sašaurinās un pāriet 19 metrus augstā obeliskā, kura galotnē atrodas 9 metrus augstais Brīvības tēls — jauna sieviete, kura rokās tur trīs zeltītas zvaigznes. Ideja celt Brīvības cīņām veltītu pieminekli parādījās 1922. gadā, kad toreizējais Latvijas premjerministrs Zigfrīds Anna Meierovics uzdeva izstrādāt noteikumus konkursam par piemiņas staba celtniecību. Pēc vairākiem konkursiem tika izvēlēts Kārļa Zāles projekts Mirdzi kā zvaigzne!. Celtniecības darbi sākās 1931. gadā un tos finansēja no tautas ziedojumiem. Pēc Otrā pasaules kara Latvijas PSR varas iestādes apsvēra iespēju pieminekli nojaukt. Uzskata, ka pieminekli esot izglābusi Vera Muhina, kura esot uzskatījusi, ka piemineklis ir mākslinieciska vērtība, kuras iznīcināšana aizskartu latviešu tautas vissvētākās jūtas. Lai gan pieminekli nenojauca, tā simbolisko nozīmi sāka interpretēt atbilstoši padomju ideoloģijai. Tomēr tautai Brīvības piemineklis joprojām palika valstiskās neatkarības simbols un 1987. gada 14. jūnijā, trīs gadus pirms Latvijas neatkarības atjaunošanas, pie tā notika pirmā pret padomju varu vērstā demonstrācija, kurā piedalījās ap 5000 cilvēku — Helsinki-86 organizētā ziedu nolikšana pie Brīvības pieminekļa padomju režīma veikto masu deportāciju upuru piemiņai."
-}
+}],
 
-]}
+
+"Museums":[
+    
+    
+    {
+        "locationName" : "Latvijas Kara Muzejs",
+        "lat" : 56.951464,
+        "long" : 24.108389,
+        "locationInfo": "Latvijas Kara muzejs ir muzejs Rīgā, kura ekspozīcija veltīta Latvijas karaspēku izveidei un kara tematikai."
+    },
+    
+    {
+        "locationName" : "Latvijas Dabas Muzejs",
+        "lat" : 56.949952,
+        "long" : 24.119136,
+        "locationInfo": "Latvijas Dabas muzejs ir dabaszinātņu muzejs Rīgā, Latvijā. Tas ir Vides aizsardzības un reģionālās attīstības ministrijas pakļautībā. Muzeju 1845. gadā dibināja Rīgas baltvācu inteliģences pārstāvji kā Rīgas Dabas pētnieku biedrības (Der Naturforscherverein zu Riga) struktūrvienību. Muzeja krājumu veidojuši biedrības biedri, kas muzejam dāvinājuši Latvijas dabas objektus. Latvijas Dabas muzejs ir Baltijā vecākais kompleksais dabaszinātņu muzejs. Katru gadu Latvijas Dabas muzejs nosauc Gada dzīvnieku Latvijā."
+    },
+    
+    {
+        "locationName" : "Farmācijas Muzejs",
+        "lat" : 56.948842,
+        "long" : 24.111613,
+        "locationInfo": "Farmācijas muzejs ir medicīnas muzejs Rīgā, Latvijā. Tas dibināts 1986. gadā kopā ar Paula Stradiņa Medicīnas vēstures muzeju. Muzejs atrodas Riharda Vāgnera ielā 13, 18. gadsimta ēkā, kas ir arhitektūras piemineklis. Muzejs iepazīstina ar farmācijas un aptieku attīstību Latvijā. Tajā iespējams aplūkot 17.-19. gadsimta dokumentus, grāmatas, farmaceitu instrumentus, aptieku traukus, signatūras, ierīces zāļu pagatavošanai un zāles, kas ražotas Latvijā 1920. un 1930. gados. Skatāma arī alķīmiķu laboratorija, ēkas iekšpagalmā atrodas ārstniecības augu dārziņš. Tiek rīkotas arī dažādas izstādes."
+    }
+],
+
+
+"NatureAndParks":[
+    
+    {
+        "locationName" : "Uzvaras Parks",
+        "lat" : 56.935888,
+        "long" : 24.084835,
+        "locationInfo": "Uzvaras parks ir parks Rīgā, parku ierobežo Ojāra Vācieša, Hermaņa iela, Aleksandra Grīna bulvāris, Uzvaras bulvāris un Raņķa dambis. To šķērso Slokas un Bāriņu ielas. Ojāra Vācieša iela to atdala no Arkādijas dārza. Uzvaras parks ir 36,7 hektārus plašs."
+    },
+    
+    {
+        "locationName" : "Lucavsalas atpūtas parks",
+        "lat" : 56.930024,
+        "long" : 24.110801,
+        "locationInfo": "Lucavsala ir sala, kas atrodas Rīgas centrālajā Daugavas daļā, Zemgales priekšpilsētā. Lucavsala ir iekļauta Salas apkaimē."
+    },
+    
+    {
+        "locationName" : "Arkādijas Parks",
+        "lat" : 56.932388,
+        "long" : 24.086451,
+        "locationInfo": "Arkādijas parks ir viens no tipiskākajiem ainavu parkiem Rīgā, Torņakalnā. Platība 6,92 ha. 1808. gadā šajā vietā ierīkoja privātu dārzu. 1885. gadā peļņas nolūkā dārzā uzcelts teātris, ierīkota bumbotava, pārvēršot dārzu par izpriecu vietu, ko 1896. gadā ieguva Rīgas pilsēta un nosauca to par Torņakalna parku. 1905. gadā Arkādijas parku paplašināja, ierīkoja jaunus stādījumus un zālienus, izmainīja caur parku tekošās Mārupītes gultni, uzcēla dārznieka māju. Vecās gultnes platākajās vietās izveidoja savstarpēji saistītus dīķus, ūdenskritumus, izbūvēja tiltiņus, ierīkoja jaunus kājceliņus. 1911. gadā parka izbūvi pabeidza un tas tika pārdēvēts par Arkādijas parku. 1927. gadā pēc arhitekta Paula Kundziņa projekta uzcēla mūzikas estrādi, kas nu ir nodegusi un demontēta. Daļu parka iznomāja, lai iegūtu līdzekļus tā uzturēšanai. Nomnieks uzcēla restorānu, ko 1958. gadā pārveidoja par kinoteātri. Blakus Arkādijas parkam atrodas arī 1950. gadā izveidotais, 1,45 ha lielais Mazais Arkādijas parks."
+    }]
+
+}

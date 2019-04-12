@@ -17,7 +17,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
     // Constants
     var locationManager = CLLocationManager()
-    var locationsModel = [CategoryList]()
+    var allLocations = CategoryList()
 
     
     override func viewDidLoad() {
@@ -45,54 +45,76 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                                                object: nil)
         
         
-        // Preload data
+        // Fetching data from JSON
         guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "json") else {
             return
         }
         
         do {
             let data = try Data(contentsOf: urlPath)
-            let locations = try JSONDecoder().decode(CategoryList.self, from: data)
-            locationsModel.append(locations)
+            self.allLocations = try JSONDecoder().decode(CategoryList.self, from: data)
             
-            for location in locations.Sightseengs!{
-                
+            for location in allLocations.Sightseeings!{
+
                 let lat = location.lat
                 let long = location.long
-                
+
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
                 marker.map = mapView
             }
-            
-            
-            
-            //print(locations.Sightseengs![2].locationName)
-            
-//            for allLocations in locations.Sightseengs! {
-//
-//                //print(locations.Sightseengs![0].locationName)
-//                print(allLocations.locationName)
-//            }
+
+            for location in allLocations.Museums!{
+
+                let lat = location.lat
+                let long = location.long
+
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                marker.title = location.locationName
+                marker.map = mapView
+            }
+
+            for location in allLocations.NatureAndParks!{
+
+                let lat = location.lat
+                let long = location.long
+
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                marker.title = location.locationName
+                marker.map = mapView
+            }
 
         } catch {
             print(error)
         }
-        
-        
-        
-        
- 
-        
-        
 
     }
     
     @objc func showCategories() {
         
+        
+        
         performSegue(withIdentifier: "showCategories", sender: nil)
+        
+        
     }
+
+    
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "showCategories" {
+//
+//            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//            let destVC = mainStoryboard.instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
+//
+//            destVC.allLocations = self.allLocations
+//        }
+//    }
     
     @objc func showSortBySeasons() {
         
