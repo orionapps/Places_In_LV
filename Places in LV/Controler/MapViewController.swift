@@ -23,11 +23,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addStyleToMap()
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        
+        
+    
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(showCategories),
@@ -62,6 +66,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
+                marker.icon = UIImage(named: "SightseeingsIcon")
                 marker.map = mapView
             }
 
@@ -73,6 +78,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
+                marker.icon = UIImage(named: "MuseumsIcon")
                 marker.map = mapView
             }
 
@@ -94,9 +100,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     }
     
     @objc func showCategories() {
-        
-        
-        
+
         performSegue(withIdentifier: "showCategories", sender: nil)
         
         
@@ -137,6 +141,34 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         mapView.animate(to: camera)
         
         self.locationManager.stopUpdatingLocation()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        print("You tapped on marker named: \(String(describing: marker.title))")
+        
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        
+        destVC.locationName = marker.title!
+        
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
+    
+    // MARK: - Adding a Style to map
+    
+    func addStyleToMap(){
+        
+        do {
+            
+            if let styleURL = Bundle.main.url(forResource: "MapStyle", withExtension: "json"){
+                
+                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                print("Unable to find MapStyle.json")
+            }
+        } catch {
+            print("One or more of the map styles failed to laod. \(error)")
+        }
     }
     
     // MARK: - Side Menu bar functions and actions
