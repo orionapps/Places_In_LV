@@ -94,6 +94,26 @@
         "long" : 24.086146,
         "locationInfo": "Arkādijas parks ir viens no tipiskākajiem ainavu parkiem Rīgā, Torņakalnā. Platība 6,92 ha. 1808. gadā šajā vietā ierīkoja privātu dārzu. 1885. gadā peļņas nolūkā dārzā uzcelts teātris, ierīkota bumbotava, pārvēršot dārzu par izpriecu vietu, ko 1896. gadā ieguva Rīgas pilsēta un nosauca to par Torņakalna parku. 1905. gadā Arkādijas parku paplašināja, ierīkoja jaunus stādījumus un zālienus, izmainīja caur parku tekošās Mārupītes gultni, uzcēla dārznieka māju. Vecās gultnes platākajās vietās izveidoja savstarpēji saistītus dīķus, ūdenskritumus, izbūvēja tiltiņus, ierīkoja jaunus kājceliņus. 1911. gadā parka izbūvi pabeidza un tas tika pārdēvēts par Arkādijas parku. 1927. gadā pēc arhitekta Paula Kundziņa projekta uzcēla mūzikas estrādi, kas nu ir nodegusi un demontēta. Daļu parka iznomāja, lai iegūtu līdzekļus tā uzturēšanai. Nomnieks uzcēla restorānu, ko 1958. gadā pārveidoja par kinoteātri. Blakus Arkādijas parkam atrodas arī 1950. gadā izveidotais, 1,45 ha lielais Mazais Arkādijas parks.",
         "placePhoto" : "ChIJdT-rdTrQ7kYR5hF5heXyjjM"
+    }],
+
+"Playgrounds":[
+    
+    {
+        "locationName" : "Fantāzija, Bērnu parks",
+        "lat" : 57.407950,
+        "long" : 21.592636,
+        "locationInfo": "Fantāzija bērnu parks",
+        "placePhoto" : "ChIJsYyCLiXQ7kYRr5gG2h5GLZk"
+    }],
+
+"sportsPlaygrounds":[
+    
+    {
+        "locationName" : "KP6 Basketbola laukums",
+        "lat" : 56.500629,
+        "long" : 20.995189,
+        "locationInfo": "KP6 Basketbola laukums",
+        "placePhoto" : "ChIJsYyCLiXQ7kYRr5gG2h5GLZk"
     }]
 
 }

@@ -99,6 +99,32 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 marker.snippet = location.locationInfo
                 marker.map = mapView
             }
+            
+            for location in allLocations.Playgrounds!{
+                
+                let lat = location.lat
+                let long = location.long
+                
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                marker.title = location.locationName
+                marker.icon = UIImage(named: "playgroundIcon")
+                marker.snippet = location.locationInfo
+                marker.map = mapView
+            }
+            
+            for location in allLocations.sportsPlaygrounds!{
+                
+                let lat = location.lat
+                let long = location.long
+                
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                marker.title = location.locationName
+                marker.icon = UIImage(named: "sportsIcon")
+                marker.snippet = location.locationInfo
+                marker.map = mapView
+            }
 
         } catch {
             print(error)
