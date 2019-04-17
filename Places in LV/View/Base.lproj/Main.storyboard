@@ -264,17 +264,17 @@
                                 <rect key="frame" x="0.0" y="423" width="414" height="473"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-JS-qHt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <rect key="frame" x="10" y="10" width="394" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="width" secondItem="Spw-EJ-F77" secondAttribute="width" id="AYw-d6-tRW"/>
-                                    <constraint firstAttribute="trailing" secondItem="JHJ-JS-qHt" secondAttribute="trailing" id="emx-IC-T0Y"/>
-                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="top" secondItem="Spw-EJ-F77" secondAttribute="top" id="lzs-Go-ZGk"/>
-                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" id="vr7-hi-poI"/>
+                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" constant="10" id="DmU-UD-QJs"/>
+                                    <constraint firstAttribute="trailing" secondItem="JHJ-JS-qHt" secondAttribute="trailing" constant="10" id="EWl-0u-GvH"/>
+                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="width" secondItem="Spw-EJ-F77" secondAttribute="width" constant="-20" id="flX-gO-Dcr"/>
+                                    <constraint firstItem="JHJ-JS-qHt" firstAttribute="top" secondItem="Spw-EJ-F77" secondAttribute="top" constant="10" id="frt-NA-qEb"/>
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-vc-QlL">

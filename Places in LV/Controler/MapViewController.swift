@@ -8,12 +8,14 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 import CoreData
 
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
+    
 
     // Constants
     var locationManager = CLLocationManager()
@@ -22,6 +24,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         addStyleToMap()
         mapView.isMyLocationEnabled = true
@@ -67,6 +70,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
                 marker.icon = UIImage(named: "SightseeingsIcon")
+                marker.snippet = location.locationInfo
                 marker.map = mapView
             }
 
@@ -79,6 +83,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
                 marker.icon = UIImage(named: "MuseumsIcon")
+                marker.snippet = location.locationInfo
                 marker.map = mapView
             }
 
@@ -90,6 +95,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
+                marker.icon = UIImage(named: "NatureAndParksIcon")
+                marker.snippet = location.locationInfo
                 marker.map = mapView
             }
 
@@ -150,6 +157,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
         
         destVC.locationName = marker.title!
+        destVC.locationInfo = marker.snippet!
         
         self.navigationController?.pushViewController(destVC, animated: true)
     }
