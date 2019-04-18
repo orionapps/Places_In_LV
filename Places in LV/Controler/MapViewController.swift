@@ -25,7 +25,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         addStyleToMap()
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
@@ -168,13 +167,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        //let location = locations.last
-        
         let centerOfLatviaLat = 56.998656
         let centerOfLatviaLong = 24.527813
 
         let camera = GMSCameraPosition.camera(withLatitude: centerOfLatviaLat, longitude: centerOfLatviaLong, zoom: 6.3)
         mapView.animate(to: camera)
+        
+        mapView.settings.myLocationButton = true
         
         self.locationManager.stopUpdatingLocation()
     }
@@ -207,13 +206,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
     }
     
-    func myLocationButton(locations: [CLLocation]) {
-        
-        let location = locations.last
-        let camera = GMSCameraPosition.camera(withLatitude: centerOfLatviaLat, longitude: centerOfLatviaLong, zoom: 6.3)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        mapView.settings.myLocationButton = true
-    }
+
     
     // MARK: - Side Menu bar functions and actions
 
