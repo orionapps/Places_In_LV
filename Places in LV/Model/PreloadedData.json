@@ -104,6 +104,14 @@
         "long" : 21.592636,
         "locationInfo": "Fantāzija bērnu parks",
         "placePhoto" : "ChIJsYyCLiXQ7kYRr5gG2h5GLZk"
+    },
+    
+    {
+        "locationName" : "Centra sporta kvartāla rotaļu laukums",
+        "lat" : 56.961457,
+        "long" : 24.143652,
+        "locationInfo": "7000 kvadrātmetru rotaļu laukums ir lielākais Rīgā un tas piemērots gan pirmsskolas vecuma bērniem, gan lielākiem bērniem. Rotaļu laukuma vizuālajā noformējumā par pamatu ir izmantota Rīgas pilsētas simboli un vēsture. Izmantojot zilas krāsas bruģakmeni un gumijas segumu laukumu vizuāli pārdala Daugava, kurā ir gan sala ar vertikālu rāpšanās elementu – piramīdu, gan pietauvots kuģis. Daugavas vienā krastā ir stilizēta vecpilsēta ar Vecrīgai raksturīgajiem elementiem – Rīgas Doma baznīcas pulksteņa kopija, Vecpilsētas melnais kaķis, torņi un tilti ar pilsētas heraldiskā zīmēm. Šajā rotaļu laukuma daļā sākumskolas un pirmsskolas bērniem būs iespēja gan izskrieties, izvingroties, gan spēlēt dažādas lomu spēles, speciāli tam paredzētos rotaļu elementos. Kā jebkura vecpilsēta arī šī glabās savus noslēpumus, ko mazie pasaules izzinātāji varēs atklāt, meklējot pēc īpašām norādēm. Daugavu varēs šķērsot gan pa diviem trošu ceļiem, gan ar kājāmgājēju tiltiņu, nonākot zaļajā Pārdaugavā, kur slejās augsti torņi, un rotaļu atrakcijas vecākiem bērniem, kuru izmantošana rada ne tikai prieku un jautrību, bet veicina arī fizisko attīstību. Vizuālās upes abus krastus savienos arī īpaša “telefona līnija”, ar kuras starpniecību bērni varēs sazināties viens ar otru esot katram savā upes krastā. Papildus tam visam rotaļu laukumā būs izvietoti soliņi vecākiem un Daugavas tecējumu noslēgs bruģī iestrādāta strūklaka, kurā veldzēties karstajās vasaras dienās.",
+        "placePhoto" : "ChIJsYyCLiXQ7kYRr5gG2h5GLZk"
     }],
 
 "sportsPlaygrounds":[
@@ -113,6 +121,14 @@
         "lat" : 56.500629,
         "long" : 20.995189,
         "locationInfo": "KP6 Basketbola laukums",
+        "placePhoto" : "ChIJsYyCLiXQ7kYRr5gG2h5GLZk"
+    },
+
+    {
+        "locationName" : "Centra sporta kvartāls",
+        "lat" : 56.961819,
+        "long" : 24.144373,
+        "locationInfo": "Centra sporta kvartāla teritorijā ir izveidots futbola laukums ar 280 metru skrejceļu ap to, basketbola laukums, divi multifunkcionālie laukumi, laukumi pludmales volejbolam, tāllēkšanas sektors, skeitparks un veloparks, laukums ielu vingrošanai, tribīnes, inventāra nomas punkti, tualetes, ģērbtuves. Visā teritorijā uzstādīta video novērošanas un apgaismošanas sistēma. Teritorija ir iežogota ar atjaunoto vēsturisko žogu.",
         "placePhoto" : "ChIJsYyCLiXQ7kYRr5gG2h5GLZk"
     }]
 

@@ -168,17 +168,19 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let location = locations.last
+        //let location = locations.last
         
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 14)
+        let centerOfLatviaLat = 56.998656
+        let centerOfLatviaLong = 24.527813
+
+        let camera = GMSCameraPosition.camera(withLatitude: centerOfLatviaLat, longitude: centerOfLatviaLong, zoom: 6.3)
         mapView.animate(to: camera)
         
         self.locationManager.stopUpdatingLocation()
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        print("You tapped on marker named: \(String(describing: marker.title))")
-        
+         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
         
@@ -203,6 +205,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         } catch {
             print("One or more of the map styles failed to laod. \(error)")
         }
+    }
+    
+    func myLocationButton(locations: [CLLocation]) {
+        
+        let location = locations.last
+        let camera = GMSCameraPosition.camera(withLatitude: centerOfLatviaLat, longitude: centerOfLatviaLong, zoom: 6.3)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.settings.myLocationButton = true
     }
     
     // MARK: - Side Menu bar functions and actions
