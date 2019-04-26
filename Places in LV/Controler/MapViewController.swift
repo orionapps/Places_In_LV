@@ -135,7 +135,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
         performSegue(withIdentifier: "showCategories", sender: nil)
         
-        
     }
 
     
