@@ -192,68 +192,6 @@
             </objects>
             <point key="canvasLocation" x="3089.8550724637685" y="147.99107142857142"/>
         </scene>
-        <!--Category Table View Controller-->
-        <scene sceneID="LHU-dR-S6d">
-            <objects>
-                <tableViewController storyboardIdentifier="CategoryTableViewController" id="axD-aM-4tl" customClass="CategoryTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Qy-1R-4Tp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoriesCell" id="W3W-CA-Brz">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W3W-CA-Brz" id="GHn-Gq-Do5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="axD-aM-4tl" id="v8A-TW-bDD"/>
-                            <outlet property="delegate" destination="axD-aM-4tl" id="Xoa-bz-M8c"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="BRt-Jm-xzV" kind="show" identifier="goToPlaces" id="FGo-h1-dAf"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hC6-GN-bjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3135" y="2524"/>
-        </scene>
-        <!--Detail Table View Controller-->
-        <scene sceneID="eJB-4B-3yg">
-            <objects>
-                <tableViewController storyboardIdentifier="DetailTableViewController" id="BRt-Jm-xzV" customClass="DetailTableViewController" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mhj-H1-Ura">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationNameCell" id="Imd-3A-T1H">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Imd-3A-T1H" id="gAY-kL-Yj0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="BRt-Jm-xzV" id="3TX-ep-pFG"/>
-                            <outlet property="delegate" destination="BRt-Jm-xzV" id="hfB-df-UHa"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="jRg-EG-FT0" kind="show" identifier="goToDetails" id="V7a-20-Q2I"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dwX-eU-GaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1120" y="2563"/>
-        </scene>
         <!--DetailVC-->
         <scene sceneID="aIL-H0-RW0">
             <objects>
@@ -262,7 +200,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nU9-Fs-3qG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nU9-Fs-3qG">
                                 <rect key="frame" x="0.0" y="44" width="414" height="339"/>
                             </imageView>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-EJ-F77">
@@ -307,6 +245,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gJU-0D-lHn"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="locationImageView" destination="nU9-Fs-3qG" id="lbC-nz-y4U"/>
                         <outlet property="locationInfoLabel" destination="JHJ-JS-qHt" id="gJ6-2z-r5F"/>
@@ -316,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bav-Me-sKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="2563"/>
+            <point key="canvasLocation" x="2178" y="2444"/>
         </scene>
         <!--Category CollectionVC-->
         <scene sceneID="guk-c0-aVI">
@@ -412,6 +353,9 @@
                             <outlet property="delegate" destination="L5g-Vm-5J4" id="KYV-Un-8JE"/>
                         </connections>
                     </collectionView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="nVe-La-fkF" kind="show" identifier="goToDetails" id="c7Z-RF-2U1"/>
                     </connections>
@@ -435,7 +379,7 @@
                             <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExpandableCell" id="JhI-aD-Npq" customClass="ExpandableCell" customModule="Places_in_LV" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExpandableCell" id="JhI-aD-Npq" userLabel="DetailCell" customClass="DetailCell" customModule="Places_in_LV" customModuleProvider="target">
                                 <rect key="frame" x="19" y="20" width="376" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -489,36 +433,20 @@
                                                 <constraint firstItem="dHc-NI-Zoj" firstAttribute="leading" secondItem="Guu-BV-Cf9" secondAttribute="leading" constant="-20" id="xPQ-jM-lbP"/>
                                             </constraints>
                                         </view>
-                                        <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDl-82-JdU">
-                                            <rect key="frame" x="20" y="211" width="336" height="116"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFh-AO-1Kg">
-                                                    <rect key="frame" x="10" y="10" width="42" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="KFh-AO-1Kg" firstAttribute="leading" secondItem="wDl-82-JdU" secondAttribute="leading" constant="10" id="6R5-1Z-fdt"/>
-                                                <constraint firstAttribute="height" constant="200" id="ERH-Gk-W40"/>
-                                                <constraint firstAttribute="trailing" secondItem="KFh-AO-1Kg" secondAttribute="trailing" constant="10" id="JeV-Rf-ezr"/>
-                                                <constraint firstItem="KFh-AO-1Kg" firstAttribute="top" secondItem="wDl-82-JdU" secondAttribute="top" constant="10" id="PyT-Pq-6mJ"/>
-                                            </constraints>
-                                        </scrollView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="Guu-BV-Cf9" firstAttribute="top" secondItem="JhI-aD-Npq" secondAttribute="top" id="AfB-sE-3ix"/>
-                                    <constraint firstItem="wDl-82-JdU" firstAttribute="leading" secondItem="JhI-aD-Npq" secondAttribute="leading" constant="20" id="Bs8-cB-224"/>
-                                    <constraint firstAttribute="trailing" secondItem="wDl-82-JdU" secondAttribute="trailing" constant="20" id="LOz-3C-d8m"/>
-                                    <constraint firstItem="wDl-82-JdU" firstAttribute="top" secondItem="Guu-BV-Cf9" secondAttribute="bottom" constant="40" id="Pul-aF-a0w"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Guu-BV-Cf9" secondAttribute="trailing" id="rap-5T-4C6"/>
                                     <constraint firstItem="Guu-BV-Cf9" firstAttribute="leading" secondItem="JhI-aD-Npq" secondAttribute="leadingMargin" id="x2E-Uc-vqM"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="detailBackgroundImg" destination="dHc-NI-Zoj" id="YI3-bd-0q1"/>
-                                    <outlet property="detailLabel" destination="ZOw-70-eqL" id="v3D-7h-dpx"/>
-                                    <outlet property="infoLabel" destination="KFh-AO-1Kg" id="Gya-Tt-NkA"/>
+                                    <outlet property="collectionDetailImg" destination="dHc-NI-Zoj" id="BkB-ZS-yp1"/>
+                                    <outlet property="collectionDetailLabel" destination="ZOw-70-eqL" id="gjp-Qj-eBF"/>
+                                    <segue destination="jRg-EG-FT0" kind="presentation" id="vre-Ni-uW7">
+                                        <segue key="commit" inheritsFrom="parent" id="fsV-Ie-K90"/>
+                                        <segue key="preview" inheritsFrom="commit" id="5pc-9D-nyv"/>
+                                    </segue>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -527,6 +455,9 @@
                             <outlet property="delegate" destination="nVe-La-fkF" id="9dZ-JH-mFx"/>
                         </connections>
                     </collectionView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfm-eC-HoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -599,4 +530,7 @@
         <image name="Sightseeings" width="1280" height="719"/>
         <image name="sideMenu" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vre-Ni-uW7"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class DetailVC: UIViewController {
 
@@ -18,13 +19,23 @@ class DetailVC: UIViewController {
     
     var locationName: String = ""
     var locationInfo: String = ""
+    var locationImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
        self.locationNameLabel.text = locationName
+       self.locationNameLabel.hero.id = "\(locationName)_name"
        self.locationInfoLabel.text = locationInfo
+       self.locationImageView.image = locationImage
+        self.locationImageView.hero.id = "\(locationImage)_image"
         
+       //self.locationImageView.hero.id =
+       //self.locationImageView.hero.modifiers = [.zPosition(2)]
+       //self.locationNameLabel.hero.id = "name"
+       //self.locationNameLabel.hero.modifiers = [.zPosition(2)]
+
         scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: locationInfoLabel.bottomAnchor).isActive = true
     }
 

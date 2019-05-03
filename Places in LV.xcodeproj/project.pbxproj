@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D3E21688435B6157243298C /* Pods_Places_in_LV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */; };
+		9F0888F222787EAE00773BE6 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0888F122787EAE00773BE6 /* DetailCell.swift */; };
 		9F256A84225F2A30003D459A /* PreloadedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A83225F2A30003D459A /* PreloadedData.json */; };
 		9F256A86226088C5003D459A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F256A85226088C5003D459A /* DetailVC.swift */; };
 		9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */; };
@@ -18,8 +19,6 @@
 		9F4CD13822537CA9001EBCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD13622537CA9001EBCD2 /* LaunchScreen.storyboard */; };
 		9F74E25C2265EEC8007D843F /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F74E25B2265EEC8007D843F /* MapStyle.json */; };
 		9F977CFB2271CEEE00E214F6 /* CategoryCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977CFA2271CEEE00E214F6 /* CategoryCollectionVC.swift */; };
-		9F977CFE2271D03300E214F6 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977CFD2271D03300E214F6 /* ExpandableCell.swift */; };
-		9F977D002271D0CD00E214F6 /* Expandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977CFF2271D0CD00E214F6 /* Expandable.swift */; };
 		9F977D022271D3B500E214F6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977D012271D3B500E214F6 /* CategoryCell.swift */; };
 		9F977D0E2272FF5F00E214F6 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977D042272FF5E00E214F6 /* UIViewXRadialGradient.swift */; };
 		9F977D0F2272FF5F00E214F6 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977D052272FF5E00E214F6 /* UITextFieldX.swift */; };
@@ -53,6 +52,7 @@
 /* Begin PBXFileReference section */
 		2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places_in_LV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		858E39007F9B1CCDEAB339AF /* Pods-Places in LV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0888F122787EAE00773BE6 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		9F256A83225F2A30003D459A /* PreloadedData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreloadedData.json; sourceTree = "<group>"; };
 		9F256A85226088C5003D459A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		9F4CD12722537CA8001EBCD2 /* Places in LV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places in LV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,8 +65,6 @@
 		9F4CD13922537CA9001EBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F74E25B2265EEC8007D843F /* MapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = "<group>"; };
 		9F977CFA2271CEEE00E214F6 /* CategoryCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionVC.swift; sourceTree = "<group>"; };
-		9F977CFD2271D03300E214F6 /* ExpandableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCell.swift; sourceTree = "<group>"; };
-		9F977CFF2271D0CD00E214F6 /* Expandable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expandable.swift; sourceTree = "<group>"; };
 		9F977D012271D3B500E214F6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9F977D042272FF5E00E214F6 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
 		9F977D052272FF5E00E214F6 /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
@@ -156,13 +154,13 @@
 				9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */,
 				9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */,
 				9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */,
-				9F256A85226088C5003D459A /* DetailVC.swift */,
 				9FB93AB3225B596900360E48 /* SideMenuVC.swift */,
 				9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */,
 				9FB93AB9225B6AF800360E48 /* SettingsVC.swift */,
 				9FB93ABB225B859E00360E48 /* Helper.swift */,
 				9F977CFA2271CEEE00E214F6 /* CategoryCollectionVC.swift */,
 				9F977D2A227306A400E214F6 /* DetailCollectionVC.swift */,
+				9F256A85226088C5003D459A /* DetailVC.swift */,
 				9F977D292273060500E214F6 /* New Group */,
 			);
 			path = Controler;
@@ -254,8 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				9F977D012271D3B500E214F6 /* CategoryCell.swift */,
-				9F977CFD2271D03300E214F6 /* ExpandableCell.swift */,
-				9F977CFF2271D0CD00E214F6 /* Expandable.swift */,
+				9F0888F122787EAE00773BE6 /* DetailCell.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -281,6 +278,7 @@
 				9F4CD12422537CA8001EBCD2 /* Frameworks */,
 				9F4CD12522537CA8001EBCD2 /* Resources */,
 				C670339D4804DD0E982032BB /* [CP] Copy Pods Resources */,
+				0E0BA2440637ED5D455CA16E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,6 +346,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E0BA2440637ED5D455CA16E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8ADBB605AECE22E4D6FF9CED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,7 +418,7 @@
 				9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */,
 				9FB93AB4225B596900360E48 /* SideMenuVC.swift in Sources */,
 				9F977D172272FF5F00E214F6 /* UISliderX.swift in Sources */,
-				9F977D002271D0CD00E214F6 /* Expandable.swift in Sources */,
+				9F0888F222787EAE00773BE6 /* DetailCell.swift in Sources */,
 				9F977D112272FF5F00E214F6 /* UILabelX.swift in Sources */,
 				9F256A86226088C5003D459A /* DetailVC.swift in Sources */,
 				9F977D102272FF5F00E214F6 /* UIButtonX.swift in Sources */,
@@ -419,7 +435,6 @@
 				9F977D142272FF5F00E214F6 /* UIImageViewX.swift in Sources */,
 				9FB93ABC225B859E00360E48 /* Helper.swift in Sources */,
 				9FB93ABA225B6AF800360E48 /* SettingsVC.swift in Sources */,
-				9F977CFE2271D03300E214F6 /* ExpandableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
