@@ -201,7 +201,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nU9-Fs-3qG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="339"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="295"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-EJ-F77">
                                 <rect key="frame" x="0.0" y="423" width="414" height="473"/>
@@ -219,6 +223,10 @@
                                     <constraint firstItem="JHJ-JS-qHt" firstAttribute="width" secondItem="Spw-EJ-F77" secondAttribute="width" constant="-20" id="flX-gO-Dcr"/>
                                     <constraint firstItem="JHJ-JS-qHt" firstAttribute="top" secondItem="Spw-EJ-F77" secondAttribute="top" constant="10" id="frt-NA-qEb"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-vc-QlL">
                                 <rect key="frame" x="186" y="383" width="42" height="40"/>
@@ -228,17 +236,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek8-nj-h5H">
+                                <rect key="frame" x="20" y="96" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="W3b-xT-Xd2"/>
+                                    <constraint firstAttribute="width" constant="48" id="mVE-fJ-aVt"/>
+                                </constraints>
+                                <state key="normal" image="ic_keyboard_arrow_down"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gJU-0D-lHn" firstAttribute="trailing" secondItem="nU9-Fs-3qG" secondAttribute="trailing" id="4kJ-sC-kPd"/>
                             <constraint firstItem="nU9-Fs-3qG" firstAttribute="top" secondItem="gJU-0D-lHn" secondAttribute="top" id="Hvs-W7-X9y"/>
+                            <constraint firstItem="ek8-nj-h5H" firstAttribute="leading" secondItem="fDk-4Y-OL1" secondAttribute="leadingMargin" id="KwV-Aq-rmO"/>
                             <constraint firstItem="u3o-vc-QlL" firstAttribute="centerX" secondItem="fDk-4Y-OL1" secondAttribute="centerX" id="Qma-i0-xEx"/>
                             <constraint firstAttribute="bottom" secondItem="Spw-EJ-F77" secondAttribute="bottom" id="RXI-N2-RVw"/>
                             <constraint firstItem="Spw-EJ-F77" firstAttribute="top" secondItem="u3o-vc-QlL" secondAttribute="bottom" id="YrE-8W-RhS"/>
                             <constraint firstItem="Spw-EJ-F77" firstAttribute="leading" secondItem="gJU-0D-lHn" secondAttribute="leading" id="afF-ym-NRg"/>
                             <constraint firstItem="gJU-0D-lHn" firstAttribute="trailing" secondItem="Spw-EJ-F77" secondAttribute="trailing" id="clD-BN-sSl"/>
+                            <constraint firstItem="ek8-nj-h5H" firstAttribute="top" secondItem="fDk-4Y-OL1" secondAttribute="topMargin" constant="8" id="faH-5v-IfY"/>
                             <constraint firstItem="u3o-vc-QlL" firstAttribute="top" secondItem="nU9-Fs-3qG" secondAttribute="bottom" id="ogD-r2-WtM"/>
                             <constraint firstItem="nU9-Fs-3qG" firstAttribute="leading" secondItem="gJU-0D-lHn" secondAttribute="leading" id="rLl-QY-EBa"/>
                             <constraint firstItem="u3o-vc-QlL" firstAttribute="centerY" secondItem="fDk-4Y-OL1" secondAttribute="centerY" multiplier="0.9" id="vho-a2-av7"/>
@@ -249,6 +271,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="hideViewBtn" destination="ek8-nj-h5H" id="FcT-Tc-iXA"/>
                         <outlet property="locationImageView" destination="nU9-Fs-3qG" id="lbC-nz-y4U"/>
                         <outlet property="locationInfoLabel" destination="JHJ-JS-qHt" id="gJ6-2z-r5F"/>
                         <outlet property="locationNameLabel" destination="u3o-vc-QlL" id="GiZ-y2-ook"/>
@@ -379,7 +402,7 @@
                             <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExpandableCell" id="JhI-aD-Npq" userLabel="DetailCell" customClass="DetailCell" customModule="Places_in_LV" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailCell" id="JhI-aD-Npq" userLabel="DetailCell" customClass="DetailCell" customModule="Places_in_LV" customModuleProvider="target">
                                 <rect key="frame" x="19" y="20" width="376" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -394,6 +417,10 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="s3z-Vc-fhc"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INl-gi-Ovl" customClass="UIViewX" customModule="Places_in_LV" customModuleProvider="target">
                                                     <rect key="frame" x="-20" y="0.0" width="400" height="105"/>
@@ -440,13 +467,13 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="Guu-BV-Cf9" secondAttribute="trailing" id="rap-5T-4C6"/>
                                     <constraint firstItem="Guu-BV-Cf9" firstAttribute="leading" secondItem="JhI-aD-Npq" secondAttribute="leadingMargin" id="x2E-Uc-vqM"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="collectionDetailImg" destination="dHc-NI-Zoj" id="BkB-ZS-yp1"/>
                                     <outlet property="collectionDetailLabel" destination="ZOw-70-eqL" id="gjp-Qj-eBF"/>
-                                    <segue destination="jRg-EG-FT0" kind="presentation" id="vre-Ni-uW7">
-                                        <segue key="commit" inheritsFrom="parent" id="fsV-Ie-K90"/>
-                                        <segue key="preview" inheritsFrom="commit" id="5pc-9D-nyv"/>
-                                    </segue>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -458,6 +485,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="jRg-EG-FT0" kind="show" identifier="goToObjectDetails" id="whg-rP-Ors"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfm-eC-HoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -516,6 +546,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="V1H-Wn-ojj" kind="relationship" relationship="rootViewController" id="qJK-Q5-pnC"/>
                     </connections>
@@ -528,9 +561,7 @@
     <resources>
         <image name="Playgrounds" width="1280" height="853"/>
         <image name="Sightseeings" width="1280" height="719"/>
+        <image name="ic_keyboard_arrow_down" width="24" height="24"/>
         <image name="sideMenu" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vre-Ni-uW7"/>
-    </inferredMetricsTieBreakers>
 </document>
