@@ -1,33 +1,25 @@
 //
-//  DetailCell.swift
+//  CategoryCell.swift
 //  Places in LV
 //
-//  Created by Aleksandrs Muravjovs on 30/04/2019.
+//  Created by Aleksandrs Muravjovs on 25/04/2019.
 //  Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
 //
 
 import UIKit
 import Hero
 
-class DetailCell:  UICollectionViewCell{
+class CategoryCell: UICollectionViewCell {
     
-    @IBOutlet weak var collectionDetailLabel: UILabel!
-    @IBOutlet weak var collectionDetailImg: UIImageView!
-    
-    //var objectName = DetailCollectionVC().locationNamesArray
-    //var objectImages = DetailCollectionVC().locationImage
+    @IBOutlet weak var categoryBackgroundImg: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    var backgroundImage = UIImage()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //self.collectionDetailLabel.hero.id = "name"
-        //self.collectionDetailImg.hero.id = "\(objectImages)_image"
-        
-        
         configureAll()
-        
     }
-    
     
     // MARK: - Configuration
     
@@ -47,4 +39,8 @@ class DetailCell:  UICollectionViewCell{
         self.layer.shadowRadius = self.contentView.layer.cornerRadius
         
     }
+    
+    
+    
 }
+

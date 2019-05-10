@@ -14,27 +14,42 @@ func + (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)
 }
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, UIScrollViewDelegate {
 
 
+    
 
+    @IBOutlet weak var btnTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var locationInfoLabel: UILabel!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var hideViewBtn: UIButton!
+    @IBOutlet weak var scrollViewTopConstraint: NSLayoutConstraint!
     
     var locationName: String = ""
     var locationInfo: String = ""
     var locationImage = UIImage()
+    
+    
+    var oldContentOffset = CGPoint.zero
+    var topConstraint:CGFloat = 0
+
     
     var panGR: UIPanGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //scrollView.setContentOffset(CGPoint(x: 0, y: 70), animated: true)
+        
+        
+        topConstraint = locationImageView.frame.size.height / 2.2
+        scrollViewTopConstraint.constant = topConstraint
+        
         self.hero.isEnabled = true
-
+        
+        self.scrollView.delegate = self
     
        self.locationNameLabel.text = locationName
        self.locationNameLabel.hero.id = "\(locationName)_name"
@@ -74,9 +89,34 @@ class DetailVC: UIViewController {
             if progress + panGR.velocity(in: nil).y / view.bounds.height > 0.3 {
                 Hero.shared.finish()
             } else {
-                Hero.shared.cancel() 
+                Hero.shared.cancel()
             }
         }
 
 }
+    
+
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        let delta =  scrollView.contentOffset.y - oldContentOffset.y
+
+        //we compress the top view
+        if delta > 0 && scrollViewTopConstraint.constant > 70 && scrollView.contentOffset.y > 0 {
+            scrollViewTopConstraint.constant -= delta
+            scrollView.contentOffset.y -= delta
+
+        }
+
+        //we expand the top view
+        if delta < 0 && scrollViewTopConstraint.constant < topConstraint && scrollView.contentOffset.y < 0{
+            scrollViewTopConstraint.constant -= delta
+            scrollView.contentOffset.y -= delta
+
+        }
+        oldContentOffset = scrollView.contentOffset
+    }
+
+    
 }
+

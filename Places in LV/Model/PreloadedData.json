@@ -5,7 +5,7 @@
 "lat" : 56.947568,
 "long" : 24.109323,
 "locationInfo": "Rīgas Svētā Pētera baznīca (vācu: Petrikirche) ir augstākā Rīgas baznīca, kā arī ievērojams gotikas stila 13. gadsimta valsts nozīmes arhitektūras piemineklis. Svētā Pētera baznīca atrodas Vecrīgā, Reformācijas laukumā 1. Pirmo reizi rakstos minēta 1209. gadā, bet no 13. gadsimta saglabājušās tagadējās ēkas sānu jomu ārsienas un daži pīlāri interjerā. Līdz 1524. gadam tas bija Romas Katoļu baznīcas dievnams, bet no 1526. līdz 1940. gadam bija Rīgas luterāņu Sv. Pētera vācu draudzes dievnams, kopš 1991. gada Pētera baznīca ir Latvijas Evaņģēliski luteriskā baznīcas Rīgas Sv. Pētera draudzes luterāņu dievnams. Reliģisko darbību Sv. Pētera baznīcā reglamentē Reliģisko organizāciju likums un citi normatīvie akti. Tā tiek izmantota kā kulta celtne, koncertu, tematisku izstāžu par pilsētas attīstību un arhitektūru, mākslas darbu izstāžu, kultūras pasākumu norises vieta, kā arī kā starptautiska kultūras tūrisma objekts, kas ikdienā ir pieejams apmeklētajiem. Ēka un zeme ap to ir Rīgas pilsētas īpašums.[1] Patlaban Svētā Pētera evaņģēliski luteriskā draudze bez maksas izmanto vairākas baznīcas telpas, bet Latvijas valsts turpina finansēt baznīcas izpētes, konservācijas un restaurācijas darbus.",
-"placePhoto" : "Peterbaznica"
+"placePhoto" : "Peterabaznica"
 },
 
 {
@@ -49,7 +49,7 @@
         "lat" : 56.951201,
         "long" : 24.108324,
         "locationInfo": "Latvijas Kara muzejs ir muzejs Rīgā, kura ekspozīcija veltīta Latvijas karaspēku izveidei un kara tematikai.",
-        "placePhoto" : "ChIJ279x6NDP7kYR5cbe8XFIZKw"
+        "placePhoto" : "LatvKaraMuzejs"
     },
     
     {
@@ -57,7 +57,7 @@
         "lat" : 56.949504,
         "long" : 24.118183,
         "locationInfo": "Latvijas Dabas muzejs ir dabaszinātņu muzejs Rīgā, Latvijā. Tas ir Vides aizsardzības un reģionālās attīstības ministrijas pakļautībā. Muzeju 1845. gadā dibināja Rīgas baltvācu inteliģences pārstāvji kā Rīgas Dabas pētnieku biedrības (Der Naturforscherverein zu Riga) struktūrvienību. Muzeja krājumu veidojuši biedrības biedri, kas muzejam dāvinājuši Latvijas dabas objektus. Latvijas Dabas muzejs ir Baltijā vecākais kompleksais dabaszinātņu muzejs. Katru gadu Latvijas Dabas muzejs nosauc Gada dzīvnieku Latvijā.",
-        "placePhoto" : "ChIJf2W1ptPP7kYRL7UNHLBZ4oY"
+        "placePhoto" : "LatvDabasMuzejs"
     },
     
     {
@@ -65,7 +65,7 @@
         "lat" : 56.948495,
         "long" : 24.111620,
         "locationInfo": "Farmācijas muzejs ir medicīnas muzejs Rīgā, Latvijā. Tas dibināts 1986. gadā kopā ar Paula Stradiņa Medicīnas vēstures muzeju. Muzejs atrodas Riharda Vāgnera ielā 13, 18. gadsimta ēkā, kas ir arhitektūras piemineklis. Muzejs iepazīstina ar farmācijas un aptieku attīstību Latvijā. Tajā iespējams aplūkot 17.-19. gadsimta dokumentus, grāmatas, farmaceitu instrumentus, aptieku traukus, signatūras, ierīces zāļu pagatavošanai un zāles, kas ražotas Latvijā 1920. un 1930. gados. Skatāma arī alķīmiķu laboratorija, ēkas iekšpagalmā atrodas ārstniecības augu dārziņš. Tiek rīkotas arī dažādas izstādes.",
-        "placePhoto" : "ChIJe2fKr9bP7kYRvrQ_AONIJpY"
+        "placePhoto" : "FarmacMuzejs"
     }
 ],
 

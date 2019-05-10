@@ -46,6 +46,14 @@
 		9FB93AC2225DF78300360E48 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AC1225DF78300360E48 /* CategoryList.swift */; };
 		9FB93AC4225DFDDC00360E48 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */; };
 		9FBBA31F22562F9E00A8FD2B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */; };
+		9FE1EAB322843DE2002A3CC6 /* Peterabaznica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EAB222843DE2002A3CC6 /* Peterabaznica.jpg */; };
+		9FE1EAB822843DEC002A3CC6 /* AnglikanuSvPetBaz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EAB422843DEB002A3CC6 /* AnglikanuSvPetBaz.jpg */; };
+		9FE1EABA22843DEC002A3CC6 /* MelngalvjuNams.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EAB622843DEB002A3CC6 /* MelngalvjuNams.jpg */; };
+		9FE1EABB22843DEC002A3CC6 /* BrivPiemineklis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EAB722843DEB002A3CC6 /* BrivPiemineklis.jpg */; };
+		9FE1EABD2285AF2E002A3CC6 /* RigasPils.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EABC2285AF2E002A3CC6 /* RigasPils.jpg */; };
+		9FE1EAC12285B76F002A3CC6 /* LatvKaraMuzejs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EABE2285B76F002A3CC6 /* LatvKaraMuzejs.jpg */; };
+		9FE1EAC22285B76F002A3CC6 /* LatvDabasMuzejs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EABF2285B76F002A3CC6 /* LatvDabasMuzejs.jpg */; };
+		9FE1EAC32285B76F002A3CC6 /* FarmacMuzejs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1EAC02285B76F002A3CC6 /* FarmacMuzejs.jpg */; };
 		9FE63C1A225497DF00F7C5BC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FE63C19225497DF00F7C5BC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +100,14 @@
 		9FB93AC1225DF78300360E48 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		9FE1EAB222843DE2002A3CC6 /* Peterabaznica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Peterabaznica.jpg; sourceTree = "<group>"; };
+		9FE1EAB422843DEB002A3CC6 /* AnglikanuSvPetBaz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AnglikanuSvPetBaz.jpg; sourceTree = "<group>"; };
+		9FE1EAB622843DEB002A3CC6 /* MelngalvjuNams.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MelngalvjuNams.jpg; sourceTree = "<group>"; };
+		9FE1EAB722843DEB002A3CC6 /* BrivPiemineklis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BrivPiemineklis.jpg; sourceTree = "<group>"; };
+		9FE1EABC2285AF2E002A3CC6 /* RigasPils.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RigasPils.jpg; sourceTree = "<group>"; };
+		9FE1EABE2285B76F002A3CC6 /* LatvKaraMuzejs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LatvKaraMuzejs.jpg; sourceTree = "<group>"; };
+		9FE1EABF2285B76F002A3CC6 /* LatvDabasMuzejs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LatvDabasMuzejs.jpg; sourceTree = "<group>"; };
+		9FE1EAC02285B76F002A3CC6 /* FarmacMuzejs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FarmacMuzejs.jpg; sourceTree = "<group>"; };
 		9FE63C19225497DF00F7C5BC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F6BD1DBBBE92605C7FC31AD4 /* Pods-Places in LV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.release.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,9 +156,10 @@
 			children = (
 				9F4CD13F22537E28001EBCD2 /* Controler */,
 				9F4CD14022537E4E001EBCD2 /* View */,
-				9F4CD14222537E7C001EBCD2 /* Other */,
 				9F4CD14122537E69001EBCD2 /* Model */,
+				9F4CD14222537E7C001EBCD2 /* Other */,
 				9F977D032272FF5E00E214F6 /* DesignableX */,
+				9FE1EAA02282F235002A3CC6 /* Images */,
 			);
 			path = "Places in LV";
 			sourceTree = "<group>";
@@ -161,7 +178,7 @@
 				9F977CFA2271CEEE00E214F6 /* CategoryCollectionVC.swift */,
 				9F977D2A227306A400E214F6 /* DetailCollectionVC.swift */,
 				9F256A85226088C5003D459A /* DetailVC.swift */,
-				9F977D292273060500E214F6 /* New Group */,
+				9F977D292273060500E214F6 /* Cells */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -199,6 +216,7 @@
 		9F977D032272FF5E00E214F6 /* DesignableX */ = {
 			isa = PBXGroup;
 			children = (
+				9FE1EAA22282F269002A3CC6 /* DesignableX */,
 				9F977D242273040100E214F6 /* dadhand */,
 				9F977D1F2273029500E214F6 /* domestic-mannersFont */,
 				9F977D182272FF7B00E214F6 /* scriptinaFont */,
@@ -248,13 +266,51 @@
 			path = ../../../../dadhand;
 			sourceTree = "<group>";
 		};
-		9F977D292273060500E214F6 /* New Group */ = {
+		9F977D292273060500E214F6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				9F977D012271D3B500E214F6 /* CategoryCell.swift */,
 				9F0888F122787EAE00773BE6 /* DetailCell.swift */,
 			);
-			path = "New Group";
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9FE1EAA02282F235002A3CC6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1EAC42285B778002A3CC6 /* Museums */,
+				9FE1EAA72282F3F9002A3CC6 /* Sightseeings */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		9FE1EAA22282F269002A3CC6 /* DesignableX */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DesignableX;
+			sourceTree = "<group>";
+		};
+		9FE1EAA72282F3F9002A3CC6 /* Sightseeings */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1EAB222843DE2002A3CC6 /* Peterabaznica.jpg */,
+				9FE1EAB422843DEB002A3CC6 /* AnglikanuSvPetBaz.jpg */,
+				9FE1EAB722843DEB002A3CC6 /* BrivPiemineklis.jpg */,
+				9FE1EAB622843DEB002A3CC6 /* MelngalvjuNams.jpg */,
+				9FE1EABC2285AF2E002A3CC6 /* RigasPils.jpg */,
+			);
+			path = Sightseeings;
+			sourceTree = "<group>";
+		};
+		9FE1EAC42285B778002A3CC6 /* Museums */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1EAC02285B76F002A3CC6 /* FarmacMuzejs.jpg */,
+				9FE1EABF2285B76F002A3CC6 /* LatvDabasMuzejs.jpg */,
+				9FE1EABE2285B76F002A3CC6 /* LatvKaraMuzejs.jpg */,
+			);
+			path = Museums;
 			sourceTree = "<group>";
 		};
 		C6F762A8100DFD94CCBD4B81 /* Pods */ = {
@@ -329,16 +385,24 @@
 			files = (
 				9F4CD13822537CA9001EBCD2 /* LaunchScreen.storyboard in Resources */,
 				9FE63C1A225497DF00F7C5BC /* Default-568h@2x.png in Resources */,
+				9FE1EAC22285B76F002A3CC6 /* LatvDabasMuzejs.jpg in Resources */,
 				9F977D232273029500E214F6 /* license.txt in Resources */,
+				9FE1EAB322843DE2002A3CC6 /* Peterabaznica.jpg in Resources */,
 				9F74E25C2265EEC8007D843F /* MapStyle.json in Resources */,
 				9F256A84225F2A30003D459A /* PreloadedData.json in Resources */,
+				9FE1EABD2285AF2E002A3CC6 /* RigasPils.jpg in Resources */,
+				9FE1EABA22843DEC002A3CC6 /* MelngalvjuNams.jpg in Resources */,
 				9F4CD13522537CA9001EBCD2 /* Assets.xcassets in Resources */,
 				9F4CD13022537CA8001EBCD2 /* Main.storyboard in Resources */,
 				9F977D1D2272FF7B00E214F6 /* readme.txt in Resources */,
+				9FE1EAC32285B76F002A3CC6 /* FarmacMuzejs.jpg in Resources */,
 				9F977D1E2272FF7B00E214F6 /* SCRIPALT.ttf in Resources */,
 				9F977D1C2272FF7B00E214F6 /* SCRIPTIN.ttf in Resources */,
+				9FE1EABB22843DEC002A3CC6 /* BrivPiemineklis.jpg in Resources */,
+				9FE1EAB822843DEC002A3CC6 /* AnglikanuSvPetBaz.jpg in Resources */,
 				9F977D282273040100E214F6 /* dadha___.ttf in Resources */,
 				9F977D272273040100E214F6 /* ReadMe.txt in Resources */,
+				9FE1EAC12285B76F002A3CC6 /* LatvKaraMuzejs.jpg in Resources */,
 				9F977D222273029500E214F6 /* Domestic_Manners.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

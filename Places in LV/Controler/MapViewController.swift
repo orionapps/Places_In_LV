@@ -185,7 +185,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         destVC.locationName = marker.title!
         destVC.locationInfo = marker.snippet!
         
-        self.navigationController?.pushViewController(destVC, animated: true)
+        self.present(destVC, animated: true, completion: nil)
     }
     
     // MARK: - Adding a Style to map
