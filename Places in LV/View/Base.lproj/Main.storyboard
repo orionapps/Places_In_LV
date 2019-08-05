@@ -206,30 +206,52 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek8-nj-h5H">
-                                <rect key="frame" x="20" y="96" width="55" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="W3b-xT-Xd2"/>
-                                    <constraint firstAttribute="width" constant="55" id="mVE-fJ-aVt"/>
-                                </constraints>
-                                <state key="normal" image="ic_keyboard_arrow_down"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R2-6f-R9t" userLabel="viewForScroll" customClass="UIViewX" customModule="Places_in_LV" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek8-nj-h5H">
+                                        <rect key="frame" x="15" y="30" width="55" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="W3b-xT-Xd2"/>
+                                            <constraint firstAttribute="width" constant="55" id="mVE-fJ-aVt"/>
+                                        </constraints>
+                                        <state key="normal" image="backIcon"/>
+                                        <connections>
+                                            <action selector="backPressed:" destination="jRg-EG-FT0" eventType="touchUpInside" id="Q1l-dW-x2o"/>
+                                        </connections>
+                                    </button>
                                     <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-EJ-F77" customClass="UIViewx">
-                                        <rect key="frame" x="0.0" y="498" width="414" height="398"/>
+                                        <rect key="frame" x="0.0" y="95" width="414" height="1001"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-JS-qHt">
-                                                <rect key="frame" x="10" y="56.5" width="394" height="26"/>
+                                                <rect key="frame" x="10" y="429" width="394" height="26"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdU-G8-CdE">
-                                                <rect key="frame" x="10" y="10" width="394" height="36.5"/>
+                                                <rect key="frame" x="10" y="382.5" width="394" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5M-5R-NNA">
+                                                <rect key="frame" x="10" y="501" width="394" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="vGa-UK-5fn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="19"/>
+                                                <state key="normal" title="Navigate to this place">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="navigateBtnPressed:" destination="jRg-EG-FT0" eventType="touchUpInside" id="Llg-ox-AbQ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m21-kt-AVO">
+                                                <rect key="frame" x="10" y="465" width="394" height="26"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -237,9 +259,15 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="tdU-G8-CdE" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" constant="10" id="1ct-2e-ABF"/>
-                                            <constraint firstItem="tdU-G8-CdE" firstAttribute="top" secondItem="Spw-EJ-F77" secondAttribute="top" constant="10" id="8Es-vA-5wl"/>
+                                            <constraint firstItem="V5M-5R-NNA" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" constant="10" id="3eL-sU-zgO"/>
+                                            <constraint firstAttribute="trailing" secondItem="m21-kt-AVO" secondAttribute="trailing" constant="10" id="4kV-h7-etJ"/>
                                             <constraint firstItem="JHJ-JS-qHt" firstAttribute="width" secondItem="Spw-EJ-F77" secondAttribute="width" constant="-20" id="8TF-xx-27H"/>
+                                            <constraint firstItem="m21-kt-AVO" firstAttribute="top" secondItem="JHJ-JS-qHt" secondAttribute="bottom" constant="10" id="K8x-QF-KYw"/>
+                                            <constraint firstItem="tdU-G8-CdE" firstAttribute="centerY" secondItem="Spw-EJ-F77" secondAttribute="centerY" id="NBX-le-npY"/>
                                             <constraint firstItem="JHJ-JS-qHt" firstAttribute="top" secondItem="tdU-G8-CdE" secondAttribute="bottom" constant="10" id="PqI-IA-Csk"/>
+                                            <constraint firstItem="V5M-5R-NNA" firstAttribute="top" secondItem="m21-kt-AVO" secondAttribute="bottom" constant="10" id="XNi-Mv-Z1g"/>
+                                            <constraint firstItem="m21-kt-AVO" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" constant="10" id="Xxd-de-4B5"/>
+                                            <constraint firstAttribute="trailing" secondItem="V5M-5R-NNA" secondAttribute="trailing" constant="10" id="Ycd-sn-6IY"/>
                                             <constraint firstAttribute="trailing" secondItem="tdU-G8-CdE" secondAttribute="trailing" constant="10" id="llj-cd-Za1"/>
                                             <constraint firstAttribute="trailing" secondItem="JHJ-JS-qHt" secondAttribute="trailing" constant="10" id="nUL-kq-dsE"/>
                                             <constraint firstItem="JHJ-JS-qHt" firstAttribute="leading" secondItem="Spw-EJ-F77" secondAttribute="leading" constant="10" id="riz-EP-AIc"/>
@@ -253,9 +281,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Spw-EJ-F77" firstAttribute="leading" secondItem="4R2-6f-R9t" secondAttribute="leading" id="04X-ud-uFw"/>
-                                    <constraint firstItem="Spw-EJ-F77" firstAttribute="top" secondItem="4R2-6f-R9t" secondAttribute="top" multiplier="0.5" id="YxA-lA-Z2u"/>
+                                    <constraint firstItem="ek8-nj-h5H" firstAttribute="top" secondItem="4R2-6f-R9t" secondAttribute="top" constant="30" id="2nc-u8-Ek8"/>
                                     <constraint firstAttribute="trailing" secondItem="Spw-EJ-F77" secondAttribute="trailing" id="dMv-cb-u1Z"/>
+                                    <constraint firstItem="ek8-nj-h5H" firstAttribute="leading" secondItem="4R2-6f-R9t" secondAttribute="leading" constant="15" id="itw-aN-ypd"/>
                                     <constraint firstAttribute="bottom" secondItem="Spw-EJ-F77" secondAttribute="bottom" id="ky1-60-JHc"/>
+                                    <constraint firstItem="Spw-EJ-F77" firstAttribute="top" secondItem="ek8-nj-h5H" secondAttribute="bottom" constant="10" id="mxY-gH-10Y"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
@@ -277,10 +307,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="4R2-6f-R9t" secondAttribute="bottom" id="Gjd-rK-ItH"/>
                             <constraint firstItem="4R2-6f-R9t" firstAttribute="height" secondItem="nU9-Fs-3qG" secondAttribute="height" id="Gy0-Li-0nm"/>
-                            <constraint firstItem="ek8-nj-h5H" firstAttribute="leading" secondItem="fDk-4Y-OL1" secondAttribute="leadingMargin" id="KwV-Aq-rmO"/>
                             <constraint firstItem="nU9-Fs-3qG" firstAttribute="leading" secondItem="fDk-4Y-OL1" secondAttribute="leading" id="NBe-Sw-bg2"/>
                             <constraint firstItem="4R2-6f-R9t" firstAttribute="leading" secondItem="gJU-0D-lHn" secondAttribute="leading" id="WN4-wc-67t"/>
-                            <constraint firstItem="ek8-nj-h5H" firstAttribute="top" secondItem="fDk-4Y-OL1" secondAttribute="topMargin" constant="8" id="faH-5v-IfY"/>
                             <constraint firstItem="nU9-Fs-3qG" firstAttribute="top" secondItem="fDk-4Y-OL1" secondAttribute="top" id="wXq-Pv-enL"/>
                             <constraint firstAttribute="bottom" secondItem="nU9-Fs-3qG" secondAttribute="bottom" id="wgr-Eg-6CX"/>
                             <constraint firstAttribute="trailing" secondItem="nU9-Fs-3qG" secondAttribute="trailing" id="wxV-bu-cRL"/>
@@ -292,13 +320,15 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="btnTopConstraint" destination="faH-5v-IfY" id="ZMj-1p-0kb"/>
+                        <outlet property="backBtn" destination="ek8-nj-h5H" id="ir9-62-gr1"/>
                         <outlet property="hideViewBtn" destination="ek8-nj-h5H" id="FcT-Tc-iXA"/>
                         <outlet property="locationImageView" destination="nU9-Fs-3qG" id="lbC-nz-y4U"/>
                         <outlet property="locationInfoLabel" destination="JHJ-JS-qHt" id="gJ6-2z-r5F"/>
                         <outlet property="locationNameLabel" destination="tdU-G8-CdE" id="5Zz-7D-SIn"/>
+                        <outlet property="navigationBtn" destination="V5M-5R-NNA" id="mxu-Ml-5mj"/>
+                        <outlet property="openingHoursLabel" destination="m21-kt-AVO" id="Rpc-fs-Bdh"/>
                         <outlet property="scrollView" destination="Spw-EJ-F77" id="ErM-0R-zNl"/>
-                        <outlet property="scrollViewTopConstraint" destination="YxA-lA-Z2u" id="Heq-cb-78Z"/>
+                        <outlet property="viewForScrollView" destination="4R2-6f-R9t" id="eRB-F7-SEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bav-Me-sKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,12 +463,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Guu-BV-Cf9">
-                                            <rect key="frame" x="8" y="0.0" width="360" height="310"/>
+                                            <rect key="frame" x="8" y="0.0" width="360" height="330"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BrivPiemineklis.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dHc-NI-Zoj">
-                                                    <rect key="frame" x="-20" y="-20" width="400" height="350"/>
+                                                    <rect key="frame" x="-20" y="-20" width="400" height="370"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="350" id="s3z-Vc-fhc"/>
+                                                        <constraint firstAttribute="height" constant="370" id="s3z-Vc-fhc"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -446,10 +476,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INl-gi-Ovl" customClass="UIViewX" customModule="Places_in_LV" customModuleProvider="target">
-                                                    <rect key="frame" x="-20" y="0.0" width="400" height="310"/>
+                                                    <rect key="frame" x="-20" y="0.0" width="400" height="330"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brīvības Piemineklis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOw-70-eqL">
-                                                            <rect key="frame" x="25" y="209" width="350" height="36.5"/>
+                                                            <rect key="frame" x="25" y="219" width="350" height="36.5"/>
                                                             <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="28"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -572,7 +602,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="V1H-Wn-ojj" kind="relationship" relationship="rootViewController" id="qJK-Q5-pnC"/>
@@ -586,7 +616,7 @@
     <resources>
         <image name="BrivPiemineklis.jpg" width="768" height="1024"/>
         <image name="Sightseeings" width="1280" height="719"/>
-        <image name="ic_keyboard_arrow_down" width="24" height="24"/>
+        <image name="backIcon" width="32" height="32"/>
         <image name="sideMenu" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>

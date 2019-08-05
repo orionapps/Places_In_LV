@@ -16,15 +16,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
     @IBOutlet weak var mapView: GMSMapView!
     
-
     // Constants
     var locationManager = CLLocationManager()
-    var allLocations = CategoryList()
+    var allLocations = [CategoryList]()
+    var customInfoWindow : ObjectPreviewView?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.customInfoWindow = ObjectPreviewView().loadView()
         addStyleToMap()
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
@@ -52,78 +53,147 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         
         // Fetching data from JSON
-        guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "json") else {
+        guard let urlPath = Bundle.main.url(forResource: "Data", withExtension: "json") else {
             return
         }
         
         do {
             let data = try Data(contentsOf: urlPath)
-            self.allLocations = try JSONDecoder().decode(CategoryList.self, from: data)
+            self.allLocations = try JSONDecoder().decode(Array<CategoryList>.self, from: data)
             
-            for location in allLocations.Sightseeings!{
-
+            for location in self.allLocations {
+                
                 let lat = location.lat
                 let long = location.long
-
+                
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 marker.title = location.locationName
-                marker.icon = UIImage(named: "SightseeingsIcon")
-                marker.snippet = location.locationInfo
-                marker.map = mapView
-            }
+                marker.appearAnimation = .pop
 
-            for location in allLocations.Museums!{
-
-                let lat = location.lat
-                let long = location.long
-
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                marker.title = location.locationName
-                marker.icon = UIImage(named: "MuseumsIcon")
-                marker.snippet = location.locationInfo
-                marker.map = mapView
-            }
-
-            for location in allLocations.NatureAndParks!{
-
-                let lat = location.lat
-                let long = location.long
-
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                marker.title = location.locationName
-                marker.icon = UIImage(named: "NatureAndParksIcon")
-                marker.snippet = location.locationInfo
+                marker.userData = location
+                
+                if location.locationID == 0 {
+                    
+                    marker.icon = GMSMarker.markerImage(with: .blue)
+                } else if location.locationID == 1 {
+                    
+                    marker.icon = GMSMarker.markerImage(with: .red)
+                } else if location.locationID == 2 {
+                    
+                    marker.icon = GMSMarker.markerImage(with: .green)
+                } else if location.locationID == 3 {
+                    
+                    marker.icon = GMSMarker.markerImage(with: .black)
+                } else {
+                    
+                    marker.icon = GMSMarker.markerImage(with: .yellow)
+                }
+                
                 marker.map = mapView
             }
             
-            for location in allLocations.Playgrounds!{
-                
-                let lat = location.lat
-                let long = location.long
-                
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                marker.title = location.locationName
-                marker.icon = UIImage(named: "playgroundIcon")
-                marker.snippet = location.locationInfo
-                marker.map = mapView
-            }
             
-            for location in allLocations.sportsPlaygrounds!{
-                
-                let lat = location.lat
-                let long = location.long
-                
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                marker.title = location.locationName
-                marker.icon = UIImage(named: "sportsIcon")
-                marker.snippet = location.locationInfo
-                marker.map = mapView
-            }
+            
+//            for location in allLocations.Sightseeings!{
+//
+//                let lat = location.lat
+//                let long = location.long
+//
+//                let marker = GMSMarker()
+//                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+//                marker.title = location.locationName
+//                marker.userData = location
+//
+////                if let path = Bundle.main.path(forResource: location.placePhoto, ofType: "jpg"){
+////
+////                    marker.icon = UIImage(contentsOfFile: path)!.withRenderingMode(.alwaysTemplate)
+////                }
+//
+//                marker.icon = GMSMarker.markerImage(with: .red)
+//                //marker.snippet = location.locationInfo
+//                marker.map = mapView
+//
+//            }
+//
+//            for location in allLocations.Museums! {
+//
+//                let lat = location.lat
+//                let long = location.long
+//
+//                let marker = GMSMarker()
+//                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+//                marker.title = location.locationName
+//                marker.userData = location
+//
+////                if let path = Bundle.main.path(forResource: location.placePhoto, ofType: "jpg"){
+////
+////                    marker.icon = UIImage(contentsOfFile: path)!.withRenderingMode(.alwaysTemplate)
+////                }
+//                 marker.icon = GMSMarker.markerImage(with: .blue)
+////
+//                //marker.snippet = location.locationInfo
+//                marker.map = mapView
+//            }
+//
+//            for location in allLocations.NatureAndParks!{
+//
+//                let lat = location.lat
+//                let long = location.long
+//
+//                let marker = GMSMarker()
+//                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+//                marker.title = location.locationName
+//                marker.userData = location
+//
+//
+////                if let path = Bundle.main.path(forResource: location.placePhoto, ofType: "jpg"){
+////
+////                    marker.icon = UIImage(contentsOfFile: path)!.withRenderingMode(.alwaysTemplate)
+////                }
+//                 marker.icon = GMSMarker.markerImage(with: .white)
+//                //marker.snippet = location.locationInfo
+//                marker.map = mapView
+//            }
+//
+//            for location in allLocations.Playgrounds!{
+//
+//                let lat = location.lat
+//                let long = location.long
+//
+//                let marker = GMSMarker()
+//                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+//                marker.title = location.locationName
+//                marker.userData = location
+//
+////                if let path = Bundle.main.path(forResource: location.placePhoto, ofType: "jpg"){
+////
+////                    marker.icon = UIImage(contentsOfFile: path)!.withRenderingMode(.alwaysTemplate)
+////                }
+//
+//                 marker.icon = GMSMarker.markerImage(with: .green)
+//                //marker.snippet = location.locationInfo
+//                marker.map = mapView
+//            }
+//
+//            for location in allLocations.sportsPlaygrounds!{
+//
+//                let lat = location.lat
+//                let long = location.long
+//
+//                let marker = GMSMarker()
+//                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+//                marker.title = location.locationName
+//                marker.userData = location
+//
+////                if let path = Bundle.main.path(forResource: location.placePhoto, ofType: "jpg"){
+////
+////                    marker.icon = UIImage(contentsOfFile: path)!.withRenderingMode(.alwaysTemplate)
+////                }
+//                 marker.icon = GMSMarker.markerImage(with: .black)
+//                //marker.snippet = location.locationInfo
+//                marker.map = mapView
+//            }
 
         } catch {
             print(error)
@@ -177,18 +247,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         self.locationManager.stopUpdatingLocation()
     }
     
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-         
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        
-        destVC.locationName = marker.title!
-        destVC.locationInfo = marker.snippet!
-        
-        self.present(destVC, animated: true, completion: nil)
-    }
+
     
-    // MARK: - Adding a Style to map
+    // MARK: - Google maps delegate
+    
+//    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+//
+//        guard let customMarkerView = marker.iconView as? ObjectPreviewView else
+//
+//        return false
+//    }
     
     func addStyleToMap(){
         
@@ -205,6 +273,38 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
     }
     
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        
+        destVC.locationName = (marker.userData as! CategoryList).locationName
+        
+        if let path = Bundle.main.path(forResource: (marker.userData as! CategoryList).placePhoto, ofType: "jpg"){
+            
+            destVC.locationImage = UIImage(contentsOfFile: path)!
+        }
+
+        
+        self.present(destVC, animated: true, completion: nil)
+    }
+    
+
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+
+
+        self.customInfoWindow?.objectLabel.text = (marker.userData as! CategoryList).locationName
+        
+        if let path = Bundle.main.path(forResource: (marker.userData as! CategoryList).placePhoto, ofType: "jpg"){
+            
+            self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: path)!
+        }
+
+        return self.customInfoWindow
+    }
+
+    
+    
 
     
     // MARK: - Side Menu bar functions and actions
@@ -215,4 +315,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     }
     
 }
+
+//class MapItem:GMSMarker {
+//    var model: CategoryList!  //your data model
+//    init(data: CategoryList) {
+//        super.init()
+//        // pass cordinate
+//
+//        for location in data.Museums!{
+//            self.position = CLLocationCoordinate2D(latitude: location.lat, longitude: location.long)
+//
+//        }
+//        self.model = data
+//    }
+//}
 
