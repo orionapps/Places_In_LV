@@ -1,0 +1,6 @@
+framework module Pods_Places_in_LV {
+  umbrella header "Pods-Places in LV-umbrella.h"
+
+  export *
+  module * { export * }
+}

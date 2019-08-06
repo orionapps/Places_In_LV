@@ -279,6 +279,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
         
         destVC.locationName = (marker.userData as! CategoryList).locationName
+        destVC.locationInfo = (marker.userData as! CategoryList).locationInfo
+        destVC.locationLatitude = (marker.userData as! CategoryList).lat
+        destVC.locationLongitude = (marker.userData as! CategoryList).long
+        
+        if let openingHours = (marker.userData as! CategoryList).openingHours {
+            
+            destVC.openingHours = openingHours
+        }
         
         if let path = Bundle.main.path(forResource: (marker.userData as! CategoryList).placePhoto, ofType: "jpg"){
             
@@ -301,6 +309,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
 
         return self.customInfoWindow
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        return false
     }
 
     
