@@ -1,11 +1,11 @@
 PODS:
-  - GoogleMaps (3.1.0):
-    - GoogleMaps/Maps (= 3.1.0)
-  - GoogleMaps/Base (3.1.0)
-  - GoogleMaps/Maps (3.1.0):
+  - GoogleMaps (3.3.0):
+    - GoogleMaps/Maps (= 3.3.0)
+  - GoogleMaps/Base (3.3.0)
+  - GoogleMaps/Maps (3.3.0):
     - GoogleMaps/Base
-  - GooglePlaces (3.1.0):
-    - GoogleMaps/Base (= 3.1.0)
+  - GooglePlaces (3.3.0):
+    - GoogleMaps/Base (= 3.3.0)
   - Hero (1.4.0)
 
 DEPENDENCIES:
@@ -20,10 +20,10 @@ SPEC REPOS:
     - Hero
 
 SPEC CHECKSUMS:
-  GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
-  GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
+  GoogleMaps: cfee83da305b9aaeccf92c24ac79df11c3003492
+  GooglePlaces: 1e2a87bd9efee9623ee65d44ecc35ebfecd7b13c
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
 
-PODFILE CHECKSUM: e38bf4e4ef946a1e1dca285f244ffc53a789737c
+PODFILE CHECKSUM: 09147bb10926ad3697fcde6e03c0f6307d8b9d69
 
 COCOAPODS: 1.5.3

@@ -10,5 +10,4 @@ target 'Places in LV' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'Hero'
-
 end

@@ -175,6 +175,7 @@
                                 <action selector="openMenuView:" destination="V1H-Wn-ojj" id="Jmb-vL-vuI"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="fiterIcon" id="hmw-wu-TOc"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="fC9-tZ-gkw" id="M2u-e7-ggt"/>
@@ -617,9 +618,10 @@
         <image name="BrivPiemineklis.jpg" width="768" height="1024"/>
         <image name="Sightseeings" width="1280" height="719"/>
         <image name="backIcon" width="32" height="32"/>
+        <image name="fiterIcon" width="32" height="32"/>
         <image name="sideMenu" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c7Z-RF-2U1"/>
+        <segue reference="sHa-I0-amo"/>
     </inferredMetricsTieBreakers>
 </document>
