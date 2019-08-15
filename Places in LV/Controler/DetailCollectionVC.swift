@@ -24,7 +24,6 @@ class DetailCollectionVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     
@@ -38,11 +37,13 @@ class DetailCollectionVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
         return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return locationNamesArray.count
     }
     
@@ -122,7 +123,6 @@ class DetailCollectionVC: UICollectionViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //let offSetY = collectionView.contentOffset.y
         
         for cell in collectionView.visibleCells as! [DetailCell] {
             cell.imgTopConstraint.constant = parallaxOffset(newOffsetY: collectionView.contentOffset.y, cell: cell)

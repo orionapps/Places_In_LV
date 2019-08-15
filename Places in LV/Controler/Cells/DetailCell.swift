@@ -16,19 +16,11 @@ class DetailCell:  UICollectionViewCell{
     @IBOutlet weak var collectionDetailLabel: UILabel!
     @IBOutlet weak var collectionDetailImg: UIImageView!
     
-    //var objectName = DetailCollectionVC().locationNamesArray
-    //var objectImages = DetailCollectionVC().locationImage
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //self.collectionDetailLabel.hero.id = "name"
-        //self.collectionDetailImg.hero.id = "\(objectImages)_image"
-        
         collectionDetailImg.clipsToBounds = true
-        
         configureAll()
-        
     }
     
     

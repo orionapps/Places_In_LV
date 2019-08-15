@@ -14,11 +14,15 @@ class ContainerView: UIViewController {
     
     var sideMenuOpen = false
     let screenSize:CGRect = UIScreen.main.bounds
-    //    var sideMenuWidth: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        listenToNotifications()
+    }
+    
+    
+    func listenToNotifications(){
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(toggleSideMenu),
                                                name: NSNotification.Name(rawValue: "ToggleSideMenu"),
@@ -31,29 +35,14 @@ class ContainerView: UIViewController {
             
             sideMenuOpen = false
             sideMenuConstraint.constant = -250
-        
         } else {
             
             sideMenuOpen = true
             sideMenuConstraint.constant = 0
-            
         }
+        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
-    
-    //    func setUpSideMenuWidth() {
-    //
-    //        self.mapView.bringSubviewToFront(self.sideMenuView)
-    //        //self.sideMenuView.sendSubviewToBack(self.mapView)
-    //
-    //
-    //        sideMenuWidth = screenSize.width * 0.7
-    //        self.widthSideMenuConstraint.constant = sideMenuWidth
-    //        self.leadingConstraint.constant = -sideMenuWidth
-    //        self.sideMenuView.layoutIfNeeded()
-    //    }
-    //
-
 }

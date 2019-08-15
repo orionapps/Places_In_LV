@@ -28,7 +28,6 @@ class Helper {
     }
     
     
-    
     func hexStringToUIColor (hex:String, alpha: Float) -> UIColor {
         
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

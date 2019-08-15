@@ -29,13 +29,8 @@ class ObjectPreviewView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
-//    override func awakeFromNib() {
-//        self.imageView.image = previewImageName
-//        self.objectLabel.text = previewLabelName
-//    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,12 +38,10 @@ class ObjectPreviewView: UIView {
     
     
     func loadView() -> ObjectPreviewView{
+        
         let customInfoWindow = Bundle.main.loadNibNamed("ObjectPreviewView", owner: self, options: nil)?[0] as! ObjectPreviewView
         
         return customInfoWindow
     }
-    
-    
-    
 }
 

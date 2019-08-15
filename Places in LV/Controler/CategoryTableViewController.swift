@@ -13,26 +13,29 @@ class CategoryTableViewController: UITableViewController {
     
     var segueIdentifiers = ["goToSightseengs", "goToNatureAndParks", "goToMuseums"]
     var categoriesArray = ["Sightseengs", "Nature And Parks", "Museums"]
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    //var selectedCategory : Categories?
-    
     var allLocations: CategoryList?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchData()
+    }
+    
+    //MARK: - Fetch Data
+    
+    func fetchData() {
         
         guard let urlPath = Bundle.main.url(forResource: "PreloadedData", withExtension: "json") else {
             return
         }
-        
         do {
+            
             let data = try Data(contentsOf: urlPath)
             self.allLocations = try JSONDecoder().decode(CategoryList.self, from: data)
         }catch {
+            
             print(error)
         }
-
     }
     
 
@@ -58,9 +61,9 @@ class CategoryTableViewController: UITableViewController {
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
-
+        
         if indexPath.row == 0 && allLocations?.locationID == 0 {
-
+            
             if let locationName = allLocations?.locationName {
                 
                 destVC.locationNamesArray.append(locationName)
@@ -70,9 +73,8 @@ class CategoryTableViewController: UITableViewController {
                 
                 destVC.locationInfoArray.append(locationInfo)
             }
-    
         }  else if indexPath.row == 1 && allLocations?.locationID == 1{
-
+            
             if let locationName = allLocations?.locationName {
                 
                 destVC.locationNamesArray.append(locationName)
@@ -82,9 +84,8 @@ class CategoryTableViewController: UITableViewController {
                 
                 destVC.locationInfoArray.append(locationInfo)
             }
-
         } else if indexPath.row == 2 && allLocations?.locationID == 2{
-
+            
             if let locationName = allLocations?.locationName {
                 
                 destVC.locationNamesArray.append(locationName)
@@ -97,24 +98,4 @@ class CategoryTableViewController: UITableViewController {
         }
         self.navigationController?.pushViewController(destVC, animated: true)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        let destinatinationVC = segue.destination as! DetailTableViewController
-//
-//
-//
-//    }
-    
-    
-//    func loadSavedLocations(with request: NSFetchRequest<Categories> = Categories.fetchRequest()) {
-//
-//        do {
-//            categoriesArray = try context.fetch(request)
-//        } catch {
-//            print("Error fetching data from context \(error)")
-//        }
-//        tableView.reloadData()
-//    }
-
 }

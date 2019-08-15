@@ -24,10 +24,12 @@ class CategoryCell: UICollectionViewCell {
     // MARK: - Configuration
     
     private func configureAll() {
+        
         configureCell()
     }
     
     private func configureCell() {
+        
         self.contentView.backgroundColor = .white
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.masksToBounds = true
@@ -37,10 +39,6 @@ class CategoryCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.3
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         self.layer.shadowRadius = self.contentView.layer.cornerRadius
-        
     }
-    
-    
-    
 }
 

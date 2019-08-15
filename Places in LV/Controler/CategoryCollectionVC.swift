@@ -29,16 +29,17 @@ class CategoryCollectionVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        
         return categoriesArray.count
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCell
@@ -48,6 +49,7 @@ class CategoryCollectionVC: UICollectionViewController {
     
         return cell
     }
+
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -138,7 +140,6 @@ func fetchData() {
     guard let urlPath = Bundle.main.url(forResource: "Data", withExtension: "json") else {
         return
     }
-    
     do {
         let data = try Data(contentsOf: urlPath)
         allLocations = try JSONDecoder().decode(Array<CategoryList>.self, from: data)

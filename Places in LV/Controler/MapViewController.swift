@@ -11,30 +11,40 @@ import GoogleMaps
 import GooglePlaces
 import CoreData
 
-
-class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GMUClusterManagerDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
+    private var clusterManager: GMUClusterManager!
     
     // Constants
     var locationManager = CLLocationManager()
     var allLocations = [CategoryList]()
     var customInfoWindow : ObjectPreviewView?
+    
+    let centerOfLatviaLat = 56.998656
+    let centerOfLatviaLong = 24.527813
+    let isClustering: Bool = true
+    let isCustom: Bool = true
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.customInfoWindow = ObjectPreviewView().loadView()
         addStyleToMap()
-        mapView.isMyLocationEnabled = true
-        mapView.delegate = self
-        
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        
-        
+        listenToNotifications()
+        clusterMarkers()
+        loadMarkers()
+    }
     
+    // MARK: - Side menu methods and segues
+    
+    @IBAction func openMenuView(_ sender: UIBarButtonItem) {
+        
+        NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
+    }
+    
+    
+    func listenToNotifications() {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(showCategories),
@@ -50,7 +60,37 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                                                selector: #selector(showSettings),
                                                name: NSNotification.Name(rawValue: "showSettings"),
                                                object: nil)
+    }
+    
+    
+    @objc func showCategories() {
         
+        performSegue(withIdentifier: "showCategories", sender: nil)
+        
+    }
+    
+    
+    @objc func showSortBySeasons() {
+        
+        performSegue(withIdentifier: "showSortBySeasons", sender: nil)
+    }
+    
+    
+    @objc func showSettings() {
+        
+        performSegue(withIdentifier: "showSettings", sender: nil)
+    }
+    
+    
+    // MARK: - Loading Markers
+    
+    func loadMarkers() {
+        
+        self.customInfoWindow = ObjectPreviewView().loadView()
+        mapView.isMyLocationEnabled = true
+        mapView.delegate = self
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
         
         // Fetching data from JSON
         guard let urlPath = Bundle.main.url(forResource: "Data", withExtension: "json") else {
@@ -61,76 +101,59 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             let data = try Data(contentsOf: urlPath)
             self.allLocations = try JSONDecoder().decode(Array<CategoryList>.self, from: data)
             
-            for location in self.allLocations {
+            self.mapView.clear()
+            
+            if isClustering {
                 
-                let lat = location.lat
-                let long = location.long
-                
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                marker.title = location.locationName
-                marker.appearAnimation = .pop
-
-                marker.userData = location
-                
-                if location.locationID == 0 {
+                for location in self.allLocations {
                     
-                    marker.icon = UIImage(named: "sightseeingMarker")
-                } else if location.locationID == 1 {
-                    marker.icon = UIImage(named: "museumMarker")
+                    let lat = location.lat
+                    let long = location.long
+                    let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    let marker = GMSMarker(position: position)
+                    marker.appearAnimation = .pop
+                    marker.userData = location
                     
-                } else if location.locationID == 2 {
+                    if location.locationID == 0 {
+                        
+                        marker.icon = UIImage(named: "sightseeingMarker")
+                    } else if location.locationID == 1 {
+                        
+                        marker.icon = UIImage(named: "museumMarker")
+                    } else if location.locationID == 2 {
+                        
+                        marker.icon = UIImage(named: "parksMarker")
+                    } else if location.locationID == 3 {
+                        
+                        marker.icon = UIImage(named: "kidsMarker")
+                    } else {
+                        
+                        marker.icon = UIImage(named: "sportsMarker")
+                    }
                     
-                    marker.icon = UIImage(named: "parksMarker")
-                } else if location.locationID == 3 {
+                    // Adding objects and info to cluster
+                    let item = POIItem(position: position, name: location.locationName, marker: marker, image: location.placePhoto!, locationInfo: location.locationInfo, lat: location.lat, long: location.long, openingHours: location.openingHours!)
                     
-                    marker.icon = UIImage(named: "kidsMarker")
-                } else {
-                    
-                    marker.icon = UIImage(named: "sportsMarker")
+                    clusterManager.add(item)
                 }
-                
-                marker.map = mapView
+            } else {
             }
         } catch {
             print(error)
         }
-
-    }
-    
-    @objc func showCategories() {
-
-        performSegue(withIdentifier: "showCategories", sender: nil)
-        
-    }
-
-    
-    @objc func showSortBySeasons() {
-        
-        performSegue(withIdentifier: "showSortBySeasons", sender: nil)
-    }
-    
-    @objc func showSettings() {
-        
-        performSegue(withIdentifier: "showSettings", sender: nil)
     }
     
     
     //MARK: - Location manager delegates
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let centerOfLatviaLat = 56.998656
-        let centerOfLatviaLong = 24.527813
 
         let camera = GMSCameraPosition.camera(withLatitude: centerOfLatviaLat, longitude: centerOfLatviaLong, zoom: 6)
         mapView.animate(to: camera)
         
         mapView.settings.myLocationButton = true
-        
         self.locationManager.stopUpdatingLocation()
     }
-    
 
     
     // MARK: - Google maps delegate
@@ -138,7 +161,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     func addStyleToMap(){
         
         do {
-            
             if let styleURL = Bundle.main.url(forResource: "MapStyle", withExtension: "json"){
                 
                 mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
@@ -150,65 +172,93 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         }
     }
     
+    
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
         
-        destVC.locationName = (marker.userData as! CategoryList).locationName
-        destVC.locationInfo = (marker.userData as! CategoryList).locationInfo
-        destVC.locationLatitude = (marker.userData as! CategoryList).lat
-        destVC.locationLongitude = (marker.userData as! CategoryList).long
+        destVC.locationName = (marker.userData as! POIItem).name
+        destVC.locationInfo = (marker.userData as! POIItem).locationInfo
+        destVC.locationLatitude = (marker.userData as! POIItem).lat
+        destVC.locationLongitude = (marker.userData as! POIItem).long
         
-        if let openingHours = (marker.userData as! CategoryList).openingHours {
-            
-            destVC.openingHours = openingHours
-        }
+        destVC.openingHours = (marker.userData as! POIItem).openingHours
         
-        if let path = Bundle.main.path(forResource: (marker.userData as! CategoryList).placePhoto, ofType: "jpg"){
+        if let path = Bundle.main.path(forResource: (marker.userData as! POIItem).image, ofType: "jpg"){
             
             destVC.locationImage = UIImage(contentsOfFile: path)!
         }
-        
         self.present(destVC, animated: true, completion: nil)
     }
     
     
-
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
-        marker.tracksInfoWindowChanges = true
-        
-        self.customInfoWindow?.objectLabel.text = (marker.userData as! CategoryList).locationName
-        
-        if let path = Bundle.main.path(forResource: (marker.userData as! CategoryList).placePhoto, ofType: "jpg"){
-            
-            self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: path)!
-        }
+        if let poiItem = marker.userData as? POIItem {
 
-        return self.customInfoWindow
+
+            marker.tracksInfoWindowChanges = true
+
+            self.customInfoWindow?.objectLabel.text = poiItem.name
+
+            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
+
+                self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: path)!
+            }
+            return self.customInfoWindow
+        }else {
+            UIView.animate(withDuration: 0.5, delay: 0.2, options: [.curveEaseOut],
+                           animations: {
+                            let newCamera = GMSCameraPosition.camera(withTarget: marker.position,
+                                                                     zoom: self.mapView.camera.zoom + 1)
+                            let update = GMSCameraUpdate.setCamera(newCamera)
+                            self.mapView.animate(with: update)
+            }, completion: {
+                finished in
+            })
+            return nil
+        }
     }
+    
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
-        
-        guard let customMarkerView = marker.userData as? ObjectPreviewView else { return false }
-        
-        customMarkerView.previewLabelName = (marker.userData as! CategoryList).locationName
-        
+        if let poiItem = marker.userData as? POIItem {
+            
+            NSLog("Did tap marker for cluster item \(poiItem.name)")
+            guard let customMarkerView = marker.userData as? ObjectPreviewView else { return false }
+            customMarkerView.previewLabelName = poiItem.name
+            
+            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
+                
+                customMarkerView.imageView.image = UIImage(contentsOfFile: path)!
+            }
+        } else {
+            
+            UIView.animate(withDuration: 0.5, delay: 0.2, options: [.curveEaseOut],
+                           animations: {
+                            let newCamera = GMSCameraPosition.camera(withTarget: marker.position,
+                                                                     zoom: self.mapView.camera.zoom + 1)
+                            let update = GMSCameraUpdate.setCamera(newCamera)
+                            self.mapView.animate(with: update)
+            }, completion: {
+                finished in
+            })
+            NSLog("Did tap a normal marker")
+        }
         return false
     }
-
     
     
+    // MARK: - Marker Clusetring methods
 
-    
-    // MARK: - Side Menu bar functions and actions
-
-    @IBAction func openMenuView(_ sender: UIBarButtonItem) {
+    func clusterMarkers() {
         
-        NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
+        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
+        clusterManager.setDelegate(self, mapDelegate: self)
     }
-    
 }
-
