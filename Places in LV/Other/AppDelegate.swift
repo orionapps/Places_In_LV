@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import GoogleMaps
 import GooglePlaces
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,10 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = Helper().navigationBarBackgroundColor()
         UINavigationBar.appearance().tintColor = Helper().navigationBarTextColor()
-        
-        //UserDefaults.standard.set(false, forKey: "didPreloadData")
-        
-        //preloadData()
+        FirebaseApp.configure()
         
         return true
     }

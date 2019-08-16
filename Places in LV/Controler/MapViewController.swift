@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreData
+import FirebaseStorage
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GMUClusterManagerDelegate {
 
@@ -195,17 +196,33 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
+       
+        
         if let poiItem = marker.userData as? POIItem {
 
 
             marker.tracksInfoWindowChanges = true
 
             self.customInfoWindow?.objectLabel.text = poiItem.name
-
-            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
-
-                self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: path)!
+            
+             let storageRef = Storage.storage().reference(withPath: "Objects/\(poiItem.image).jpg")
+            storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
+                if let error = error {
+                    print("Got an error fetching data: \(error.localizedDescription)")
+                    return
+                }
+                if let data = data {
+                    
+                self?.customInfoWindow?.imageView.image = UIImage(data: data)
+                }
             }
+
+            //self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: <#T##String#>)
+//            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
+            
+//
+//                self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: path)!
+//            }
             return self.customInfoWindow
         }else {
             UIView.animate(withDuration: 0.5, delay: 0.2, options: [.curveEaseOut],
