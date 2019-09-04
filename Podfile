@@ -12,4 +12,6 @@ target 'Places in LV' do
   pod 'Hero'
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end

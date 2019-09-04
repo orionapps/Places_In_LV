@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey("AIzaSyAijhLX_-CeshdTqtOO75OtUBj7yHaPf2o")
+        GMSServices.provideAPIKey("AIzaSyBsgjOprIR1bLlRamWXIW344ezH00Hzplg")
         GMSPlacesClient.provideAPIKey("AIzaSyBmH-HqtTXe-6FneivZpw4FdxhR-fr43fM")
         
         UINavigationBar.appearance().barTintColor = Helper().navigationBarBackgroundColor()
