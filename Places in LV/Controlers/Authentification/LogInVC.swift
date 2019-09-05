@@ -55,7 +55,7 @@ class LogInVC: UIViewController {
     
     func transitionToMaps() {
         
-        let mapsVC =  storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as? MapViewController
+        let mapsVC =  storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as? ContainerView
         
         view.window?.rootViewController = mapsVC
         view.window?.makeKeyAndVisible()
