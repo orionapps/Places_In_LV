@@ -144,6 +144,9 @@
                                             <constraint firstAttribute="height" constant="50" id="ubg-kT-lxs"/>
                                         </constraints>
                                         <state key="normal" title="Sign in with Google"/>
+                                        <connections>
+                                            <action selector="signInWithGooglePressed:" destination="Fic-E3-aEd" eventType="touchUpInside" id="VT7-Df-SaL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce4-vp-gWq">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>

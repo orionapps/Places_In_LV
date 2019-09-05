@@ -11,12 +11,12 @@ import CoreData
 import GoogleMaps
 import GooglePlaces
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -27,8 +27,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Helper().navigationBarTextColor()
         FirebaseApp.configure()
         
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let googleDidHandle = GIDSignIn.sharedInstance().handle(url)
+        
+        return googleDidHandle
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            print(error.localizedDescription)
+            return
+    }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+}
+    
+        func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+            
+            print("User has disconected")
+        }
+        
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -142,4 +177,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
 
