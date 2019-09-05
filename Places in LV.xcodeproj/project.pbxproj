@@ -158,7 +158,7 @@
 		9F977D202273029500E214F6 /* Domestic_Manners.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Domestic_Manners.ttf; sourceTree = "<group>"; };
 		9F977D212273029500E214F6 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		9F977D252273040100E214F6 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		9F977D262273040100E214F6 /* dadha___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dadha___.ttf"; sourceTree = "<group>"; };
+		9F977D262273040100E214F6 /* dadha___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dadha___.ttf; sourceTree = "<group>"; };
 		9F977D2A227306A400E214F6 /* DetailCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionVC.swift; sourceTree = "<group>"; };
 		9FA4948622F830D90051C255 /* ObjectPreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectPreviewView.xib; sourceTree = "<group>"; };
 		9FA4948822F856B60051C255 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
