@@ -14,5 +14,6 @@ target 'Places in LV' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
 
 end
