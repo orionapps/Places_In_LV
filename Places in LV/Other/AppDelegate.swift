@@ -12,6 +12,8 @@ import GoogleMaps
 import GooglePlaces
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -20,19 +22,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // Configuring google maps
         GMSServices.provideAPIKey("AIzaSyBsgjOprIR1bLlRamWXIW344ezH00Hzplg")
         GMSPlacesClient.provideAPIKey("AIzaSyBmH-HqtTXe-6FneivZpw4FdxhR-fr43fM")
         
+        // Setting up bar design
         UINavigationBar.appearance().barTintColor = Helper().navigationBarBackgroundColor()
         UINavigationBar.appearance().tintColor = Helper().navigationBarTextColor()
+    
+        // Configuring Firebase
         FirebaseApp.configure()
         
+        // Confirguring Google sign in
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        return true
+        // Configuring Facebook sign in
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
+        // Checking if user already logged in with Facebook
+//        if AccessToken.current != nil {
+//
+//            proceedToMaps()
+//        }
+
+        return ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
+    //MARK: - Facebook sign in methods
+    func applicationWillResignActive(_ application: UIApplication) {
+        AppEvents.activateApp()
+    }
+    
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return ApplicationDelegate.shared.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    
+    //MARK: - Google sign in methods
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
         let googleDidHandle = GIDSignIn.sharedInstance().handle(url)
@@ -51,23 +80,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
+        proceedToMaps()
 }
     
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
             
             print("User has disconected")
         }
-        
     
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    //MARK: - Method for proceeding to maps
+    func proceedToMaps() {
+        
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

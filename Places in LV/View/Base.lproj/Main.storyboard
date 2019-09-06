@@ -181,7 +181,7 @@
                     </view>
                     <connections>
                         <outlet property="signInWithEmailBtn" destination="WiY-NZ-fhx" id="Vp0-Lm-kHh"/>
-                        <outlet property="signInWithFacebookBtn" destination="Ce4-vp-gWq" id="qzx-nL-U41"/>
+                        <outlet property="signInWithFacebookBtn" destination="Ce4-vp-gWq" id="xLr-1N-JnM"/>
                         <outlet property="signInWithGoogleBtn" destination="klP-zN-Ksl" id="3ck-56-slb"/>
                         <outlet property="signInWithTwitterBtn" destination="9bI-qK-uNv" id="1Bi-NQ-CPr"/>
                     </connections>
