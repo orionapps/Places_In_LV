@@ -41,18 +41,16 @@ class ChooseLogInVC: UIViewController, GIDSignInDelegate {
         signInWithEmailBtn.layer.cornerRadius = 25.0
         signInWithEmailBtn.tintColor = UIColor.white
         signInWithEmailBtn.backgroundColor = Helper().hexStringToUIColor(hex: "c4041F", alpha: 1.0)
-        
-        
     }
     
     
     @IBAction func signInWithGooglePressed(_ sender: UIButton) {
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         GIDSignIn.sharedInstance().signIn()
     }
 
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
@@ -60,17 +58,15 @@ class ChooseLogInVC: UIViewController, GIDSignInDelegate {
             return
         }
         
-        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
+        
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            print("logged ins sucsessfuly")
-            self.transitionToMaps()
         }
     }
     
@@ -82,7 +78,6 @@ class ChooseLogInVC: UIViewController, GIDSignInDelegate {
         view.window?.rootViewController = mapsVC
         view.window?.makeKeyAndVisible()
     }
-
 }
 
 
