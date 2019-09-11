@@ -53,4 +53,26 @@ class Helper {
             alpha: CGFloat(alpha)
         )
     }
+    
+    
+    //Activity indicator methods
+    
+    func startActivityIndicator(view: UIView, activityIndicator: UIActivityIndicatorView) {
+        
+        activityIndicator.center = view.center
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = Helper().navigationBarBackgroundColor()
+        view.addSubview(activityIndicator)
+        activityIndicator .startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    
+    func stopActivityIndicator (activityIndicator: UIActivityIndicatorView) {
+        
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+
 }

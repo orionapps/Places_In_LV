@@ -26,6 +26,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     let centerOfLatviaLong = 24.527813
     let isClustering: Bool = true
     let isCustom: Bool = true
+    
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
     
     override func viewDidLoad() {
@@ -183,39 +185,53 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         destVC.locationInfo = (marker.userData as! POIItem).locationInfo
         destVC.locationLatitude = (marker.userData as! POIItem).lat
         destVC.locationLongitude = (marker.userData as! POIItem).long
-        
         destVC.openingHours = (marker.userData as! POIItem).openingHours
         
-        if let path = Bundle.main.path(forResource: (marker.userData as! POIItem).image, ofType: "jpg"){
-            
-            destVC.locationImage = UIImage(contentsOfFile: path)!
-        }
-        self.present(destVC, animated: true, completion: nil)
-    }
-    
-    
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        Helper().startActivityIndicator(view: mapView, activityIndicator: activityIndicator)
         
-       
-        
-        if let poiItem = marker.userData as? POIItem {
-
-
-            marker.tracksInfoWindowChanges = true
-
-            self.customInfoWindow?.objectLabel.text = poiItem.name
+        if Reachability.isConnectedToNetwork() {
             
-             let storageRef = Storage.storage().reference(withPath: "Objects/\(poiItem.image).jpg")
+            let storageRef = Storage.storage().reference(withPath: "Objects/\((marker.userData as! POIItem).image).jpg")
             storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
                 if let error = error {
                     print("Got an error fetching data: \(error.localizedDescription)")
                     return
                 }
+                
                 if let data = data {
                     
-                self?.customInfoWindow?.imageView.image = UIImage(data: data)
+                    destVC.locationImage = UIImage(data: data)!
+                    Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
+                    self!.present(destVC, animated: true, completion: nil)
                 }
             }
+        } else {
+            
+            Helper().stopActivityIndicator(activityIndicator: activityIndicator)
+            
+            let alert = UIAlertController(title: "Faild to load info", message: "Please check your internet connection and try again", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            }
+}
+    
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        
+        if let poiItem = marker.userData as? POIItem {
+
+
+            marker.tracksInfoWindowChanges = true
+            
+            
+            self.customInfoWindow?.objectLabel.sizeToFit()
+            self.customInfoWindow?.objectLabel.adjustsFontSizeToFitWidth = true
+            self.customInfoWindow?.objectLabel.textAlignment = NSTextAlignment.center
+
+            self.customInfoWindow?.objectLabel.text = poiItem.name
+
 
             //self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: <#T##String#>)
 //            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
@@ -279,3 +295,5 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         clusterManager.setDelegate(self, mapDelegate: self)
     }
 }
+
+

@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import FirebaseStorage
 
 class DetailCollectionVC: UICollectionViewController {
     
@@ -21,6 +22,8 @@ class DetailCollectionVC: UICollectionViewController {
     
     var cellHeight: CGFloat = 370
     var parallaxOffsetSpeed: CGFloat = 40
+    
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,38 +87,35 @@ class DetailCollectionVC: UICollectionViewController {
         destVC.locationLongitude = locationLongitude[indexPath.item]
         destVC.openingHours = openingHours[indexPath.item]
         
-        if let path = Bundle.main.path(forResource: locationImage[indexPath.row], ofType: "jpg"){
+        Helper().startActivityIndicator(view: self.view, activityIndicator: activityIndicator)
+        
+        if Reachability.isConnectedToNetwork() {
             
-            destVC.locationImage = UIImage(contentsOfFile: path)!
+            let storageRef = Storage.storage().reference(withPath: "Objects/\((locationImage[indexPath.row])).jpg")
+            storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
+                if let error = error {
+                    print("Got an error fetching data: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let data = data {
+                    
+                    destVC.locationImage = UIImage(data: data)!
+                    Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
+                    self!.present(destVC, animated: true, completion: nil)
+                }
+            }
+        } else {
+            
+            Helper().stopActivityIndicator(activityIndicator: activityIndicator)
+            
+            let alert = UIAlertController(title: "Faild to load info", message: "Please check your internet connection and try again", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         }
-        self.present(destVC, animated: true, completion: nil)
     }
-    
-    //    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-    //        let size = image.size
-    //
-    //        let widthRatio  = targetSize.width  / size.width
-    //        let heightRatio = targetSize.height / size.height
-    //
-    //        // Figure out what our orientation is, and use that to form the rectangle
-    //        var newSize: CGSize
-    //        if(widthRatio > heightRatio) {
-    //            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-    //        } else {
-    //            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-    //        }
-    //
-    //        // This is the rect that we've calculated out and this is what is actually used below
-    //        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-    //
-    //        // Actually do the resizing to the rect using the ImageContext stuff
-    //        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-    //        image.draw(in: rect)
-    //        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    //        UIGraphicsEndImageContext()
-    //
-    //        return newImage!
-    //    }
     
     func parallaxOffset(newOffsetY: CGFloat, cell: UICollectionViewCell) -> CGFloat {
         
@@ -128,6 +128,7 @@ class DetailCollectionVC: UICollectionViewController {
             cell.imgTopConstraint.constant = parallaxOffset(newOffsetY: collectionView.contentOffset.y, cell: cell)
         }
     }
+
     
     
 }

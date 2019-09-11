@@ -34,8 +34,8 @@ class AuthVC: UIViewController {
     func setUpElements() {
         
         // Automatic sign in with Google in case user is already signed in before
-//        GIDSignIn.sharedInstance()?.presentingViewController = self
-//        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
         Utilities.styleFilledButton(signUpBtn)
         Utilities.styleHollowButton(logInBtn)

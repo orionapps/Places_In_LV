@@ -11,12 +11,11 @@ import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 
-class ChooseLogInVC: UIViewController, GIDSignInDelegate, LoginButtonDelegate {
+class ChooseLogInVC: UIViewController, LoginButtonDelegate {
     
     
     @IBOutlet weak var signInWithGoogleBtn: GIDSignInButton!
     @IBOutlet weak var signInWithFacebookBtn: UIButton!
-    @IBOutlet weak var signInWithTwitterBtn: UIButton!
     @IBOutlet weak var signInWithEmailBtn: UIButton!
     
     override func viewDidLoad() {
@@ -38,9 +37,6 @@ class ChooseLogInVC: UIViewController, GIDSignInDelegate, LoginButtonDelegate {
         signInWithFacebookBtn.tintColor = UIColor.white
         signInWithFacebookBtn.backgroundColor = Helper().hexStringToUIColor(hex: "2A4383", alpha: 1.0)
         
-        signInWithTwitterBtn.layer.cornerRadius = 25.0
-        signInWithTwitterBtn.tintColor = UIColor.white
-        signInWithTwitterBtn.backgroundColor = Helper().hexStringToUIColor(hex: "3283E0", alpha: 1.0)
         
         signInWithEmailBtn.layer.cornerRadius = 25.0
         signInWithEmailBtn.tintColor = UIColor.white
@@ -55,24 +51,24 @@ class ChooseLogInVC: UIViewController, GIDSignInDelegate, LoginButtonDelegate {
         GIDSignIn.sharedInstance().signIn()
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-        }
-    }
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+//        // ...
+//        if let error = error {
+//            print(error.localizedDescription)
+//            return
+//        }
+//
+//        guard let authentication = user.authentication else { return }
+//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//                                                       accessToken: authentication.accessToken)
+//
+//        Auth.auth().signIn(with: credential) { (authResult, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//        }
+//    }
     
     
     //MARK: - Facebook sign in methods

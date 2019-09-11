@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QdR-5d-hCK">
-                                <rect key="frame" x="40" y="562" width="334" height="260"/>
+                                <rect key="frame" x="40" y="632" width="334" height="190"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klP-zN-Ksl">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -152,12 +152,8 @@
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <state key="normal" title="Sign in with Facebook"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bI-qK-uNv">
-                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
-                                        <state key="normal" title="Sign in with Twitter"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiY-NZ-fhx">
-                                        <rect key="frame" x="0.0" y="210" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
                                         <state key="normal" title="Sign in with Email"/>
                                         <connections>
                                             <segue destination="Xkw-4F-JfQ" kind="show" id="wKs-Wd-9jo"/>
@@ -166,7 +162,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WiY-NZ-fhx" firstAttribute="height" secondItem="klP-zN-Ksl" secondAttribute="height" id="Q71-TQ-16D"/>
-                                    <constraint firstItem="9bI-qK-uNv" firstAttribute="height" secondItem="klP-zN-Ksl" secondAttribute="height" id="XLB-Ak-xNk"/>
                                     <constraint firstItem="Ce4-vp-gWq" firstAttribute="height" secondItem="klP-zN-Ksl" secondAttribute="height" id="cdn-eg-jO7"/>
                                 </constraints>
                             </stackView>
@@ -183,7 +178,6 @@
                         <outlet property="signInWithEmailBtn" destination="WiY-NZ-fhx" id="Vp0-Lm-kHh"/>
                         <outlet property="signInWithFacebookBtn" destination="Ce4-vp-gWq" id="xLr-1N-JnM"/>
                         <outlet property="signInWithGoogleBtn" destination="klP-zN-Ksl" id="3ck-56-slb"/>
-                        <outlet property="signInWithTwitterBtn" destination="9bI-qK-uNv" id="1Bi-NQ-CPr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izc-vU-Y55" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -483,7 +477,7 @@
                                             <action selector="backPressed:" destination="jRg-EG-FT0" eventType="touchUpInside" id="Q1l-dW-x2o"/>
                                         </connections>
                                     </button>
-                                    <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-EJ-F77" customClass="UIViewx">
+                                    <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-EJ-F77">
                                         <rect key="frame" x="0.0" y="95" width="414" height="1001"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-JS-qHt">
@@ -902,6 +896,6 @@
         <image name="sideMenu" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sHa-I0-amo"/>
+        <segue reference="c7Z-RF-2U1"/>
     </inferredMetricsTieBreakers>
 </document>
