@@ -59,15 +59,49 @@ class DetailCollectionVC: UICollectionViewController {
         cell.collectionDetailLabel.hero.modifiers = [.zPosition(4)]
         
         
-        if let path = Bundle.main.path(forResource: locationImage[indexPath.row], ofType: "jpg"){
+//        if let path = Bundle.main.path(forResource: locationImage[indexPath.row], ofType: "jpg"){
+//
+//            let image = UIImage(contentsOfFile: path)
+//            //cell.collectionDetailImg.image =  self.resizeImage(image: image!, targetSize: CGSize(width: 400.0, height: 600.0))
+//
+//            cell.collectionDetailImg.image = image
+//
+//            cell.collectionDetailImg.hero.id = "\(String(describing: UIImage(named: locationImage[indexPath.item])))_image"
+//        }
+        
+        Helper().startActivityIndicator(view: , activityIndicator: activityIndicator)
+        
+        if Reachability.isConnectedToNetwork() {
             
-            let image = UIImage(contentsOfFile: path)
-            //cell.collectionDetailImg.image =  self.resizeImage(image: image!, targetSize: CGSize(width: 400.0, height: 600.0))
+            let storageRef = Storage.storage().reference(withPath: "Objects/\((locationImage[indexPath.row])).jpg")
+            storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
+                if let error = error {
+                    print("Got an error fetching data: \(error.localizedDescription)")
+                    return
+                }
+
+                if let data = data {
+
+                    let pictures = UIImage(data: data)!
+                    cell.collectionDetailImg.image = pictures
+                    Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
+                    //self?.collectionView.reloadData()
+
+                }
+            }
             
-            cell.collectionDetailImg.image = image
             
-            cell.collectionDetailImg.hero.id = "\(String(describing: UIImage(named: locationImage[indexPath.item])))_image"
+        } else {
+            
+            Helper().stopActivityIndicator(activityIndicator: activityIndicator)
+            
+            let alert = UIAlertController(title: "Faild to load info", message: "Please check your internet connection and try again", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         }
+        
         cell.collectionDetailImg.hero.modifiers = [.zPosition(2)]
         
         cell.imgHightConstraint.constant = self.parallaxImageHeight
