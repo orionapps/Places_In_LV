@@ -69,12 +69,13 @@ class DetailCollectionVC: UICollectionViewController {
 //            cell.collectionDetailImg.hero.id = "\(String(describing: UIImage(named: locationImage[indexPath.item])))_image"
 //        }
         
-        Helper().startActivityIndicator(view: , activityIndicator: activityIndicator)
+        
         
         if Reachability.isConnectedToNetwork() {
             
             let storageRef = Storage.storage().reference(withPath: "Objects/\((locationImage[indexPath.row])).jpg")
             storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
+                
                 if let error = error {
                     print("Got an error fetching data: \(error.localizedDescription)")
                     return
@@ -82,15 +83,14 @@ class DetailCollectionVC: UICollectionViewController {
 
                 if let data = data {
 
-                    let pictures = UIImage(data: data)!
-                    cell.collectionDetailImg.image = pictures
-                    Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
-                    //self?.collectionView.reloadData()
+                    DispatchQueue.main.async {
 
+                        let pictures = UIImage(data: data)!
+                        cell.collectionDetailImg.image = pictures
+                    }
                 }
             }
-            
-            
+
         } else {
             
             Helper().stopActivityIndicator(activityIndicator: activityIndicator)

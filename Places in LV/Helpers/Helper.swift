@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+import FirebaseStorage
 
 // Version 1 color scheme: 9E3039 & 0B4F6C & 01BAEF & FBFBFF & 040F16
+let imageCache = NSCache<NSString, UIImage>()
 
 
-class Helper {
-    
+class Helper: UIImageView {
+
+    var imageUrlString: String?
     
     // Navigation bar color for whole app
     func navigationBarBackgroundColor() -> UIColor {
@@ -66,13 +69,83 @@ class Helper {
         activityIndicator.color = Helper().navigationBarBackgroundColor()
         view.addSubview(activityIndicator)
         activityIndicator .startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        //UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
+    //Cache images
+    
     func stopActivityIndicator (activityIndicator: UIActivityIndicatorView) {
-        
+
         activityIndicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
+        //UIApplication.shared.endIgnoringInteractionEvents()
     }
 
+//    func loadImageUsingCacheWithUrlString(referenceString: StorageReference) {
+//
+//        var pictures: UIImage
+//
+//        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+//
+//        self.startActivityIndicator(view: self, activityIndicator: activityIndicator)
+//
+//        referenceString.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
+//            if let error = error {
+//                print("Got an error fetching data: \(error.localizedDescription)")
+//                return
+//            }
+//
+//            if let data = data {
+//
+//                DispatchQueue.main.async {
+//
+//                    pictures = UIImage(data: data)!
+//                    Helper().stopActivityIndicator(activityIndicator: activityIndicator)
+//                }
+//            }
+//        }
+//        return pictures
+        
+        //var imageUrlString: String?
+        
+//        func loadImageUsingUrlString(urlString: String) {
+//
+//            imageUrlString = urlString
+//
+//            guard let url = URL(string: urlString) else { return }
+//
+//            image = nil
+//
+//            if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
+//                self.image = imageFromCache
+//                return
+//            }
+//
+//            let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
+//            addSubview(activityIndicator)
+//            activityIndicator.startAnimating()
+//            activityIndicator.center = self.center
+//
+//            URLSession.shared.dataTask(with: url, completionHandler: { (data, respones, error) in
+//
+//                if error != nil {
+//                    print(error ?? "")
+//                    return
+//                }
+//
+//                DispatchQueue.main.async {
+//                    guard let imageToCache = UIImage(data: data!) else { return }
+//
+//                    if self.imageUrlString == urlString {
+//                        self.image = imageToCache
+//                        activityIndicator.removeFromSuperview()
+//                    }
+//
+//                    imageCache.setObject(imageToCache, forKey: urlString as NSString)
+//                }
+//
+//            }).resume()
+       //}
+//    }
+
 }
+

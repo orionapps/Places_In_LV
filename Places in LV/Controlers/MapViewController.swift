@@ -197,14 +197,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     print("Got an error fetching data: \(error.localizedDescription)")
                     return
                 }
-                
+
                 if let data = data {
-                    
+
                     destVC.locationImage = UIImage(data: data)!
                     Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
                     self!.present(destVC, animated: true, completion: nil)
                 }
             }
+                    
         } else {
             
             Helper().stopActivityIndicator(activityIndicator: activityIndicator)
@@ -263,10 +264,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             guard let customMarkerView = marker.userData as? ObjectPreviewView else { return false }
             customMarkerView.previewLabelName = poiItem.name
             
-            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
-                
-                customMarkerView.imageView.image = UIImage(contentsOfFile: path)!
-            }
+//            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
+//
+//                customMarkerView.imageView.image = UIImage(contentsOfFile: path)!
+//            }
         } else {
             
             UIView.animate(withDuration: 0.5, delay: 0.2, options: [.curveEaseOut],
