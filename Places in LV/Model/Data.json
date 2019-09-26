@@ -80,6 +80,16 @@
     },
     
     {
+        "locationID" : 1,
+        "locationName" : "Mālpils Muiža",
+        "lat" : 57.006663,
+        "long" : 24.949057,
+        "locationInfo": "Mālpils muižas (vācu: Lemburg) kungu māja atrodas Mālpils novada centrā Mālpilī, apmēram 60 km no Rīgas un 15 km no Siguldas. Tā celta klasicisma stilā 18. gadsimta vidū, bet pārbūvēta 1911. gadā pēc arhitekta Vilhelma Bokslafa projekta. Muižas pils ir valsts nozīmes kultūras piemineklis, tās restaurācija noslēdzās 2008. gada augustā. Tajā atrodas dizaina viesnīca, bārs un restorāns.",
+        "placePhoto" : "MalpilsMuiza",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
         "locationID" : 2,
         "locationName" : "Uzvaras Parks",
         "lat" : 56.935897,
@@ -108,6 +118,16 @@
         "placePhoto" : "ArkadijasParks",
         "openingHours" : "Atvērts 24/7"
     },
+    
+    {
+        "locationID" : 2,
+        "locationName" : "Černausku dižozols",
+        "lat" : 57.091423,
+        "long" : 24.797940,
+        "locationInfo": "Černausku ozols ir varenākais Allažu apkārtnes dižozols. 1977. gadā iekļauts dižkoku sarakstā. Tā dobumā mīt aizsargājamās spožās skudras (Lasius Fuliginosus Latreille.) Šobrīd šī koka apkārtmērs - 6,9 m, vainaga augstums - 22 m, vainaga projekcija - 390 m2, zaru garums - lidz 13,6 m.",
+        "placePhoto" : "CernauskuDizozols",
+        "openingHours" : "Atvērts 24/7"
+    },
 
     {
         "locationID" : 3,
@@ -130,12 +150,33 @@
     },
     
     {
+        "locationID" : 3,
+        "locationName" : "Bērnu Parks Ventspilī",
+        "lat" : 57.389008,
+        "long" : 21.547920,
+        "locationInfo": "Visa gada garumā katru svētdienu 12:00 šeit tiek organizēti atraktīvi pasākumi bērniem. Bērnu pilsētiņa (Lielā prospekta un Vasarnīcu ielu ielokā) atklāta 2000. gadā un tajā uzstādītas vairāk nekā 40 dažāda veida rotaļu iekārtas, kas paredzētas bērniem no mazuļa vecuma līdz pat tīnim. Šeit var pagrozīt 1,5 m lielu globusu, uzsmaidīt puķu kompozīcijai Pīļu ģimene. Vasarā Bērnu pilsētiņā darbojas arī bērnu velokartu noma un batuti.",
+        "placePhoto" : "BernuParksVentspili",
+        "openingHours" : "No 1. apriļa - 30. oktobrim: 07:00 - 20:00 \nNo 1. novembra - 31.martam: 07:00 - 22:00"
+    },
+
+    
+    {
         "locationID" : 4,
         "locationName" : "KP6 Basketbola laukums",
         "lat" : 56.500629,
         "long" : 20.995189,
         "locationInfo": "KP6 Basketbola laukums",
         "placePhoto" : "StandartSports",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 4,
+        "locationName" : "Ventspils augstskolas basketbola laukums",
+        "lat" : 57.384540,
+        "long" : 21.543686,
+        "locationInfo": "Basketbola laukums atrodas Ventspils augstskolas teritorijā. Ir pieejams basketbola laukums ar bruģētu segumu un metāliskiem strītbola groziem, kā arī ir pieejems vel viens grozs ar bruģa segumu un metālisko strītbola grozu. Pie basketbola laukuma ir pieejama bezmaksas autostāvieta.",
+        "placePhoto" : "VentspilsAugstskolasBasketbolaLaukums",
         "openingHours" : "Nezināms"
     },
     

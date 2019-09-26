@@ -202,7 +202,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
                     destVC.locationImage = UIImage(data: data)!
                     Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
-                    self!.present(destVC, animated: true, completion: nil)
+                    
+                    self!.navigationController?.pushViewController(destVC, animated: true)
                 }
             }
                     
@@ -294,6 +295,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
         clusterManager.setDelegate(self, mapDelegate: self)
+        
+        renderer.minimumClusterSize = 5
     }
 }
 

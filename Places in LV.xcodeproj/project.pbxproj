@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D3E21688435B6157243298C /* Pods_Places_in_LV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */; };
 		9F0888F222787EAE00773BE6 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0888F122787EAE00773BE6 /* DetailCell.swift */; };
-		9F256A84225F2A30003D459A /* PreloadedData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F256A83225F2A30003D459A /* PreloadedData.json */; };
 		9F256A86226088C5003D459A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F256A85226088C5003D459A /* DetailVC.swift */; };
 		9F2EC0DB2292B49D00EED38A /* ObjectPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2EC0DA2292B49D00EED38A /* ObjectPreviewView.swift */; };
 		9F32579A231FA2D6001D738F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325799231FA2D6001D738F /* SignUpVC.swift */; };
@@ -89,7 +88,6 @@
 		2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places_in_LV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		858E39007F9B1CCDEAB339AF /* Pods-Places in LV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0888F122787EAE00773BE6 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
-		9F256A83225F2A30003D459A /* PreloadedData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreloadedData.json; sourceTree = "<group>"; };
 		9F256A85226088C5003D459A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		9F2EC0DA2292B49D00EED38A /* ObjectPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPreviewView.swift; sourceTree = "<group>"; };
 		9F325799231FA2D6001D738F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				9F4CD13122537CA8001EBCD2 /* DataModel.xcdatamodeld */,
-				9F256A83225F2A30003D459A /* PreloadedData.json */,
 				9FB93AC1225DF78300360E48 /* CategoryList.swift */,
 				9F74E25B2265EEC8007D843F /* MapStyle.json */,
 				9FA4948822F856B60051C255 /* Data.json */,
@@ -580,7 +577,6 @@
 				9FE1EAD022896B90002A3CC6 /* StandartSports.jpg in Resources */,
 				9FE1EAB322843DE2002A3CC6 /* Peterabaznica.jpg in Resources */,
 				9F74E25C2265EEC8007D843F /* MapStyle.json in Resources */,
-				9F256A84225F2A30003D459A /* PreloadedData.json in Resources */,
 				9FE1EABD2285AF2E002A3CC6 /* RigasPils.jpg in Resources */,
 				9FE1EABA22843DEC002A3CC6 /* MelngalvjuNams.jpg in Resources */,
 				9FA4948922F856B60051C255 /* Data.json in Resources */,

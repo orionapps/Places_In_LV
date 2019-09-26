@@ -112,18 +112,18 @@ class DetailCollectionVC: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        
-        destVC.locationName = locationNamesArray[indexPath.item]
-        destVC.locationInfo = locationInfoArray[indexPath.item]
-        destVC.locationLatitude = locationLatitude[indexPath.item]
-        destVC.locationLongitude = locationLongitude[indexPath.item]
-        destVC.openingHours = openingHours[indexPath.item]
-        
         Helper().startActivityIndicator(view: self.view, activityIndicator: activityIndicator)
         
         if Reachability.isConnectedToNetwork() {
+            
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+            
+            destVC.locationName = self.locationNamesArray[indexPath.item]
+            destVC.locationInfo = self.locationInfoArray[indexPath.item]
+            destVC.locationLatitude = self.locationLatitude[indexPath.item]
+            destVC.locationLongitude = self.locationLongitude[indexPath.item]
+            destVC.openingHours = self.openingHours[indexPath.item]
             
             let storageRef = Storage.storage().reference(withPath: "Objects/\((locationImage[indexPath.row])).jpg")
             storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
@@ -136,9 +136,10 @@ class DetailCollectionVC: UICollectionViewController {
                     
                     destVC.locationImage = UIImage(data: data)!
                     Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
-                    self!.present(destVC, animated: true, completion: nil)
+                    self!.navigationController?.pushViewController(destVC, animated: true)
                 }
             }
+            
         } else {
             
             Helper().stopActivityIndicator(activityIndicator: activityIndicator)
