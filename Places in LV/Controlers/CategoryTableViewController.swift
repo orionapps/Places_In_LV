@@ -59,7 +59,7 @@ class CategoryTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
         
         if indexPath.row == 0 && allLocations?.locationID == 0 {

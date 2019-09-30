@@ -98,8 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     //MARK: - Method for proceeding to maps
     func proceedToMaps() {
         
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
+        let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+        let initialViewController : UIViewController = mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()

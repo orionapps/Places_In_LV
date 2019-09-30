@@ -103,7 +103,8 @@ class SignUpVC: UIViewController {
     
     func transitionToMaps() {
         
-        let mapsVC =  storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as? ContainerView
+        let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+        let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
         
         view.window?.rootViewController = mapsVC
         view.window?.makeKeyAndVisible()

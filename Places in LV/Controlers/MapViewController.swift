@@ -178,7 +178,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
         
         destVC.locationName = (marker.userData as! POIItem).name
@@ -227,7 +227,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
 
             marker.tracksInfoWindowChanges = true
             
-            
+            self.customInfoWindow?.contentView.layer.cornerRadius = 15
             self.customInfoWindow?.objectLabel.sizeToFit()
             self.customInfoWindow?.objectLabel.adjustsFontSizeToFitWidth = true
             self.customInfoWindow?.objectLabel.textAlignment = NSTextAlignment.center
@@ -263,7 +263,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             
             NSLog("Did tap marker for cluster item \(poiItem.name)")
             guard let customMarkerView = marker.userData as? ObjectPreviewView else { return false }
+            customMarkerView.contentView.layer.cornerRadius = 15
             customMarkerView.previewLabelName = poiItem.name
+            
             
 //            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
 //
@@ -285,7 +287,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         return false
     }
     
-    
+       
     // MARK: - Marker Clusetring methods
 
     func clusterMarkers() {

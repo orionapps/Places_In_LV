@@ -116,7 +116,7 @@ class DetailCollectionVC: UICollectionViewController {
         
         if Reachability.isConnectedToNetwork() {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
             let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
             
             destVC.locationName = self.locationNamesArray[indexPath.item]

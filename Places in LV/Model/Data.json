@@ -121,6 +121,26 @@
     
     {
         "locationID" : 2,
+        "locationName" : "Reņķa dārzs",
+        "lat" : 57.384713,
+        "long" : 21.568876,
+        "locationInfo": "Reņķa dārzs ir centrālā kultūras pasākumu norises vieta Ventspilī vasaras sezonā, kur regulāri notiek zaļumballes, vasaras koncerti un festivāli. Reņķa dārzā ir izvietoti arī vairāki savdabīgi vides objekti. Parkā draiskojas Mākoņaitiņas – 10 auni un jēriņi. Koka skulptūru grupā Dārza zvēriņi pastaigājas govis, kaķis un sienāzis. Bet lielā, 4 m augstā Muša nelido prom un ļauj bērniem kāpelēt pa savām daudzajām kājām. Reņķa dārzā milzu zābaku, cepuri, atslēgu saišķi, pogas un vilnas diegu kamolu pazaudējis milzis Lutausis, kā arī iedzīvojies liels Bruņurupucis. Netālu ganās Jūras govis, kas labi sadzīvo ar Krabju krabi un Kamolu. Reņķa dārza dīķis ar peldošo strūklaku un atpūtas soliņiem pie tā kļuvis par patīkamu vietu, kur atvilkt elpu un atpūtināt kājas. Reņķa dārzā ierīkotas fitnesa iekārtas vingrošanai brīvā dabā. [Resurs: www.visitventspils.com]",
+        "placePhoto" : "RenkaDarzs",
+        "openingHours" : "24/7"
+    },
+    
+    {
+        "locationID" : 2,
+        "locationName" : "Ventspils piejūras parks (Jūrmalas Parks)",
+        "lat" : 57.388735,
+        "long" : 21.533745,
+        "locationInfo": "Ventspils piejūras parks atrodas Parka un Loču ielas krustojumā. Parkā ir izvietota viena no lielākajām brīvdabas enkuru takām kur ir iespējams apskatīt dažāda veida enkurus. Parkā ir izvietots neliels bērnu laukums kā arī kursē brīvdabas muzeja Mazbānītis. Parkā ir izvietotas vairākas piknika vietas ar soliņiem un galdiem. Automašīnu ir iespējams novietot bezmaksas autostāvietā loču ielā.",
+        "placePhoto" : "VentspilsPiejurasParks",
+        "openingHours" : "24/7"
+    },
+    
+    {
+        "locationID" : 2,
         "locationName" : "Černausku dižozols",
         "lat" : 57.091423,
         "long" : 24.797940,
@@ -134,9 +154,9 @@
         "locationName" : "Fantāzija, Bērnu parks",
         "lat" : 57.407950,
         "long" : 21.592636,
-        "locationInfo": "Fantāzija bērnu parks",
-        "placePhoto" : "StandartPlayground",
-        "openingHours" : "Nezināms"
+        "locationInfo": "Liels rotaļu laukums kurš atrodas Pārventā, Talsu ielā. Tas ir piemērots gan pirmsskolas vecuma bērniem, gan lielākiem bērniem. 2019. gadā rotaļu laukums tika renovēts. Katru svētdienu plkst. 15:00 notiek atraktīvi muzikāli pasākumi bērniem. Parkā atrodas arī Zelta Saules un Sudraba Mēness govs skulptūra. Netālu no Bērnu parka atrodas arī Pārventas Meža taka ar 12 dažādas sarežģītības pakāpes atrakcijām, kas veidotas no tauvu un trošu elementiem.",
+        "placePhoto" : "FantazijaBernuParks",
+        "openingHours" : "No 1. apriļa - 30. oktobrim: 08:00 - 20:00 \nNo 1. novembra - 31.martam: 08:00 - 20:00"
     },
     
     {
@@ -156,7 +176,7 @@
         "long" : 21.547920,
         "locationInfo": "Visa gada garumā katru svētdienu 12:00 šeit tiek organizēti atraktīvi pasākumi bērniem. Bērnu pilsētiņa (Lielā prospekta un Vasarnīcu ielu ielokā) atklāta 2000. gadā un tajā uzstādītas vairāk nekā 40 dažāda veida rotaļu iekārtas, kas paredzētas bērniem no mazuļa vecuma līdz pat tīnim. Šeit var pagrozīt 1,5 m lielu globusu, uzsmaidīt puķu kompozīcijai Pīļu ģimene. Vasarā Bērnu pilsētiņā darbojas arī bērnu velokartu noma un batuti.",
         "placePhoto" : "BernuParksVentspili",
-        "openingHours" : "No 1. apriļa - 30. oktobrim: 07:00 - 20:00 \nNo 1. novembra - 31.martam: 07:00 - 22:00"
+        "openingHours" : "No 1. apriļa - 30. oktobrim: 07:00 - 20:00 \nNo 1. novembra - 31.martam: 07:00 - 20:00"
     },
 
     
@@ -178,6 +198,46 @@
         "locationInfo": "Basketbola laukums atrodas Ventspils augstskolas teritorijā. Ir pieejams basketbola laukums ar bruģētu segumu un metāliskiem strītbola groziem, kā arī ir pieejems vel viens grozs ar bruģa segumu un metālisko strītbola grozu. Pie basketbola laukuma ir pieejama bezmaksas autostāvieta.",
         "placePhoto" : "VentspilsAugstskolasBasketbolaLaukums",
         "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 4,
+        "locationName" : "Ventspils skeitparks",
+        "lat" : 57.388549,
+        "long" : 21.566796,
+        "locationInfo": "Ekstrēmo sporta veidu cienītājiem ir radīta bāze, kur, lietderīgi pavadot savu brīvo laiku, ikviens var trenēties un apgūt trikus ekstrēmajā skrituļslidošanā, velo-frīstailā un skeitbordā, kā arī organizēt sacensības. Ventspils vasaras skeitparks darbojas jau kopš 2000.gada un šo gadu laikā tas paplašināts ar jauniem elementiem. Skeitparka teritorijā, kas ir ap 5200 m², uzstādītas rampas, pusrampas, slīpumi, piramīdas, triku kalniņi, tramplīni, slaidi, ieskrējiena paaugstinājumi, „volraid siena”, metāla elementi, speciāls baseins un laukums iesācējiem, kopā ap 40 dažādiem elementiem. Parka lielākais lepnums ir lielā rampa, ko projektējis daudzu starptautisku ekstrēmo sacensību laureāts, beļģis Wim Leanerts, kurš ir arī „SAUNAKO” RHINO rampu galvenais projektētājs. Ventspils skeitparka lielā rampa pēc tehniskajiem parametriem ir universālākā un modernākā rampa Baltijas valstīs. Tā ir 3,8 m augsta, 12,5 m gara un 9,6 m plata un tās segums ir nodilumizturīgs pret triecieniem, deformāciju un laika apstākļu negatīvo iedarbību. Rampa ir TUV sertificēta un atbilst visām Eiropas standartu asociācijas prasībām. Skeitparka apmeklējums ir bez maksas. [Resurs: www.visitventspils.com]",
+        "placePhoto" : "VentspilsSkeitparks",
+        "openingHours" : "9:00 - 23:00"
+    },
+    
+    {
+        "locationID" : 4,
+        "locationName" : "Ventspils 2. pamatskolas Basketbola laukums",
+        "lat" : 57.387383,
+        "long" : 21.550754,
+        "locationInfo": "Basketbola laukums atrodas Ventspils 2. pamatskolas teritorijā, bet to var brīvi izmantot jebkurš. Ir pieejams basketbola laukums ar cieto segumu. Pie basketbola laukuma ir pieejama bezmaksas autostāvieta ceļmalā pie skolas.",
+        "placePhoto" : "Ventspils2PamatskolasBasketbolaLaukums",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 4,
+        "locationName" : "Ventspils 2. pamatskolas Futbola laukums",
+        "lat" : 57.387426,
+        "long" : 21.551930,
+        "locationInfo": "Futbola laukums atrodas Ventspils 2. pamatskolas teritorijā, bet to var brīvi izmantot jebkurš. Futbola laukumam ir gumijots mākslīgās zāles segums. Tas ir aprīkots ar diviem standarta izmēra vārtiem kā ari vairākiem mazāka izmēra vārtiem. Pie futbola laukuma ir pieejama bezmaksas autostāvieta ceļmalā pie skolas.",
+        "placePhoto" : "Ventspils2PamatskolasFutbolaLaukums",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 4,
+        "locationName" : "Volejbola laukums Kuldīgas ielā",
+        "lat" : 57.382572,
+        "long" : 21.567370,
+        "locationInfo": "Pludmales volejbola laukums atrodas pie benzīntanka starp Kuldīgas, Inženieru un Zvaigžņu ielām. Pieejami divi pludmales volejbola laukumi. Pie volejbola laukuma ir pieejama bezmaksas autostāvieta ceļmalā vai pie benzīntanka.",
+        "placePhoto" : "InzenieruIelasVolejbolaLaukums",
+        "openingHours" : "24/7"
     },
     
     {

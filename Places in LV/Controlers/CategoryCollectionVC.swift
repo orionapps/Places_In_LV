@@ -53,7 +53,7 @@ class CategoryCollectionVC: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailCollectionVC") as! DetailCollectionVC
         
         for location in allLocations {

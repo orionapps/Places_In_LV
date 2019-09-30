@@ -9,18 +9,23 @@
 /* Begin PBXBuildFile section */
 		4D3E21688435B6157243298C /* Pods_Places_in_LV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */; };
 		9F0888F222787EAE00773BE6 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0888F122787EAE00773BE6 /* DetailCell.swift */; };
+		9F1AA24D2342321C0093C23A /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1AA24C2342321C0093C23A /* Map.storyboard */; };
+		9F1AA24F234232AC0093C23A /* CategoryCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1AA24E234232AC0093C23A /* CategoryCollection.storyboard */; };
 		9F256A86226088C5003D459A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F256A85226088C5003D459A /* DetailVC.swift */; };
 		9F2EC0DB2292B49D00EED38A /* ObjectPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2EC0DA2292B49D00EED38A /* ObjectPreviewView.swift */; };
 		9F32579A231FA2D6001D738F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F325799231FA2D6001D738F /* SignUpVC.swift */; };
 		9F32579C231FA2E6001D738F /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32579B231FA2E6001D738F /* LogInVC.swift */; };
 		9F32579E231FA347001D738F /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32579D231FA347001D738F /* AuthVC.swift */; };
 		9F3257A1231FD4DA001D738F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3257A0231FD4DA001D738F /* Utilities.swift */; };
+		9F3900D423422F8600FFF921 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3900D323422F8600FFF921 /* LogIn.storyboard */; };
+		9F3900D623422F9B00FFF921 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3900D523422F9B00FFF921 /* SignUp.storyboard */; };
 		9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */; };
 		9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */; };
 		9F4CD13022537CA8001EBCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD12E22537CA8001EBCD2 /* Main.storyboard */; };
 		9F4CD13322537CA8001EBCD2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD13122537CA8001EBCD2 /* DataModel.xcdatamodeld */; };
 		9F4CD13522537CA9001EBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD13422537CA9001EBCD2 /* Assets.xcassets */; };
 		9F4CD13822537CA9001EBCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD13622537CA9001EBCD2 /* LaunchScreen.storyboard */; };
+		9F519C8A2342346D007C5B6B /* Season.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F519C892342346D007C5B6B /* Season.storyboard */; };
 		9F5D655D2302A762007B2BF4 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D653D2302A762007B2BF4 /* GMUGridBasedClusterAlgorithm.m */; };
 		9F5D655E2302A762007B2BF4 /* GQTPointQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D653F2302A762007B2BF4 /* GQTPointQuadTree.m */; };
 		9F5D655F2302A762007B2BF4 /* GMUClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D65402302A762007B2BF4 /* GMUClusterManager.m */; };
@@ -35,6 +40,7 @@
 		9F5D656C23054A6E007B2BF4 /* CustomMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D656B23054A6E007B2BF4 /* CustomMarkers.swift */; };
 		9F62028A231D2F2E00A8E0CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F620289231D2F2E00A8E0CC /* GoogleService-Info.plist */; };
 		9F74E25C2265EEC8007D843F /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F74E25B2265EEC8007D843F /* MapStyle.json */; };
+		9F9333A32342338400C45916 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9333A22342338400C45916 /* Detail.storyboard */; };
 		9F977CFB2271CEEE00E214F6 /* CategoryCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977CFA2271CEEE00E214F6 /* CategoryCollectionVC.swift */; };
 		9F977D022271D3B500E214F6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977D012271D3B500E214F6 /* CategoryCell.swift */; };
 		9F977D0E2272FF5F00E214F6 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977D042272FF5E00E214F6 /* UIViewXRadialGradient.swift */; };
@@ -57,6 +63,7 @@
 		9F977D2B227306A400E214F6 /* DetailCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F977D2A227306A400E214F6 /* DetailCollectionVC.swift */; };
 		9FA4948722F830D90051C255 /* ObjectPreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA4948622F830D90051C255 /* ObjectPreviewView.xib */; };
 		9FA4948922F856B60051C255 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FA4948822F856B60051C255 /* Data.json */; };
+		9FA8406B2342349A008CFF67 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA8406A2342349A008CFF67 /* Settings.storyboard */; };
 		9FB93AB4225B596900360E48 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB3225B596900360E48 /* SideMenuVC.swift */; };
 		9FB93AB6225B5C8E00360E48 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB5225B5C8E00360E48 /* ContainerView.swift */; };
 		9FB93AB8225B6AC800360E48 /* SearchBySeasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */; };
@@ -88,12 +95,16 @@
 		2DC9D937D794DC8A31A0EFA1 /* Pods_Places_in_LV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places_in_LV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		858E39007F9B1CCDEAB339AF /* Pods-Places in LV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places in LV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Places in LV/Pods-Places in LV.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0888F122787EAE00773BE6 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		9F1AA24C2342321C0093C23A /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		9F1AA24E234232AC0093C23A /* CategoryCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryCollection.storyboard; sourceTree = "<group>"; };
 		9F256A85226088C5003D459A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		9F2EC0DA2292B49D00EED38A /* ObjectPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPreviewView.swift; sourceTree = "<group>"; };
 		9F325799231FA2D6001D738F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9F32579B231FA2E6001D738F /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		9F32579D231FA347001D738F /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		9F3257A0231FD4DA001D738F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		9F3900D323422F8600FFF921 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		9F3900D523422F9B00FFF921 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		9F4CD12722537CA8001EBCD2 /* Places in LV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places in LV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +113,7 @@
 		9F4CD13422537CA9001EBCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F4CD13722537CA9001EBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F4CD13922537CA9001EBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F519C892342346D007C5B6B /* Season.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Season.storyboard; sourceTree = "<group>"; };
 		9F5D64ED2302A0F7007B2BF4 /* GoogleUtils-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoogleUtils-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F5D653D2302A762007B2BF4 /* GMUGridBasedClusterAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUGridBasedClusterAlgorithm.m; sourceTree = "<group>"; };
 		9F5D653E2302A762007B2BF4 /* GMUClusterIconGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUClusterIconGenerator.h; sourceTree = "<group>"; };
@@ -140,6 +152,7 @@
 		9F5D656B23054A6E007B2BF4 /* CustomMarkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkers.swift; sourceTree = "<group>"; };
 		9F620289231D2F2E00A8E0CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F74E25B2265EEC8007D843F /* MapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = "<group>"; };
+		9F9333A22342338400C45916 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		9F977CFA2271CEEE00E214F6 /* CategoryCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionVC.swift; sourceTree = "<group>"; };
 		9F977D012271D3B500E214F6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		9F977D042272FF5E00E214F6 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
@@ -162,6 +175,7 @@
 		9F977D2A227306A400E214F6 /* DetailCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionVC.swift; sourceTree = "<group>"; };
 		9FA4948622F830D90051C255 /* ObjectPreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectPreviewView.xib; sourceTree = "<group>"; };
 		9FA4948822F856B60051C255 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		9FA8406A2342349A008CFF67 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9FB93AB3225B596900360E48 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		9FB93AB5225B5C8E00360E48 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBySeasonVC.swift; sourceTree = "<group>"; };
@@ -294,6 +308,13 @@
 				9F4CD13622537CA9001EBCD2 /* LaunchScreen.storyboard */,
 				9F4CD12E22537CA8001EBCD2 /* Main.storyboard */,
 				9FA4948622F830D90051C255 /* ObjectPreviewView.xib */,
+				9F3900D323422F8600FFF921 /* LogIn.storyboard */,
+				9F3900D523422F9B00FFF921 /* SignUp.storyboard */,
+				9F1AA24C2342321C0093C23A /* Map.storyboard */,
+				9F1AA24E234232AC0093C23A /* CategoryCollection.storyboard */,
+				9F9333A22342338400C45916 /* Detail.storyboard */,
+				9F519C892342346D007C5B6B /* Season.storyboard */,
+				9FA8406A2342349A008CFF67 /* Settings.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -583,16 +604,23 @@
 				9FE1EAC92289620D002A3CC6 /* StandartPark.jpg in Resources */,
 				9F4CD13522537CA9001EBCD2 /* Assets.xcassets in Resources */,
 				9FE1EAC6228960F4002A3CC6 /* UzvarasParks.jpg in Resources */,
+				9F519C8A2342346D007C5B6B /* Season.storyboard in Resources */,
+				9FA8406B2342349A008CFF67 /* Settings.storyboard in Resources */,
+				9F9333A32342338400C45916 /* Detail.storyboard in Resources */,
 				9FE1EACB22896288002A3CC6 /* ArkadijasParks.jpg in Resources */,
 				9F4CD13022537CA8001EBCD2 /* Main.storyboard in Resources */,
+				9F1AA24D2342321C0093C23A /* Map.storyboard in Resources */,
+				9F1AA24F234232AC0093C23A /* CategoryCollection.storyboard in Resources */,
 				9F977D1D2272FF7B00E214F6 /* readme.txt in Resources */,
 				9FE1EAC32285B76F002A3CC6 /* FarmacMuzejs.jpg in Resources */,
 				9F977D1E2272FF7B00E214F6 /* SCRIPALT.ttf in Resources */,
+				9F3900D423422F8600FFF921 /* LogIn.storyboard in Resources */,
 				9FA4948722F830D90051C255 /* ObjectPreviewView.xib in Resources */,
 				9F62028A231D2F2E00A8E0CC /* GoogleService-Info.plist in Resources */,
 				9F977D1C2272FF7B00E214F6 /* SCRIPTIN.ttf in Resources */,
 				9FE1EABB22843DEC002A3CC6 /* BrivPiemineklis.jpg in Resources */,
 				9FE1EAB822843DEC002A3CC6 /* AnglikanuSvPetBaz.jpg in Resources */,
+				9F3900D623422F9B00FFF921 /* SignUp.storyboard in Resources */,
 				9F977D282273040100E214F6 /* dadha___.ttf in Resources */,
 				9F977D272273040100E214F6 /* ReadMe.txt in Resources */,
 				9FE1EAC12285B76F002A3CC6 /* LatvKaraMuzejs.jpg in Resources */,

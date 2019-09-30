@@ -13,6 +13,7 @@ class ObjectPreviewView: UIView {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var objectLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
     
     var locationNamesArray = [String]()
     var locationInfoArray = [String]()
@@ -30,12 +31,18 @@ class ObjectPreviewView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    
+    private func commonInit() {
+        
+        self.layer.cornerRadius = 15
     }
     
     
