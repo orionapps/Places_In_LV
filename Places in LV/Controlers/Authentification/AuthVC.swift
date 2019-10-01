@@ -11,6 +11,7 @@ import GoogleSignIn
 
 class AuthVC: UIViewController {
 
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
     
@@ -32,6 +33,8 @@ class AuthVC: UIViewController {
 
     
     func setUpElements() {
+        
+        
         
         // Automatic sign in with Google in case user is already signed in before
         //GIDSignIn.sharedInstance()?.presentingViewController = self

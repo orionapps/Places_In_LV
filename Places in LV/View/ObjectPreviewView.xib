@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -17,14 +17,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-bC-hsf">
                     <rect key="frame" x="0.0" y="0.0" width="230" height="67"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-PR-bxf">
-                            <rect key="frame" x="10" y="5" width="163" height="57"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-PR-bxf">
+                            <rect key="frame" x="10" y="17.5" width="168" height="32"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nac-aa-Ay8">
-                            <rect key="frame" x="183" y="15" width="37" height="37"/>
+                            <rect key="frame" x="188" y="17.5" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="nac-aa-Ay8" secondAttribute="height" multiplier="1:1" id="cmd-ZZ-xVl"/>
                             </constraints>
@@ -32,22 +32,19 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="nac-aa-Ay8" firstAttribute="centerY" secondItem="2u4-bC-hsf" secondAttribute="centerY" id="73m-W3-L8S"/>
+                        <constraint firstItem="Uta-PR-bxf" firstAttribute="centerY" secondItem="2u4-bC-hsf" secondAttribute="centerY" id="Aob-9V-kzp"/>
                         <constraint firstAttribute="trailing" secondItem="nac-aa-Ay8" secondAttribute="trailing" constant="10" id="CVl-Jc-qmS"/>
                         <constraint firstItem="nac-aa-Ay8" firstAttribute="leading" secondItem="Uta-PR-bxf" secondAttribute="trailing" constant="10" id="DTe-gl-ai2"/>
-                        <constraint firstItem="Uta-PR-bxf" firstAttribute="top" secondItem="2u4-bC-hsf" secondAttribute="top" constant="5" id="GPy-ht-Mb2"/>
-                        <constraint firstItem="nac-aa-Ay8" firstAttribute="centerY" secondItem="2u4-bC-hsf" secondAttribute="centerY" id="HiA-XB-Oo0"/>
-                        <constraint firstAttribute="bottom" secondItem="Uta-PR-bxf" secondAttribute="bottom" constant="5" id="Paq-fp-q1n"/>
+                        <constraint firstItem="nac-aa-Ay8" firstAttribute="height" secondItem="Uta-PR-bxf" secondAttribute="height" id="V8y-I4-iAR"/>
                         <constraint firstItem="Uta-PR-bxf" firstAttribute="leading" secondItem="2u4-bC-hsf" secondAttribute="leading" constant="10" id="eMb-Qa-G0e"/>
-                        <constraint firstItem="nac-aa-Ay8" firstAttribute="top" secondItem="2u4-bC-hsf" secondAttribute="top" constant="15" id="egT-pX-8Py"/>
-                        <constraint firstAttribute="bottom" secondItem="nac-aa-Ay8" secondAttribute="bottom" constant="15" id="hdg-t7-4J9"/>
-                        <constraint firstItem="Uta-PR-bxf" firstAttribute="centerY" secondItem="2u4-bC-hsf" secondAttribute="centerY" id="qef-7w-LOI"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2u4-bC-hsf" secondAttribute="trailing" id="L1G-6E-Kgu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2u4-bC-hsf" secondAttribute="bottom" id="Wls-4L-DTl"/>
+                <constraint firstAttribute="bottom" secondItem="2u4-bC-hsf" secondAttribute="bottom" id="acO-Jo-qx4"/>
                 <constraint firstItem="2u4-bC-hsf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b83-v1-X0S"/>
                 <constraint firstItem="2u4-bC-hsf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zaG-aM-cap"/>
             </constraints>

@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signUpImage" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-FU-kRa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zqw-IT-GwN">
                                 <rect key="frame" x="40" y="84" width="334" height="370.5"/>
                                 <subviews>
@@ -67,9 +70,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Wee-FU-kRa" firstAttribute="trailing" secondItem="V0C-uR-5DJ" secondAttribute="trailing" id="4cD-k5-Dff"/>
                             <constraint firstItem="zqw-IT-GwN" firstAttribute="top" secondItem="V0C-uR-5DJ" secondAttribute="top" constant="40" id="DYu-NW-0pa"/>
+                            <constraint firstAttribute="bottom" secondItem="Wee-FU-kRa" secondAttribute="bottom" id="Ddj-jK-M63"/>
                             <constraint firstItem="zqw-IT-GwN" firstAttribute="leading" secondItem="V0C-uR-5DJ" secondAttribute="leading" constant="40" id="FVR-Zr-hdT"/>
                             <constraint firstItem="V0C-uR-5DJ" firstAttribute="trailing" secondItem="zqw-IT-GwN" secondAttribute="trailing" constant="40" id="UIk-aZ-vyz"/>
+                            <constraint firstItem="Wee-FU-kRa" firstAttribute="top" secondItem="B1v-CW-iRJ" secondAttribute="top" id="aCr-re-cnE"/>
+                            <constraint firstItem="Wee-FU-kRa" firstAttribute="leading" secondItem="V0C-uR-5DJ" secondAttribute="leading" id="ynA-g2-7Yb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V0C-uR-5DJ"/>
                     </view>
@@ -84,7 +91,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmZ-Qv-aDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="-1317"/>
+            <point key="canvasLocation" x="1992.753623188406" y="-1317.1875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="signUpImage" width="1024" height="1536"/>
+    </resources>
 </document>
