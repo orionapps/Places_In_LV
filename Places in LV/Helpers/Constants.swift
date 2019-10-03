@@ -13,5 +13,6 @@ struct Constants {
     struct Storyboard {
         
         static let mapsVC = "MapsVC"
+        static let authVC = "AuthVC"
     }
 }

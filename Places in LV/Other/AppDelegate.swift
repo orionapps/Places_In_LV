@@ -14,7 +14,6 @@ import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
@@ -39,13 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Configuring Facebook sign in
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        
-        // Checking if user already logged in with Facebook
-//        if AccessToken.current != nil {
-//
-//            proceedToMaps()
-//        }
+
+        // Checking if user is already signed in
+        if let alreadySignedIn = Auth.auth().currentUser {
+            
+            print("User \(alreadySignedIn) is already signed in")
+            proceedToMaps()
+        } else {
+            print("Is not signed in yet")
+        }
 
         return ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }

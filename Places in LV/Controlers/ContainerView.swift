@@ -10,7 +10,11 @@ import UIKit
 
 class ContainerView: UIViewController {
 
-    @IBOutlet weak var sideMenuConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuContainer: UIView!
+    @IBOutlet weak var mapViewContainer: UIView!
     
     var sideMenuOpen = false
     let screenSize:CGRect = UIScreen.main.bounds
@@ -18,6 +22,7 @@ class ContainerView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sideMenuLeadingConstraint.constant = -sideMenuContainer.frame.size.width
         listenToNotifications()
     }
     
@@ -33,13 +38,14 @@ class ContainerView: UIViewController {
         
         if sideMenuOpen {
             
-            sideMenuOpen = false
-            sideMenuConstraint.constant = -250
+            UserDefaults.standard.set(false, forKey: "sideMenuIsOpen")
+            sideMenuLeadingConstraint.constant = -200
         } else {
             
-            sideMenuOpen = true
-            sideMenuConstraint.constant = 0
+            UserDefaults.standard.set(true, forKey: "sideMenuIsOpen")
+            sideMenuLeadingConstraint.constant = 0
         }
+        sideMenuOpen = !sideMenuOpen
         
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()

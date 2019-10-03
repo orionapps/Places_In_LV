@@ -15,13 +15,53 @@
                     <view key="view" contentMode="scaleToFill" id="odq-dW-mN5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsImage" translatesAutoresizingMaskIntoConstraints="NO" id="Yx2-M4-OUC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ijO-7V-KBd">
+                                <rect key="frame" x="20" y="84" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-xH-FeW">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hSQ-JB-9Ex"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="    Mainīt valodu" image="worldIcon">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeLanguagePressed:" destination="WOf-A4-53y" eventType="touchUpInside" id="LgY-X1-GFa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Yx2-M4-OUC" firstAttribute="leading" secondItem="p7d-F8-KfD" secondAttribute="leading" id="L6T-Sy-tNN"/>
+                            <constraint firstItem="ijO-7V-KBd" firstAttribute="top" secondItem="p7d-F8-KfD" secondAttribute="top" constant="40" id="LDz-8M-qME"/>
+                            <constraint firstAttribute="bottom" secondItem="Yx2-M4-OUC" secondAttribute="bottom" id="WMj-nA-cuf"/>
+                            <constraint firstItem="Yx2-M4-OUC" firstAttribute="top" secondItem="odq-dW-mN5" secondAttribute="top" id="g5n-2A-OR3"/>
+                            <constraint firstItem="Yx2-M4-OUC" firstAttribute="trailing" secondItem="p7d-F8-KfD" secondAttribute="trailing" id="jj8-d1-WYx"/>
+                            <constraint firstItem="p7d-F8-KfD" firstAttribute="trailing" secondItem="ijO-7V-KBd" secondAttribute="trailing" constant="20" id="kGg-VC-Vmi"/>
+                            <constraint firstItem="ijO-7V-KBd" firstAttribute="centerX" secondItem="odq-dW-mN5" secondAttribute="centerX" id="mP0-yy-kAP"/>
+                            <constraint firstItem="ijO-7V-KBd" firstAttribute="leading" secondItem="p7d-F8-KfD" secondAttribute="leading" constant="20" id="mak-A7-jEu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="p7d-F8-KfD"/>
                     </view>
+                    <connections>
+                        <outlet property="changeLanguageBtn" destination="9Gu-xH-FeW" id="SZO-k6-5tO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l94-lx-4hm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="104"/>
+            <point key="canvasLocation" x="120.28985507246378" y="110.49107142857143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settingsImage" width="1024" height="1536"/>
+        <image name="worldIcon" width="40" height="40"/>
+    </resources>
 </document>

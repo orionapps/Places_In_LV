@@ -27,8 +27,8 @@ class LogInVC: UIViewController {
         errorLabel.alpha = 0
         
         // Style elements
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
+        Utilities.styleTextField(emailTextField, withText: "Email")
+        Utilities.styleTextField(passwordTextField, withText: "Password")
         Utilities.styleFilledButton(logInBtn)
     }
     
@@ -53,17 +53,7 @@ class LogInVC: UIViewController {
         errorLabel.alpha = 1
     }
     
-    func transitionToMaps() {
-        
-        let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-        let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
-        
-        view.window?.rootViewController = mapsVC
-        view.window?.makeKeyAndVisible()
-    }
     
-    
-
     @IBAction func logInBtnPressed(_ sender: UIButton) {
         
         // Validate text field
@@ -87,7 +77,8 @@ class LogInVC: UIViewController {
                     self.showError("Error occured during log in")
                 }
             }
-            transitionToMaps()
+            Helper().transitionToMaps(view: self.view)
+
     }
 }
 }

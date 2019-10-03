@@ -20,8 +20,8 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setUpElements()
+        
+        setUpElements()
     }
     
     func setUpElements() {
@@ -30,10 +30,10 @@ class SignUpVC: UIViewController {
         errorLabel.alpha = 0
         
         // Style the element
-        Utilities.styleTextField(firstNameTextField)
-        Utilities.styleTextField(lastNameTextField)
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
+        Utilities.styleTextField(firstNameTextField, withText: "First Name")
+        Utilities.styleTextField(lastNameTextField, withText: "Last Name")
+        Utilities.styleTextField(emailTextField, withText: "Email")
+        Utilities.styleTextField(passwordTextField, withText: "Password")
         Utilities.styleFilledButton(signInBtn)
     }
     
@@ -48,12 +48,12 @@ class SignUpVC: UIViewController {
         let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if Utilities.isPasswordValid(cleanPassword) == false {
-            return "Please make sure you password is at least 8 characters, conatins special character and a number"
+            return "Please make sure you password is at least 8 characters, and contains a number"
         }
         return nil
     }
     
-
+    
     @IBAction func signUpTapped(_ sender: UIButton) {
         
         // Validate the fields
@@ -74,7 +74,14 @@ class SignUpVC: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { (results, error) in
                 
                 if error != nil {
-                    self.showError("Error creating user")
+                    
+                    if error?.localizedDescription == "The email address is already in use by another account." {
+                        self.showError("The email address is already in use by another account.")
+                    } else {
+                        self.showError("Error creating user")
+                    }
+                    
+                    print(error?.localizedDescription as Any)
                 } else {
                     
                     let db = Firestore.firestore()
@@ -85,13 +92,9 @@ class SignUpVC: UIViewController {
                             self.showError("Error saving user data")
                         }
                     })
-                    
-                    self.transitionToMaps()
+                    Helper().transitionToMaps(view: self.view)
                 }
             }
-            
-            // Transition to the maps screen
-    
         }
     }
     
@@ -99,15 +102,6 @@ class SignUpVC: UIViewController {
         
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-    
-    func transitionToMaps() {
-        
-        let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-        let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
-        
-        view.window?.rootViewController = mapsVC
-        view.window?.makeKeyAndVisible()
     }
     
 }

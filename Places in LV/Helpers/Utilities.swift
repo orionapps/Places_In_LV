@@ -11,7 +11,7 @@ import UIKit
 
 class Utilities {
     
-    static func styleTextField(_ textfield:UITextField) {
+    static func styleTextField(_ textfield:UITextField, withText: String) {
         
         // Create the bottom line
         let bottomLine = CALayer()
@@ -19,6 +19,11 @@ class Utilities {
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         
         bottomLine.backgroundColor = Helper().navigationBarBackgroundColor().cgColor
+        
+        textfield.attributedPlaceholder = NSAttributedString(string: withText, attributes: [NSAttributedString.Key.foregroundColor : Helper().navigationBarBackgroundColor()])
+        textfield.textColor = Helper().navigationBarBackgroundColor()
+        textfield.tintColor = Helper().navigationBarBackgroundColor()
+        textfield.font = UIFont(name: "ArialHebrew", size: 15)
         
         // Remove border on text field
         textfield.borderStyle = .none
@@ -47,7 +52,7 @@ class Utilities {
     
     static func isPasswordValid(_ password : String) -> Bool {
         
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
     

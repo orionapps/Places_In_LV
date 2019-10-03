@@ -10,21 +10,34 @@ import UIKit
 
 class SettingsVC: UIViewController {
 
+    @IBOutlet weak var changeLanguageBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpView() {
+        
+        Utilities.styleHollowButton(changeLanguageBtn)
     }
-    */
-
+    
+    
+    @IBAction func changeLanguagePressed(_ sender: UIButton) {
+        
+        // Setting up popover
+        let width = self.view.frame.width / 1.5
+        let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: self.view.frame.size.height / 4))
+        let options = [
+          .type(.auto),
+          .sideEdge(2.2),
+          .animationIn(0.3),
+          .blackOverlayColor(UIColor.clear),
+          .arrowSize(CGSize(width: 20, height: 20))
+          ] as [PopoverOption]
+        let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
+        popover.show(aView, fromView: self.changeLanguageBtn)
+    }
+    
 }

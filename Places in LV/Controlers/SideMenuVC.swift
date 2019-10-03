@@ -32,6 +32,7 @@ class SideMenuVC: UITableViewController {
         case 0: NotificationCenter.default.post(name: Notification.Name("showCategories"), object: nil)
         case 1: NotificationCenter.default.post(name: Notification.Name("showSortBySeasons"), object: nil)
         case 2: NotificationCenter.default.post(name: Notification.Name("showSettings"), object: nil)
+        case 3: NotificationCenter.default.post(name: Notification.Name("signOut"), object: nil)
         default: break
         }
     }
@@ -39,5 +40,6 @@ class SideMenuVC: UITableViewController {
     @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
        
         NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("removeAlphaView"), object: nil)
     }
 }

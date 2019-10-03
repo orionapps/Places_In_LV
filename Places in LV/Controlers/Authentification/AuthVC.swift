@@ -8,12 +8,16 @@
 
 import UIKit
 import GoogleSignIn
+import FirebaseAuth
+import Firebase
 
 class AuthVC: UIViewController {
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
+    
+    let screenSize:CGRect = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +38,14 @@ class AuthVC: UIViewController {
     
     func setUpElements() {
         
-        
-        
         // Automatic sign in with Google in case user is already signed in before
         //GIDSignIn.sharedInstance()?.presentingViewController = self
         //GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
         Utilities.styleFilledButton(signUpBtn)
         Utilities.styleHollowButton(logInBtn)
+        
     }
-
+    
+    
 }

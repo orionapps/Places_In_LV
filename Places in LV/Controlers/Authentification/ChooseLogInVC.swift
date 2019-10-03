@@ -51,26 +51,6 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
         GIDSignIn.sharedInstance().signIn()
     }
     
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-//        // ...
-//        if let error = error {
-//            print(error.localizedDescription)
-//            return
-//        }
-//
-//        guard let authentication = user.authentication else { return }
-//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-//                                                       accessToken: authentication.accessToken)
-//
-//        Auth.auth().signIn(with: credential) { (authResult, error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//        }
-//    }
-    
-    
     //MARK: - Facebook sign in methods
     @objc func handleCustomFBLogin(){
         
@@ -80,7 +60,8 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
                 return
             }
             self.showEmailAddress()
-            self.transitionToMaps()
+            Helper().transitionToMaps(view: self.view)
+
         }
     }
     
@@ -110,14 +91,6 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
     
     //MARK: - Transition to Maps
     
-    func transitionToMaps() {
-        
-        let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-        let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
-        
-        view.window?.rootViewController = mapsVC
-        view.window?.makeKeyAndVisible()
-    }
 }
 
 

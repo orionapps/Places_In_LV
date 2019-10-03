@@ -19,6 +19,7 @@
 		9F3257A1231FD4DA001D738F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3257A0231FD4DA001D738F /* Utilities.swift */; };
 		9F3900D423422F8600FFF921 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3900D323422F8600FFF921 /* LogIn.storyboard */; };
 		9F3900D623422F9B00FFF921 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3900D523422F9B00FFF921 /* SignUp.storyboard */; };
+		9F3EC058234610BE00B076CE /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EC057234610BD00B076CE /* Popover.swift */; };
 		9F4CD12B22537CA8001EBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */; };
 		9F4CD12D22537CA8001EBCD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */; };
 		9F4CD13022537CA8001EBCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CD12E22537CA8001EBCD2 /* Main.storyboard */; };
@@ -105,6 +106,7 @@
 		9F3257A0231FD4DA001D738F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9F3900D323422F8600FFF921 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		9F3900D523422F9B00FFF921 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		9F3EC057234610BD00B076CE /* Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		9F4CD12722537CA8001EBCD2 /* Places in LV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places in LV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4CD12A22537CA8001EBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				9FB93ABB225B859E00360E48 /* Helper.swift */,
 				9FFC7186231FEAD800E486D0 /* Constants.swift */,
 				9FE05C0323292A4500166DE6 /* Reachability.swift */,
+				9F3EC057234610BD00B076CE /* Popover.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				9F5D655E2302A762007B2BF4 /* GQTPointQuadTree.m in Sources */,
 				9FB93AC2225DF78300360E48 /* CategoryList.swift in Sources */,
 				9F5D65652302A762007B2BF4 /* GMUStaticCluster.m in Sources */,
+				9F3EC058234610BE00B076CE /* Popover.swift in Sources */,
 				9F977D162272FF5F00E214F6 /* UIVisualEffectViewX.swift in Sources */,
 				9F5D65612302A762007B2BF4 /* GMUWrappingDictionaryKey.m in Sources */,
 				9F5D65642302A762007B2BF4 /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,

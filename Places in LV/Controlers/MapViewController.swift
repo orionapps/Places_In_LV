@@ -11,11 +11,13 @@ import GoogleMaps
 import GooglePlaces
 import CoreData
 import FirebaseStorage
+import FirebaseAuth
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GMUClusterManagerDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
     private var clusterManager: GMUClusterManager!
+    @IBOutlet weak var alphaView: UIView!
     
     // Constants
     var locationManager = CLLocationManager()
@@ -37,6 +39,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         listenToNotifications()
         clusterMarkers()
         loadMarkers()
+        alphaView.isHidden = true
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
+        swipeLeft.direction = .left
+        self.alphaView.addGestureRecognizer(swipeLeft)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        self.alphaView.addGestureRecognizer(tap)
     }
     
     // MARK: - Side menu methods and segues
@@ -44,7 +54,25 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     @IBAction func openMenuView(_ sender: UIBarButtonItem) {
         
         NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
+        
+        removeAlphaView()
     }
+    
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
+       
+        NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
+        
+        removeAlphaView()
+    }
+    
+    @objc func tapAction(tap: UITapGestureRecognizer) {
+       
+        NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
+        
+        removeAlphaView()
+    }
+    
+    
     
     
     func listenToNotifications() {
@@ -63,25 +91,69 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                                                selector: #selector(showSettings),
                                                name: NSNotification.Name(rawValue: "showSettings"),
                                                object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(signOut),
+                                               name: NSNotification.Name(rawValue: "signOut"),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(removeAlphaView),
+                                               name: NSNotification.Name(rawValue: "removeAlphaView"),
+                                               object: nil)
     }
     
     
     @objc func showCategories() {
         
         performSegue(withIdentifier: "showCategories", sender: nil)
-        
+        removeAlphaView()
     }
     
     
     @objc func showSortBySeasons() {
         
         performSegue(withIdentifier: "showSortBySeasons", sender: nil)
+        removeAlphaView()
     }
     
     
     @objc func showSettings() {
         
         performSegue(withIdentifier: "showSettings", sender: nil)
+        removeAlphaView()
+    }
+    
+    @objc func signOut() {
+        
+        removeAlphaView()
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        let authStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let authVC =  authStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.authVC) as! UINavigationController
+        view.window?.rootViewController = authVC
+        view.window?.makeKeyAndVisible()
+    }
+    
+    @objc func removeAlphaView() {
+        
+        if UserDefaults.standard.bool(forKey: "sideMenuIsOpen") == true {
+            UIView.animate(withDuration: 0.3) {
+                self.alphaView.alpha = 0.4
+                self.alphaView.isHidden = false
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.alphaView.alpha = 0
+                self.alphaView.isHidden = true
+            }
+        }
     }
     
     

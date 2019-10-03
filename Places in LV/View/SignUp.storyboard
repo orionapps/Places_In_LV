@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZXJ-yw-Wly">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -13,34 +13,34 @@
             <objects>
                 <viewController id="ZXJ-yw-Wly" customClass="SignUpVC" customModule="Places_in_LV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B1v-CW-iRJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signUpImage" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-FU-kRa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SingInWithEmailImage" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-FU-kRa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zqw-IT-GwN">
-                                <rect key="frame" x="40" y="84" width="334" height="370.5"/>
+                                <rect key="frame" x="40" y="40" width="334" height="370.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTJ-9c-A5R">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUY-Mk-VXl">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDY-Eq-x2S">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-tb-jlq">
                                         <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-MH-AnC">
                                         <rect key="frame" x="0.0" y="280" width="334" height="50"/>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOW-XH-5Qj">
-                                        <rect key="frame" x="0.0" y="350" width="334" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="350" width="334" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -71,10 +71,16 @@
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wee-FU-kRa" firstAttribute="trailing" secondItem="V0C-uR-5DJ" secondAttribute="trailing" id="4cD-k5-Dff"/>
-                            <constraint firstItem="zqw-IT-GwN" firstAttribute="top" secondItem="V0C-uR-5DJ" secondAttribute="top" constant="40" id="DYu-NW-0pa"/>
+                            <constraint firstItem="zqw-IT-GwN" firstAttribute="top" secondItem="V0C-uR-5DJ" secondAttribute="top" constant="40" id="DYu-NW-0pa">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="Wee-FU-kRa" secondAttribute="bottom" id="Ddj-jK-M63"/>
-                            <constraint firstItem="zqw-IT-GwN" firstAttribute="leading" secondItem="V0C-uR-5DJ" secondAttribute="leading" constant="40" id="FVR-Zr-hdT"/>
-                            <constraint firstItem="V0C-uR-5DJ" firstAttribute="trailing" secondItem="zqw-IT-GwN" secondAttribute="trailing" constant="40" id="UIk-aZ-vyz"/>
+                            <constraint firstItem="zqw-IT-GwN" firstAttribute="leading" secondItem="V0C-uR-5DJ" secondAttribute="leading" constant="40" id="FVR-Zr-hdT">
+                                <variation key="heightClass=regular-widthClass=regular" constant="180"/>
+                            </constraint>
+                            <constraint firstItem="V0C-uR-5DJ" firstAttribute="trailing" secondItem="zqw-IT-GwN" secondAttribute="trailing" constant="40" id="UIk-aZ-vyz">
+                                <variation key="heightClass=regular-widthClass=regular" constant="180"/>
+                            </constraint>
                             <constraint firstItem="Wee-FU-kRa" firstAttribute="top" secondItem="B1v-CW-iRJ" secondAttribute="top" id="aCr-re-cnE"/>
                             <constraint firstItem="Wee-FU-kRa" firstAttribute="leading" secondItem="V0C-uR-5DJ" secondAttribute="leading" id="ynA-g2-7Yb"/>
                         </constraints>
@@ -91,10 +97,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmZ-Qv-aDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992.753623188406" y="-1317.1875"/>
+            <point key="canvasLocation" x="2059" y="-1318"/>
         </scene>
     </scenes>
     <resources>
-        <image name="signUpImage" width="1024" height="1536"/>
+        <image name="SingInWithEmailImage" width="1024" height="1536"/>
     </resources>
 </document>

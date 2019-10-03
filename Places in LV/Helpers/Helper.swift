@@ -79,73 +79,16 @@ class Helper: UIImageView {
         activityIndicator.stopAnimating()
         //UIApplication.shared.endIgnoringInteractionEvents()
     }
-
-//    func loadImageUsingCacheWithUrlString(referenceString: StorageReference) {
-//
-//        var pictures: UIImage
-//
-//        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-//
-//        self.startActivityIndicator(view: self, activityIndicator: activityIndicator)
-//
-//        referenceString.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
-//            if let error = error {
-//                print("Got an error fetching data: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            if let data = data {
-//
-//                DispatchQueue.main.async {
-//
-//                    pictures = UIImage(data: data)!
-//                    Helper().stopActivityIndicator(activityIndicator: activityIndicator)
-//                }
-//            }
-//        }
-//        return pictures
         
-        //var imageUrlString: String?
-        
-//        func loadImageUsingUrlString(urlString: String) {
-//
-//            imageUrlString = urlString
-//
-//            guard let url = URL(string: urlString) else { return }
-//
-//            image = nil
-//
-//            if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
-//                self.image = imageFromCache
-//                return
-//            }
-//
-//            let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
-//            addSubview(activityIndicator)
-//            activityIndicator.startAnimating()
-//            activityIndicator.center = self.center
-//
-//            URLSession.shared.dataTask(with: url, completionHandler: { (data, respones, error) in
-//
-//                if error != nil {
-//                    print(error ?? "")
-//                    return
-//                }
-//
-//                DispatchQueue.main.async {
-//                    guard let imageToCache = UIImage(data: data!) else { return }
-//
-//                    if self.imageUrlString == urlString {
-//                        self.image = imageToCache
-//                        activityIndicator.removeFromSuperview()
-//                    }
-//
-//                    imageCache.setObject(imageToCache, forKey: urlString as NSString)
-//                }
-//
-//            }).resume()
-       //}
-//    }
+    func transitionToMaps(view: UIView) {
+            
+            let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+            let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
+            
+            view.window?.rootViewController = mapsVC
+            view.window?.makeKeyAndVisible()
+        }
+    
 
 }
 
