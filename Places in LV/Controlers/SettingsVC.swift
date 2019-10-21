@@ -26,18 +26,32 @@ class SettingsVC: UIViewController {
     
     @IBAction func changeLanguagePressed(_ sender: UIButton) {
         
-        // Setting up popover
-        let width = self.view.frame.width / 1.5
-        let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: self.view.frame.size.height / 4))
-        let options = [
-          .type(.auto),
-          .sideEdge(2.2),
-          .animationIn(0.3),
-          .blackOverlayColor(UIColor.clear),
-          .arrowSize(CGSize(width: 20, height: 20))
-          ] as [PopoverOption]
-        let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
-        popover.show(aView, fromView: self.changeLanguageBtn)
+        let actionSheet = UIAlertController(title: "Mainīt valodu", message:nil, preferredStyle: .actionSheet)
+        
+        let cancel = UIAlertAction(title: "Atcelt", style: .cancel, handler: nil)
+        
+        let latvianLanguage = UIAlertAction(title: "Latviešu", style: .default) { action in
+            
+            print("LV language selected")
+        }
+        
+        let russianLanguage = UIAlertAction(title: "Русский", style: .default) { action in
+            
+            print("RU language selected")
+        }
+        
+        let englishLanguage = UIAlertAction(title: "English", style: .default) { action in
+            
+            print("ENG language selected")
+        }
+        
+        actionSheet.addAction(cancel)
+        actionSheet.addAction(latvianLanguage)
+        actionSheet.addAction(russianLanguage)
+        actionSheet.addAction(englishLanguage)
+        
+        present(actionSheet, animated: true, completion: nil)
+
     }
     
 }

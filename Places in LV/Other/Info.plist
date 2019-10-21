@@ -52,13 +52,6 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Use Location</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SCRIPTIN.ttf</string>
-		<string>SCRIPALT.ttf</string>
-		<string>Domestic_Manners.ttf</string>
-		<string>dadha___.ttf</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

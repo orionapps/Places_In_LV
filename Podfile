@@ -16,5 +16,6 @@ target 'Places in LV' do
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
+  pod 'LanguageManager-iOS'
 
 end
