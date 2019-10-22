@@ -29,11 +29,16 @@ class SignUpVC: UIViewController {
         //Hide the error label
         errorLabel.alpha = 0
         
+        let firstName = "First Name"
+        let lastName = "Last Name"
+        let email = "Email"
+        let password = "Password"
+        
         // Style the element
-        Utilities.styleTextField(firstNameTextField, withText: "First Name")
-        Utilities.styleTextField(lastNameTextField, withText: "Last Name")
-        Utilities.styleTextField(emailTextField, withText: "Email")
-        Utilities.styleTextField(passwordTextField, withText: "Password")
+        Utilities.styleTextField(firstNameTextField, withText: firstName.localiz())
+        Utilities.styleTextField(lastNameTextField, withText: lastName.localiz())
+        Utilities.styleTextField(emailTextField, withText: email.localiz())
+        Utilities.styleTextField(passwordTextField, withText: password.localiz())
         Utilities.styleFilledButton(signInBtn)
     }
     
@@ -41,14 +46,18 @@ class SignUpVC: UIViewController {
     // Check the fields and validate that the data is correct. If everything is correct, this method returns nil. Otherwise, it returns the error message.
     func validateFields() -> String? {
         
+        let fillAllFieldsErrorMessage = "Please fill in all fields"
+        
         if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return "Please fill in all fields"
+            return fillAllFieldsErrorMessage.localiz()
         }
         
         let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        let passwordRequirementsErrorMessage = "Please make sure your password is at least 8 characters, and contains a number"
+        
         if Utilities.isPasswordValid(cleanPassword) == false {
-            return "Please make sure you password is at least 8 characters, and contains a number"
+            return passwordRequirementsErrorMessage.localiz()
         }
         return nil
     }

@@ -15,4 +15,10 @@ struct Constants {
         static let mapsVC = "MapsVC"
         static let authVC = "AuthVC"
     }
+    
+    struct ErrorMessages {
+        
+        static let internetConnectionErrorTitle = "Failed to load info"
+        static let internetConnectionErrorMessage = "Please check your internet connection and try again"
+    }
 }

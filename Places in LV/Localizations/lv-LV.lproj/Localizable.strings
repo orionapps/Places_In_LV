@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Places in LV
+
+  Created by Aleksandrs Muravjovs on 21/10/2019.
+  Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
+*/
+
+"    Change Language" = "    Mainīt valodu";
+"Cancel" = "Atcelt";
+"Sign Up" = "Reģistrēties";
+"Log In" = "Ielogoties";
+"Sign in with Google" = "Ielogoties ar Google";
+"Sign in with Facebook" = "Ielogoties ar Facebook";
+"Sign in with Email" = "Ielogoties ar E-Pastu";
+"Email" = "E-Pasts";
+"Password" = "Parole";
+"First Name" = "Vārds";
+"Last Name" = "Uzvārds";
+"Categories" = "Kategorijas";
+"Search by Season (soon)" = "Meklēt pēc sezonas (drīzumā)";
+"Settings" = "Iestatījumi";
+"Sign Out" = "Izlogoties";

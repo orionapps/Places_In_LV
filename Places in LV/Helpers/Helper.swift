@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import FirebaseStorage
+import LanguageManager_iOS
+
 
 // Version 1 color scheme: 9E3039 & 0B4F6C & 01BAEF & FBFBFF & 040F16
 let imageCache = NSCache<NSString, UIImage>()
@@ -88,6 +90,19 @@ class Helper: UIImageView {
             view.window?.rootViewController = mapsVC
             view.window?.makeKeyAndVisible()
         }
+    
+    //Change Language
+    
+    func changeLanguage(to requiredLanguage: Languages) {
+        
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        
+        LanguageManager.shared.setLanguage(language: requiredLanguage, rootViewController: vc) { view in
+            view.transform = CGAffineTransform(scaleX: 2, y: 2)
+            view.alpha = 0
+        }
+    }
     
 
 }

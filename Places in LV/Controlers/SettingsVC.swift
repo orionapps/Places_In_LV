@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class SettingsVC: UIViewController {
 
@@ -26,23 +27,25 @@ class SettingsVC: UIViewController {
     
     @IBAction func changeLanguagePressed(_ sender: UIButton) {
         
-        let actionSheet = UIAlertController(title: "Mainīt valodu", message:nil, preferredStyle: .actionSheet)
+        let title = "Change Language"
+        let cancelTitle = "Cancel"
         
-        let cancel = UIAlertAction(title: "Atcelt", style: .cancel, handler: nil)
+        let actionSheet = UIAlertController(title: title.localiz(), message:nil, preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
         
         let latvianLanguage = UIAlertAction(title: "Latviešu", style: .default) { action in
             
-            print("LV language selected")
+            Helper().changeLanguage(to: .lv)
         }
         
         let russianLanguage = UIAlertAction(title: "Русский", style: .default) { action in
             
-            print("RU language selected")
+            Helper().changeLanguage(to: .ru)
         }
         
         let englishLanguage = UIAlertAction(title: "English", style: .default) { action in
             
-            print("ENG language selected")
+            Helper().changeLanguage(to: .en)
         }
         
         actionSheet.addAction(cancel)
@@ -51,7 +54,6 @@ class SettingsVC: UIViewController {
         actionSheet.addAction(englishLanguage)
         
         present(actionSheet, animated: true, completion: nil)
-
     }
     
 }

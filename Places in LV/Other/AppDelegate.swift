@@ -13,6 +13,7 @@ import GooglePlaces
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import LanguageManager_iOS
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Localizing based on the app language
+        LanguageManager.shared.defaultLanguage = .deviceLanguage
         
         // Configuring google maps
         GMSServices.provideAPIKey("AIzaSyBsgjOprIR1bLlRamWXIW344ezH00Hzplg")

@@ -45,7 +45,7 @@ class CategoryCollectionVC: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCell
         
         cell.categoryBackgroundImg.image = UIImage(named: categoryImageNames[indexPath.row])
-        cell.categoryLabel.text = categoriesArray[indexPath.row]
+        cell.categoryLabel.text = categoriesArray[indexPath.row].localiz()
     
         return cell
     }

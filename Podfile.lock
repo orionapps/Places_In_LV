@@ -148,6 +148,7 @@ PODS:
   - GTMSessionFetcher/Full (1.2.2):
     - GTMSessionFetcher/Core (= 1.2.2)
   - Hero (1.4.0)
+  - LanguageManager-iOS (1.1.5)
   - leveldb-library (1.22)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -166,6 +167,7 @@ DEPENDENCIES:
   - GooglePlaces
   - GoogleSignIn
   - Hero
+  - LanguageManager-iOS
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -195,6 +197,7 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - Hero
+    - LanguageManager-iOS
     - leveldb-library
     - nanopb
     - Protobuf
@@ -226,10 +229,11 @@ SPEC CHECKSUMS:
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  LanguageManager-iOS: db9b1795f428063b77b8e140f80d9a6894dcbcbd
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
 
-PODFILE CHECKSUM: 52fdea7094d1a7fe1197c7d119f93917c090c037
+PODFILE CHECKSUM: 25cf0276d8d68d504ae5281b379513ef25d720f5
 
 COCOAPODS: 1.5.3

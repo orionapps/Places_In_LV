@@ -95,7 +95,7 @@ class DetailCollectionVC: UICollectionViewController {
             
             Helper().stopActivityIndicator(activityIndicator: activityIndicator)
             
-            let alert = UIAlertController(title: "Faild to load info", message: "Please check your internet connection and try again", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: Constants.ErrorMessages.internetConnectionErrorTitle.localiz(), message: Constants.ErrorMessages.internetConnectionErrorMessage.localiz(), preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             
@@ -144,7 +144,7 @@ class DetailCollectionVC: UICollectionViewController {
             
             Helper().stopActivityIndicator(activityIndicator: activityIndicator)
             
-            let alert = UIAlertController(title: "Faild to load info", message: "Please check your internet connection and try again", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: Constants.ErrorMessages.internetConnectionErrorTitle.localiz(), message: Constants.ErrorMessages.internetConnectionErrorMessage.localiz(), preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             

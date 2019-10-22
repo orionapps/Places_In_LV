@@ -5,3 +5,40 @@
   Created by Aleksandrs Muravjovs on 21/10/2019.
   Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
 */
+
+// ENGLISH LOCALIZATION
+
+
+// LOG IN AND SIGN UP
+"    Change Language" = "    Change Language";
+"Change Language" = "Change Language";
+"Cancel" = "Cancel";
+"Sign Up" = "Sign Up";
+"Log In" = "Log In";
+"   Sign in with Google" = "   Sign in with Google";
+"   Sign in with Facebook" = "   Sign in with Facebook";
+"   Sign in with Email" = "   Sign in with Email";
+"Email" = "Email";
+"Password" = "Password";
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+
+// IN APP
+"Categories" = "Categories";
+"Search by Season (soon)" = "Search by Season (soon)";
+"Settings" = "Settings";
+"Sign Out" = "Sign Out";
+"Back" = "Back";
+
+//MAIN CONTENT
+"Sightseeings" = "Sightseeings";
+"Nature And Parks" = "Nature And Parks";
+"Museums" = "Museums";
+"Playgrounds" = "Playgrounds";
+"Outdoor Sports" = "Outdoor Sports";
+
+//ERROR MESSAGES
+"Please fill in all fields" = "Please fill in all fields";
+"Please make sure your password is at least 8 characters, and contains a number" = "Please make sure your password is at least 8 characters, and contains a number";
+"Failed to load info" = "Failed to load info";
+"Please check your internet connection and try again" = "Please check your internet connection and try again";

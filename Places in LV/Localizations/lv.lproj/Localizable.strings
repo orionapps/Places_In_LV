@@ -5,3 +5,41 @@
   Created by Aleksandrs Muravjovs on 21/10/2019.
   Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
 */
+
+//LATVIAN LOCALIZATION
+
+
+//LOG IN AND SIGN UP
+"    Change Language" = "    Mainīt valodu";
+"Change Language" = "Mainīt valodu";
+"Cancel" = "Atcelt";
+"Sign Up" = "Reģistrēties";
+"Log In" = "Ielogoties";
+"   Sign in with Google" = "   Ielogoties ar Google";
+"   Sign in with Facebook" = "   Ielogoties ar Facebook";
+"   Sign in with Email" = "   Ielogoties ar E-Pastu";
+"Email" = "E-Pasts";
+"Password" = "Parole";
+"First Name" = "Vārds";
+"Last Name" = "Uzvārds";
+
+//IN APP
+"Categories" = "Kategorijas";
+"Search by Season (soon)" = "Meklēt pēc sezonas (drīzumā)";
+"Settings" = "Iestatījumi";
+"Sign Out" = "Izlogoties";
+"Back" = "Atpakaļ";
+
+//MAIN CONTENT
+"Sightseeings" = "Apskates objekti";
+"Nature And Parks" = "Daba un parki";
+"Museums" = "Muzeji";
+"Playgrounds" = "Rotaļu laukumi";
+"Outdoor Sports" = "Sporta laukumi brīvā dabā";
+
+
+//ERROR MESSAGES
+"Please fill in all fields" = "Lūdzu, aizpildiet visus laukus";
+"Please make sure your password is at least 8 characters, and contains a number" = "Lūdzu, pārliecinieties, ka parolē ir vismaz 8 rakstzīmes un tā satur skaitli.";
+"Faild to load info" = "Neizdevās ielādēt informāciju";
+"Please check your internet connection and try again" = "Lūdzu, pārbaudiet interneta savienojumu un mēģiniet vēlreiz";

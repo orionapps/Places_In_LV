@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  Places in LV
+
+  Created by Aleksandrs Muravjovs on 21/10/2019.
+  Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
+*/
+
+//RUSSIAN LOCALIZATION
+
+//LOG IN AND SIGN UP
+"    Change Language" = "    Сменить язык";
+"Change Language" = "Сменить язык";
+"Cancel" = "Отменить";
+"Sign Up" = "Зарегестрироватся";
+"Log In" = "Вход";
+"   Sign in with Google" = "   Войти с помощью Google";
+"   Sign in with Facebook" = "   Войти с помощью Facebook";
+"   Sign in with Email" = "   Войти с помощью е-почты";
+"Email" = "е-почты";
+"Password" = "Пароль";
+"First Name" = "Имя";
+"Last Name" = "Фамилия";
+
+//IN APP
+"Categories" = "Категории";
+"Search by Season (soon)" = "Искать по сезону (скоро)";
+"Settings" = "Настройки";
+"Sign Out" = "Выйти";
+"Back" = "Назад";
+
+//MAIN CONTENT
+"Sightseeings" = "Достопримечательности";
+"Nature And Parks" = "Природа и парки";
+"Museums" = "Музеи";
+"Playgrounds" = "Детские площадки";
+"Outdoor Sports" = "Уличные спортивные площадки";
+
+
+//ERROR MESSAGES
+"Please fill in all fields" = "Пожалуйста, заполните все поля";
+"Please make sure your password is at least 8 characters, and contains a number" = "Убедитесь, что ваш пароль содержит не менее 8 символов и содержит число";
+"Failed to load info" = "Не удалось загрузить информацию";
+"Please check your internet connection and try again" = "Пожалуйста, проверьте соединение с интернетом и попробуйте снова";
