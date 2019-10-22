@@ -90,6 +90,16 @@
     },
     
     {
+        "locationID" : 1,
+        "locationName" : "Rīgas Motormuzejs",
+        "lat" : 56.970617,
+        "long" : 24.227566,
+        "locationInfo": "Rīgas Motormuzejs ar savu ekspozīciju apmeklētāju acis priecē jau kopš 1989. gada. Gan toreiz, gan tagad tas ir vienīgais šāda profila muzejs Latvijā un lielākais Baltijā. Tomēr, ideja par seno spēkratu muzeju Latvijā dzima jau 20. gadsimta septiņdesmitajos gados, kad neliela entuziastu grupa – Latvijas Antīko automobiļu klubs iedibināja vēl nebijušu kustību – seno spēkratu salidojumus un rallijus. Šie pasākumi pulcēja ne tikai seno spēkratu īpašniekus, bet arī skatītāju tūkstošus. Pēc vērienīgās rekonstrukcijas 2016.gadā atklātais Rīgas Motormuzejs ir pārvērties līdz nepazīšanai. Izmantojot modernas un interaktīvas tehnoloģijas, apmeklētāji tiek aicināti doties virtuāli patiesā ceļojumā auto būves vēsturē, kas aizsākas nu jau pirms 133 gadiem, kad patentēja pirmo auto. Muzeja ekspozīcijas zāles ir aptumšotas, bet paši spēkrati spilgti izgaismoti. Tas ļauj koncentrēt uzmanību uz būtiskāko – muzeja eksponātiem un to stāstiem, kas apmeklētājam pašam jāatklāj ar modernu multimediju palīdzību. Līdzās pastāvīgai ekspozīcijai, kas izvietota 3 stāvos 4000 kvadrātmetru platībā, notiek tematiskas izstādes, spēkratu prezentācijas, autobūves vēstures izpētes darbs un muzeja darbnīcās tiek restaurēti spēkrati. [Resurs: www.motormuzejs.lv] Motormuzejā ir pieejama kafejnīca, slēgtais kā arī āra bērnu laukums. Pie motormuzeja var ērti un bez maksas novietot automašīnu.",
+        "placePhoto" : "motorMuzejs",
+        "openingHours" : "Katru dienu no 10:00 līdz 18:00"
+    },
+    
+    {
         "locationID" : 2,
         "locationName" : "Uzvaras Parks",
         "lat" : 56.935897,
@@ -177,17 +187,6 @@
         "locationInfo": "Visa gada garumā katru svētdienu 12:00 šeit tiek organizēti atraktīvi pasākumi bērniem. Bērnu pilsētiņa (Lielā prospekta un Vasarnīcu ielu ielokā) atklāta 2000. gadā un tajā uzstādītas vairāk nekā 40 dažāda veida rotaļu iekārtas, kas paredzētas bērniem no mazuļa vecuma līdz pat tīnim. Šeit var pagrozīt 1,5 m lielu globusu, uzsmaidīt puķu kompozīcijai Pīļu ģimene. Vasarā Bērnu pilsētiņā darbojas arī bērnu velokartu noma un batuti.",
         "placePhoto" : "BernuParksVentspili",
         "openingHours" : "No 1. apriļa - 30. oktobrim: 07:00 - 20:00 \nNo 1. novembra - 31.martam: 07:00 - 20:00"
-    },
-
-    
-    {
-        "locationID" : 4,
-        "locationName" : "KP6 Basketbola laukums",
-        "lat" : 56.500629,
-        "long" : 20.995189,
-        "locationInfo": "KP6 Basketbola laukums",
-        "placePhoto" : "StandartSports",
-        "openingHours" : "Nezināms"
     },
     
     {

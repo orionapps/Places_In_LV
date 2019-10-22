@@ -51,6 +51,8 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
     
     func setUpView() {
         
+        let openingHoursTitle = "Opening Hours:"
+        
         navigationBtn.layer.masksToBounds = true
         navigationBtn.layer.cornerRadius = 10
         navigationBtn.layer.borderColor = UIColor.white.cgColor
@@ -67,7 +69,7 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
         self.locationImageView.image = locationImage
         self.locationImageView.hero.id = "\(locationImage)_image"
         self.locationImageView.hero.modifiers = [.zPosition(2)]
-        self.openingHoursLabel.text = "Opening Hours: \n\(openingHours)"
+        self.openingHoursLabel.text = "\(openingHoursTitle.localiz()) \n\(openingHours)"
         
         scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: locationInfoLabel.bottomAnchor).isActive = true
     }
@@ -86,9 +88,13 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
     
     @IBAction func navigateBtnPressed(_ sender: UIButton) {
         
-        let actionSheet = UIAlertController(title: "Navigation", message:"Select prefered navigation app", preferredStyle: .actionSheet)
+        let navigationTitle = "Navigation"
+        let navigationMessage = "Select preferred navigation app"
+        let cancelTitle = "Cancel"
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let actionSheet = UIAlertController(title: navigationTitle.localiz(), message:navigationMessage.localiz(), preferredStyle: .actionSheet)
+        
+        let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
         
         let googleMaps = UIAlertAction(title: "Google Maps", style: .default) { action in
             

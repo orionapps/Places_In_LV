@@ -28,6 +28,10 @@
 "Settings" = "Настройки";
 "Sign Out" = "Выйти";
 "Back" = "Назад";
+"Opening Hours:" = "Часы работы:";
+"Navigation" = "Навигация";
+"Select preferred navigation app" = "Выберите предпочтительное приложение для навигации";
+"Navigate to this place" = "Перейдите к этому месту";
 
 //MAIN CONTENT
 "Sightseeings" = "Достопримечательности";
