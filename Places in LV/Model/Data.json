@@ -175,7 +175,7 @@
         "lat" : 56.961457,
         "long" : 24.143652,
         "locationInfo": "7000 kvadrātmetru rotaļu laukums ir lielākais Rīgā un tas piemērots gan pirmsskolas vecuma bērniem, gan lielākiem bērniem. Rotaļu laukuma vizuālajā noformējumā par pamatu ir izmantota Rīgas pilsētas simboli un vēsture. Izmantojot zilas krāsas bruģakmeni un gumijas segumu laukumu vizuāli pārdala Daugava, kurā ir gan sala ar vertikālu rāpšanās elementu – piramīdu, gan pietauvots kuģis. Daugavas vienā krastā ir stilizēta vecpilsēta ar Vecrīgai raksturīgajiem elementiem – Rīgas Doma baznīcas pulksteņa kopija, Vecpilsētas melnais kaķis, torņi un tilti ar pilsētas heraldiskā zīmēm. Šajā rotaļu laukuma daļā sākumskolas un pirmsskolas bērniem būs iespēja gan izskrieties, izvingroties, gan spēlēt dažādas lomu spēles, speciāli tam paredzētos rotaļu elementos. Kā jebkura vecpilsēta arī šī glabās savus noslēpumus, ko mazie pasaules izzinātāji varēs atklāt, meklējot pēc īpašām norādēm. Daugavu varēs šķērsot gan pa diviem trošu ceļiem, gan ar kājāmgājēju tiltiņu, nonākot zaļajā Pārdaugavā, kur slejās augsti torņi, un rotaļu atrakcijas vecākiem bērniem, kuru izmantošana rada ne tikai prieku un jautrību, bet veicina arī fizisko attīstību. Vizuālās upes abus krastus savienos arī īpaša “telefona līnija”, ar kuras starpniecību bērni varēs sazināties viens ar otru esot katram savā upes krastā. Papildus tam visam rotaļu laukumā būs izvietoti soliņi vecākiem un Daugavas tecējumu noslēgs bruģī iestrādāta strūklaka, kurā veldzēties karstajās vasaras dienās.",
-        "placePhoto" : "StandartPlayground",
+        "placePhoto" : "centraBernuLaukums",
         "openingHours" : "Nezināms"
     },
     
@@ -187,6 +187,26 @@
         "locationInfo": "Visa gada garumā katru svētdienu 12:00 šeit tiek organizēti atraktīvi pasākumi bērniem. Bērnu pilsētiņa (Lielā prospekta un Vasarnīcu ielu ielokā) atklāta 2000. gadā un tajā uzstādītas vairāk nekā 40 dažāda veida rotaļu iekārtas, kas paredzētas bērniem no mazuļa vecuma līdz pat tīnim. Šeit var pagrozīt 1,5 m lielu globusu, uzsmaidīt puķu kompozīcijai Pīļu ģimene. Vasarā Bērnu pilsētiņā darbojas arī bērnu velokartu noma un batuti.",
         "placePhoto" : "BernuParksVentspili",
         "openingHours" : "No 1. apriļa - 30. oktobrim: 07:00 - 20:00 \nNo 1. novembra - 31.martam: 07:00 - 20:00"
+    },
+    
+    {
+        "locationID" : 3,
+        "locationName" : "Kaņiera ielas bērnu laukums",
+        "lat" : 56.912908,
+        "long" : 24.171080,
+        "locationInfo": "Netālu no Rīgas veselības centra filiāles, pie ķengaraga promenādes atrodas pasvisam neliels bērnu laukums. Laukums domāts pirmsskolas vecuma bērniem. Ir pieejemas dažas atrakcijas bērniem kā arī 2 trenažieri pieugušajiem.",
+        "placePhoto" : "kanieraIelasBernuParks",
+        "openingHours" : "Atvērts 24/7"
+    },
+    
+    {
+        "locationID" : 3,
+        "locationName" : "84.vidusskolas sporta un aktivitātes laukums",
+        "lat" : 56.949227,
+        "long" : 24.204994,
+        "locationInfo": "Liels bērnu laukums kur pieejamas atrakcijas visu vecumu bērniem. Teritorija ir iežogota un tajā ir bruģēti laukumi un celiņi gan gājējiem, gan skrituļotājiem. Apmeklētāju ērtībām teritorijā darbosies ģērbtuves, inventāra nomas punkti. Teritorijā ir izvietoti soliņi. Diennakts tumšajā laikā teritorija tiks izgaismota. Par kārtību un drošību teritorijā rūpēsies gan pašvaldības policija, gan apsardze. Pie sporta laukuma ir pieejama bezmaksas autostāvvieta",
+        "placePhoto" : "purvciemaBernuLaukums",
+        "openingHours" : "Nezināms"
     },
     
     {
@@ -246,6 +266,16 @@
         "long" : 24.144373,
         "locationInfo": "Centra sporta kvartāla teritorijā ir izveidots futbola laukums ar 280 metru skrejceļu ap to, basketbola laukums, divi multifunkcionālie laukumi, laukumi pludmales volejbolam, tāllēkšanas sektors, skeitparks un veloparks, laukums ielu vingrošanai, tribīnes, inventāra nomas punkti, tualetes, ģērbtuves. Visā teritorijā uzstādīta video novērošanas un apgaismošanas sistēma. Teritorija ir iežogota ar atjaunoto vēsturisko žogu.",
         "placePhoto" : "StandartSports",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 4,
+        "locationName" : "84.vidusskolas sporta un aktivitātes laukums",
+        "lat" : 56.949818,
+        "long" : 24.206012,
+        "locationInfo": "Skolas laukumā ir izveidots liels sporta kopleks kurā ietilpst: basketbola laukumi ar gumijotu segumu un metāla strītbola groziem, volejbola laukums ar gumijotu segumu, tenisa laukums, trenažieri, futbola laukums, galda tenisa galdi. Ziemas laikā ir pieejams arī hokeja laukums, vasaras laikā tas ir domāts skrituļošanai. Ir pieejams skriešanas celiņš ar gumijotu segumu. Laukuma teritorijā ir pieejams nomas punks inventāram. Pie laukuma ir pieejama bezmaksas autostāvvieta",
+        "placePhoto" : "purvciemaSportaLaukums",
         "openingHours" : "Nezināms"
     }
 ]
