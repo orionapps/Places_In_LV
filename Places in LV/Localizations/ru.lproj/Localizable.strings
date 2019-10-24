@@ -32,6 +32,8 @@
 "Navigation" = "Навигация";
 "Select preferred navigation app" = "Выберите предпочтительное приложение для навигации";
 "Navigate to this place" = "Перейдите к этому месту";
+"Add new object at this location" = "Добавить новый объект в этом месте";
+"Add new object" = "Добавить новый объект";
 
 //MAIN CONTENT
 "Sightseeings" = "Достопримечательности";

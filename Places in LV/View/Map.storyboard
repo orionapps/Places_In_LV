@@ -220,6 +220,7 @@
                         <segue destination="aY9-14-b9D" kind="show" identifier="toDetails" id="gfP-1E-4hA"/>
                         <segue destination="3nu-r8-SQv" kind="show" identifier="showSortBySeasons" id="Ae2-fv-zSU"/>
                         <segue destination="gwc-km-9sz" kind="show" identifier="showSettings" id="UVc-A5-Cx9"/>
+                        <segue destination="thi-rp-JsM" kind="show" id="QXW-A6-sGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAU-dB-82k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,6 +266,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEI-Ku-bfP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3341" y="245"/>
+        </scene>
+        <!--NewObjectAdding-->
+        <scene sceneID="1iO-Lu-WOW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewObjectAdding" id="thi-rp-JsM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="maw-h3-WCv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVA-FL-zrM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3393" y="324"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BAs-X9-UxI">

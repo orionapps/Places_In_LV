@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // Helper to avoid texfield overlay with keyboard
+        IQKeyboardManager.shared.enable = true
+        
         // Localizing based on the app language
         LanguageManager.shared.defaultLanguage = .deviceLanguage
         

@@ -21,4 +21,12 @@ struct Constants {
         static let internetConnectionErrorTitle = "Failed to load info"
         static let internetConnectionErrorMessage = "Please check your internet connection and try again"
     }
+    
+    struct MyKeys {
+        static let imageFolderInFirebase = "Objects"
+        static let userAddedImageFolderInFirebase = "userUploadedObjects"
+        static let uid = "uid"
+        static let imageUrl = "imageUrl"
+        static let imagesCollection = "imagesCollection"
+    }
 }

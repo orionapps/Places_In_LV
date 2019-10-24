@@ -263,7 +263,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         if Reachability.isConnectedToNetwork() {
             
-            let storageRef = Storage.storage().reference(withPath: "Objects/\((marker.userData as! POIItem).image).jpg")
+            let storageRef = Storage.storage().reference(withPath: "\(Constants.MyKeys.imageFolderInFirebase)/\((marker.userData as! POIItem).image).jpg")
             storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
                 if let error = error {
                     print("Got an error fetching data: \(error.localizedDescription)")
@@ -357,6 +357,30 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             NSLog("Did tap a normal marker")
         }
         return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        
+        let title = "Add new object at this location"
+        let cancelTitle = "Cancel"
+        let buttonTitle = "Add new object"
+        
+        let actionSheet = UIAlertController(title: title.localiz(), message:nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
+        
+        let addNewObject = UIAlertAction(title: buttonTitle.localiz(), style: .default) { action in
+            
+            print("Long pressed at coordinates: Lat:\(coordinate.latitude ) Long:\(coordinate.longitude)")
+            
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "NewObjectAdding", bundle: nil)
+            let newObjectVC = mainStoryboard.instantiateViewController(withIdentifier: "NewObjectAddingVC") as! NewObjectAddingVC
+            self.navigationController?.pushViewController(newObjectVC, animated: true)
+        }
+        
+        actionSheet.addAction(cancel)
+        actionSheet.addAction(addNewObject)
+        
+        present(actionSheet, animated: true, completion: nil)
     }
     
        
