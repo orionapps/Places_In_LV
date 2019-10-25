@@ -35,6 +35,18 @@
 "Navigate to this place" = "Navigate to this place";
 "Add new object at this location" = "Add new object at this location";
 "Add new object" = "Add new object";
+"Error" = "Error";
+"All fields must be filled" = "All fields must be filled";
+"Please add photo" = "Please add photo";
+"Done" = "Done";
+"Success" = "Success";
+"Your object information has been sent and will be reviewed by our team soon. Please be aware that Explore Latvia team can refuse including your object on the map in case it contains inaccurate or inappropriate data." = "Your object information has been sent and will be reviewed by our team soon. Please be aware that Explore Latvia team can refuse including your object on the map in case it contains inaccurate or inappropriate data.";
+"Choose from library" = "Choose from library";
+"Take from camera" = "Take from camera";
+"Choose object photo" = "Choose object photo";
+"Change Image" = "Change Image";
+"Add Image" = "Add Image";
+"Submit" = "Submit";
 
 //MAIN CONTENT
 "Sightseeings" = "Sightseeings";

@@ -28,10 +28,9 @@ class SettingsVC: UIViewController {
     @IBAction func changeLanguagePressed(_ sender: UIButton) {
         
         let title = "Change Language"
-        let cancelTitle = "Cancel"
         
         let actionSheet = UIAlertController(title: title.localiz(), message:nil, preferredStyle: .actionSheet)
-        let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Constants.FrequentlyUsedMessages.cancel.localiz(), style: .cancel, handler: nil)
         
         let latvianLanguage = UIAlertAction(title: "Latviešu", style: .default) { action in
             
@@ -48,7 +47,7 @@ class SettingsVC: UIViewController {
             Helper().changeLanguage(to: .en)
         }
         
-        actionSheet.addAction(cancel)
+        actionSheet.addAction(cancelAction)
         actionSheet.addAction(latvianLanguage)
         actionSheet.addAction(russianLanguage)
         actionSheet.addAction(englishLanguage)

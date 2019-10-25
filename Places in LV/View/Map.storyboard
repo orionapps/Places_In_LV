@@ -220,7 +220,7 @@
                         <segue destination="aY9-14-b9D" kind="show" identifier="toDetails" id="gfP-1E-4hA"/>
                         <segue destination="3nu-r8-SQv" kind="show" identifier="showSortBySeasons" id="Ae2-fv-zSU"/>
                         <segue destination="gwc-km-9sz" kind="show" identifier="showSettings" id="UVc-A5-Cx9"/>
-                        <segue destination="thi-rp-JsM" kind="show" id="QXW-A6-sGd"/>
+                        <segue destination="thi-rp-JsM" kind="show" identifier="toNewObjectAdding" id="QXW-A6-sGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAU-dB-82k" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -35,6 +35,19 @@
 "Navigate to this place" = "Dotieses uz šo vietu";
 "Add new object at this location" = "Pievienot jaunu objektu šajā vietā";
 "Add new object" = "Pievienot jaunu objektu";
+"Error" = "Kļūda";
+"All fields must be filled" = "Lūdzu aizpildiet visus laukus";
+"Please add photo" = "Lūdzu, pievienojiet fotoattēlu";
+"Done" = "Gatavs";
+"Success" = "Dati veiksmīgi nosūtīti";
+"Your object information has been sent and will be reviewed by our team soon. Please be aware that Explore Latvia team can refuse including your object on the map in case it contains inaccurate or inappropriate data." = "Objekta informācija ir nosūtīta, un mūsu komanda to drīz pārskatīs. Lūdzu, ņemiet vērā, ka komanda Explore Latvia var atteikties iekļaut Jūsu objektu kartē, ja tajā ir neprecīzi vai nepiemēroti dati.";
+"Choose from library" = "Izvēlieties no galerijas";
+"Take from camera" = "Fotogrāfēt";
+"Choose object photo" = "Izvēlieties objekta fotoattēlu";
+"Change Image" = "Mainīt attēlu";
+"Add Image" = "Pievienot attēlu";
+"Submit" = "Iesniegt";
+
 
 //MAIN CONTENT
 "Sightseeings" = "Apskates objekti";

@@ -52,9 +52,9 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bn-dA-IPg">
-                                        <rect key="frame" x="159.5" y="429" width="95" height="38"/>
+                                        <rect key="frame" x="157.5" y="429" width="99" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Add photo">
+                                        <state key="normal" title="Add Image">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -96,9 +96,9 @@
                     <connections>
                         <outlet property="addImageBtn" destination="6bn-dA-IPg" id="tZe-6s-Slo"/>
                         <outlet property="imageView" destination="Uo4-WB-7TD" id="Lkt-57-zfR"/>
-                        <outlet property="objectDescriptionTxtField" destination="Jyd-3f-LFl" id="1M4-7D-Bh8"/>
-                        <outlet property="objectNameTxtField" destination="KYw-9s-6TJ" id="gR2-vz-3Kz"/>
-                        <outlet property="objectWorkingHoursTxtField" destination="8nE-DN-07i" id="XP0-vb-szq"/>
+                        <outlet property="objectDescriptionTxtField" destination="Jyd-3f-LFl" id="6Jg-qy-bom"/>
+                        <outlet property="objectNameTxtField" destination="KYw-9s-6TJ" id="vYE-rf-34k"/>
+                        <outlet property="objectWorkingHoursTxtField" destination="8nE-DN-07i" id="JG2-W3-CEO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luG-KR-35f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

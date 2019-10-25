@@ -19,56 +19,67 @@ class NewObjectAddingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
     func uploadObjectPhoto() {
-
-        guard let image = imageView.image,
-            let data = image.jpegData(compressionQuality: 1.0) else {
-                AlertService.showAlert(style: .alert, title: "Error", message: "Something went wrong")
+        
+        let imageName = UUID().uuidString
+        let textName = UUID().uuidString
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let imageObjectRef = storageRef.child(Constants.MyKeys.userAddedImageFolderInFirebase).child(imageName)
+        let textObjectRef = storageRef.child(Constants.MyKeys.userAddedImageFolderInFirebase).child(textName)
+        
+        
+        // Uploading json for Object name, description and working hours to firebase storage
+        if objectNameTxtField.text != "" && objectDescriptionTxtField.text != "" && objectWorkingHoursTxtField.text != "" {
+            
+            let objectName = String(describing: objectNameTxtField.text)
+            let objectDescription = String(describing: objectDescriptionTxtField.text)
+            let objectWorkingHours = String(describing: objectWorkingHoursTxtField.text)
+            
+            let newObjectDict = ["Image UUID" : imageName ,"Object Name": objectName, "Object description": objectDescription, "Object working hours": objectWorkingHours]
+            
+            textObjectRef.child(Constants.MyKeys.userAddedImageFolderInFirebase).child(textName)
+            
+            let jsonData = try! JSONSerialization.data(withJSONObject: newObjectDict, options: .prettyPrinted)
+            
+            textObjectRef.putData(jsonData, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
+                    return
+                }
+            }
+        } else {
+            
+            AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: Constants.ErrorMessages.allFieldsMustBeFilled.localiz())
             return
         }
         
-//        if self.objectNameTxtField != nil {
-//            let objectNameData = self.objectNameTxtField
-//        } else {
-//            AlertService.showAlert(style: .alert, title: "Error", message: "Please type object name")
-//        }
-
-        let imageName = UUID().uuidString
-        let storageReference = Storage.storage().reference()
-            
-        storageReference.child(Constants.MyKeys.userAddedImageFolderInFirebase).child(imageName)
         
-        if objectNameTxtField.text != "" && objectDescriptionTxtField.text != "" && objectWorkingHoursTxtField.text != "" {
-            
-            storageReference.child(Constants.MyKeys.userAddedImageFolderInFirebase).setValuesForKeys(["Object Name": objectNameTxtField.text!, "Object description": objectDescriptionTxtField.text!, "Object working hours": objectWorkingHoursTxtField.text!])
-            
-            objectNameTxtField.text = ""
-            objectDescriptionTxtField.text = ""
-            objectWorkingHoursTxtField.text = ""
-            
-        } else {
-            
-            AlertService.showAlert(style: .alert, title: "Error", message: "All fields must be filled")
+        // Uploading object photo to firebase storage
+        guard let image = imageView.image,
+            let data = image.jpegData(compressionQuality: 1.0) else {
+                AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: Constants.ErrorMessages.pleaseAddPhoto.localiz())
+                return
         }
         
-        storageReference.putData(data, metadata: nil) { (metadata, error) in
+        imageObjectRef.putData(data, metadata: nil) { (metadata, error) in
             if let error = error {
-                AlertService.showAlert(style: .alert, title: "Error", message: error.localizedDescription)
+                AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                 return
             }
             
-            storageReference.downloadURL { (url, error) in
+            imageObjectRef.downloadURL { (url, error) in
                 if let error = error {
-                    AlertService.showAlert(style: .alert, title: "Error", message: error.localizedDescription)
+                    AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                     return
                 }
                 
                 guard let url = url else{
-                    AlertService.showAlert(style: .alert, title: "Error", message: error?.localizedDescription)
+                    AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error?.localizedDescription)
                     return
                 }
                 
@@ -82,14 +93,25 @@ class NewObjectAddingVC: UIViewController {
                 
                 dataReference.setData(data) { (error) in
                     if let error = error {
-                        AlertService.showAlert(style: .alert, title: "Error", message: error.localizedDescription)
+                        AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                         return
                     }
                     
                     UserDefaults.standard.set(documentUid, forKey: Constants.MyKeys.uid)
                     self.imageView.image = UIImage()
-                    AlertService.showAlert(style: .alert, title: "Success", message: "Image saved sucsessfully")
                     
+                    let done = "Done"
+                    let success = "Success"
+                    let successfullyUploadedDataMessage = "Your object information has been sent and will be reviewed by our team soon. Please be aware that Explore Latvia team can refuse including your object on the map in case it contains inaccurate or inappropriate data."
+                    
+                    // Alert view if success
+                    let ok = UIAlertAction(title: done.localiz(), style: .default) { action in
+                        self.navigationController?.popViewController(animated: true)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                    AlertService.showAlert(style: .alert, title: success.localiz(), message: successfullyUploadedDataMessage.localiz(), actions: [ok]) {
+                    }
                 }
             }
         }
@@ -104,33 +126,31 @@ class NewObjectAddingVC: UIViewController {
         
         uploadObjectPhoto()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+//MARK: - Extension 
 
 extension NewObjectAddingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {
         
-        let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
+        let chooseFromLibrary = "Choose from library"
+        let photoLibraryAction = UIAlertAction(title: chooseFromLibrary.localiz(), style: .default) { (action) in
             self.showImagePickerController(sourceType: .photoLibrary)
         }
         
-        let cameraAction = UIAlertAction(title: "Take from camera", style: .default) { (action) in
-                   self.showImagePickerController(sourceType: .camera)
-               }
+        let takeFromCamera = "Take from camera"
+        let cameraAction = UIAlertAction(title: takeFromCamera.localiz(), style: .default) { (action) in
+            self.showImagePickerController(sourceType: .camera)
+        }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Constants.FrequentlyUsedMessages.cancel.localiz(), style: .cancel, handler: nil)
         
-        AlertService.showAlert(style: .actionSheet, title: "Choose object photo", message: nil, actions: [photoLibraryAction, cameraAction, cancelAction], completion: nil)
+        let chooseObjectPhoto = "Choose object photo"
+        
+        AlertService.showAlert(style: .actionSheet, title: chooseObjectPhoto.localiz(), message: nil, actions: [photoLibraryAction, cameraAction, cancelAction], completion: nil)
     }
     
     func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
@@ -149,8 +169,15 @@ extension NewObjectAddingVC: UIImagePickerControllerDelegate, UINavigationContro
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = originalImage
         }
+        let changeImage = "Change Image"
+        let addPhoto = "Add Image"
         
-        //addImageBtn.alpha = 0
+        if self.imageView != nil {
+            addImageBtn.setTitle(changeImage.localiz(), for: .normal)
+        } else {
+            addImageBtn.setTitle(addPhoto.localiz(), for: .normal)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 }

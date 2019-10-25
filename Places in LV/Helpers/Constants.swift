@@ -20,6 +20,14 @@ struct Constants {
         
         static let internetConnectionErrorTitle = "Failed to load info"
         static let internetConnectionErrorMessage = "Please check your internet connection and try again"
+        static let error = "Error"
+        static let allFieldsMustBeFilled = "All fields must be filled"
+        static let pleaseAddPhoto = "Please add photo"
+    }
+    
+    struct FrequentlyUsedMessages {
+
+        static let cancel = "Cancel"
     }
     
     struct MyKeys {
