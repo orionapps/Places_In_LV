@@ -369,11 +369,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
         
         let addNewObject = UIAlertAction(title: buttonTitle.localiz(), style: .default) { action in
-            
-            print("Long pressed at coordinates: Lat:\(coordinate.latitude ) Long:\(coordinate.longitude)")
-            
+
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "NewObjectAdding", bundle: nil)
             let newObjectVC = mainStoryboard.instantiateViewController(withIdentifier: "NewObjectAddingVC") as! NewObjectAddingVC
+            
+            newObjectVC.tappedLatitude = String(coordinate.latitude)
+            newObjectVC.tappedLongitude = String(coordinate.longitude)
+            
             self.navigationController?.pushViewController(newObjectVC, animated: true)
         }
         
