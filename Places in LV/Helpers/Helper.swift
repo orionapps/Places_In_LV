@@ -32,6 +32,14 @@ class Helper: UIImageView {
         return Helper().hexStringToUIColor(hex: "FBFBFF", alpha: 1)
     }
     
+    // Dark blue color
+    func darkBlueColor() -> UIColor {
+        
+        return Helper().hexStringToUIColor(hex: "195D7A", alpha: 1)
+    }
+    
+    
+    
     
     func hexStringToUIColor (hex:String, alpha: Float) -> UIColor {
         

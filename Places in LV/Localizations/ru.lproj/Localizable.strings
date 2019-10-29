@@ -6,7 +6,7 @@
   Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
 */
 
-//RUSSIAN LOCALIZATION
+//////////   RUSSIAN LOCALIZATION   //////////
 
 //LOG IN AND SIGN UP
 "    Change Language" = "    Сменить язык";
@@ -46,6 +46,12 @@
 "Change Image" = "Сменить фото";
 "Add Image" = "Добавить фото";
 "Submit" = "Отправить";
+"Next" = "Далее";
+"    Select category " = "    Выберите категорию";
+"Object Name" = "Названия места";
+"Description" = "Описание";
+"Working hours" = "Рабочее время";
+
 
 
 //MAIN CONTENT

@@ -6,7 +6,7 @@
   Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
 */
 
-//LATVIAN LOCALIZATION
+//////////   LATVIAN LOCALIZATION   //////////
 
 
 //LOG IN AND SIGN UP
@@ -47,6 +47,12 @@
 "Change Image" = "Mainīt attēlu";
 "Add Image" = "Pievienot attēlu";
 "Submit" = "Iesniegt";
+"Next" = "Tālāk";
+"    Select category " = "    Izvēlēties kategoriju";
+"Object Name" = "Vietas nosaukums";
+"Description" = "Apraksts";
+"Working hours" = "Darba laiks";
+
 
 
 //MAIN CONTENT

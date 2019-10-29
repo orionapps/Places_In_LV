@@ -105,7 +105,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <state key="normal" title="Nature and parks">
+                                        <state key="normal" title="Nature And Parks">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -216,6 +216,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nyk-GN-b3I"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="ZsX-8o-p1x" id="L2n-Th-RrT"/>
                         <outlet property="objectDescriptionTxtField" destination="Jyd-3f-LFl" id="Xfg-Eb-SzU"/>
                         <outlet property="objectNameTxtField" destination="KYw-9s-6TJ" id="2Nx-5i-aHC"/>
                         <outlet property="objectWorkingHoursTxtField" destination="8nE-DN-07i" id="X6S-nm-PZJ"/>

@@ -6,7 +6,7 @@
   Copyright © 2019 Aleksandrs Muravjovs. All rights reserved.
 */
 
-// ENGLISH LOCALIZATION
+///////// ENGLISH LOCALIZATION //////////
 
 
 // LOG IN AND SIGN UP
@@ -47,6 +47,11 @@
 "Change Image" = "Change Image";
 "Add Image" = "Add Image";
 "Submit" = "Submit";
+"Next" = "Next";
+"    Select category " = "    Select category ";
+"Object Name" = "Object Name";
+"Description" = "Description";
+"Working hours" = "Working hours";
 
 //MAIN CONTENT
 "Sightseeings" = "Sightseeings";

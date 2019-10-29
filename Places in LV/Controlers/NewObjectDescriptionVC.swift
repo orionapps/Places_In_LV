@@ -19,26 +19,37 @@ class NewObjectDescriptionVC: UIViewController {
     @IBOutlet var categoryCollection: [UIButton]!
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var selectCategoryBtn: UIButton!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     var pickedImage: UIImage!
     var objectCategory: String = ""
     var tappedLatitude: String = ""
     var tappedLongitude: String = ""
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpView()
+    }
+    
+    func setUpView() {
+        
+        self.backgroundImageView.image = pickedImage
+    
         Utilities.styleFilledButton(submitBtn)
-        Utilities.styleFilledButton(selectCategoryBtn)
+        Utilities.styleDarkFilledButton(selectCategoryBtn)
         
         categoryCollection.forEach { (categoryItem) in
             
-            Utilities.styleFilledButton(categoryItem)
+        Utilities.styleFilledButton(categoryItem)
         }
     }
     
     
     func uploadObjectData() {
+        
+        Helper().startActivityIndicator(view: self.view, activityIndicator: activityIndicator)
         
         let imageName = UUID().uuidString
         let textName = UUID().uuidString
@@ -60,12 +71,15 @@ class NewObjectDescriptionVC: UIViewController {
             
             textObjectRef.putData(jsonData, metadata: nil) { (metadata, error) in
                 if let error = error {
+                    
+                    Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                     AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                     return
                 }
             }
         } else {
             
+            Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
             AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: Constants.ErrorMessages.allFieldsMustBeFilled.localiz())
             return
         }
@@ -79,17 +93,20 @@ class NewObjectDescriptionVC: UIViewController {
             
             imageObjectRef.putData(data!, metadata: nil) { (metadata, error) in
             if let error = error {
+                Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                 AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                 return
             }
             
             imageObjectRef.downloadURL { (url, error) in
                 if let error = error {
+                    Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                     AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                     return
                 }
                 
                 guard let url = url else{
+                    Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                     AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error?.localizedDescription)
                     return
                 }
@@ -104,6 +121,7 @@ class NewObjectDescriptionVC: UIViewController {
                 
                 dataReference.setData(data) { (error) in
                     if let error = error {
+                        Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                         AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
                         return
                     }
@@ -114,6 +132,8 @@ class NewObjectDescriptionVC: UIViewController {
                     let done = "Done"
                     let success = "Success"
                     let successfullyUploadedDataMessage = "Your object information has been sent and will be reviewed by our team soon. Please be aware that Explore Latvia team can refuse including your object on the map in case it contains inaccurate or inappropriate data."
+                    
+                    Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                     
                     // Alert view if success
                     let ok = UIAlertAction(title: done.localiz(), style: .default) { action in
@@ -151,7 +171,8 @@ class NewObjectDescriptionVC: UIViewController {
             categoryCollection.forEach { (categoryItem) in
                 
                 UIView.animate(withDuration: 0.3) {
-                    self.selectCategoryBtn.setTitle("   \(title)", for: .normal)
+                    self.selectCategoryBtn.setTitle(title, for: .normal)
+                    self.selectCategoryBtn.setImage(nil, for: .normal)
                     categoryItem.isHidden = !categoryItem.isHidden
                     self.view.layoutIfNeeded()
                 }
