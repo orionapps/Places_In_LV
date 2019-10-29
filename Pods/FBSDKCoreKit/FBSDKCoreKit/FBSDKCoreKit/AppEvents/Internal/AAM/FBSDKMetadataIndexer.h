@@ -18,10 +18,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBSDKLibAnalyzer : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
-+ (NSDictionary<NSString *, NSString *> *)getMethodsTable;
-+ (NSArray<NSString *> *)symbolicateCallstack:(NSArray<NSString *> *)callstack
-                                methodMapping:(NSDictionary<NSString *,id> *)methodMapping;
+@interface FBSDKMetadataIndexer : NSObject
+
++ (void)enable;
 
 @end
+
+NS_ASSUME_NONNULL_END

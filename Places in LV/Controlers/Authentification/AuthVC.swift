@@ -12,7 +12,7 @@ import FirebaseAuth
 import Firebase
 
 class AuthVC: UIViewController {
-
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
@@ -21,20 +21,22 @@ class AuthVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpElements()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
+    
     
     func setUpElements() {
         
@@ -44,8 +46,5 @@ class AuthVC: UIViewController {
         
         Utilities.styleFilledButton(signUpBtn)
         Utilities.styleHollowButton(logInBtn)
-        
     }
-    
-    
 }

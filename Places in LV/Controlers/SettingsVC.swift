@@ -10,20 +10,24 @@ import UIKit
 import LanguageManager_iOS
 
 class SettingsVC: UIViewController {
-
+    
     @IBOutlet weak var changeLanguageBtn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpView()
     }
+    
+    //MARK: - Setting up view
     
     func setUpView() {
         
         Utilities.styleHollowButton(changeLanguageBtn)
     }
     
+    //MARK: - Action methods
     
     @IBAction func changeLanguagePressed(_ sender: UIButton) {
         
@@ -54,5 +58,4 @@ class SettingsVC: UIViewController {
         
         present(actionSheet, animated: true, completion: nil)
     }
-    
 }

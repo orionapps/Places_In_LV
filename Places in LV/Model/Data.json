@@ -81,22 +81,22 @@
     
     {
         "locationID" : 1,
-        "locationName" : "Mālpils Muiža",
-        "lat" : 57.006663,
-        "long" : 24.949057,
-        "locationInfo": "Mālpils muižas (vācu: Lemburg) kungu māja atrodas Mālpils novada centrā Mālpilī, apmēram 60 km no Rīgas un 15 km no Siguldas. Tā celta klasicisma stilā 18. gadsimta vidū, bet pārbūvēta 1911. gadā pēc arhitekta Vilhelma Bokslafa projekta. Muižas pils ir valsts nozīmes kultūras piemineklis, tās restaurācija noslēdzās 2008. gada augustā. Tajā atrodas dizaina viesnīca, bārs un restorāns.",
-        "placePhoto" : "MalpilsMuiza",
-        "openingHours" : "Nezināms"
-    },
-    
-    {
-        "locationID" : 1,
         "locationName" : "Rīgas Motormuzejs",
         "lat" : 56.970617,
         "long" : 24.227566,
         "locationInfo": "Rīgas Motormuzejs ar savu ekspozīciju apmeklētāju acis priecē jau kopš 1989. gada. Gan toreiz, gan tagad tas ir vienīgais šāda profila muzejs Latvijā un lielākais Baltijā. Tomēr, ideja par seno spēkratu muzeju Latvijā dzima jau 20. gadsimta septiņdesmitajos gados, kad neliela entuziastu grupa – Latvijas Antīko automobiļu klubs iedibināja vēl nebijušu kustību – seno spēkratu salidojumus un rallijus. Šie pasākumi pulcēja ne tikai seno spēkratu īpašniekus, bet arī skatītāju tūkstošus. Pēc vērienīgās rekonstrukcijas 2016.gadā atklātais Rīgas Motormuzejs ir pārvērties līdz nepazīšanai. Izmantojot modernas un interaktīvas tehnoloģijas, apmeklētāji tiek aicināti doties virtuāli patiesā ceļojumā auto būves vēsturē, kas aizsākas nu jau pirms 133 gadiem, kad patentēja pirmo auto. Muzeja ekspozīcijas zāles ir aptumšotas, bet paši spēkrati spilgti izgaismoti. Tas ļauj koncentrēt uzmanību uz būtiskāko – muzeja eksponātiem un to stāstiem, kas apmeklētājam pašam jāatklāj ar modernu multimediju palīdzību. Līdzās pastāvīgai ekspozīcijai, kas izvietota 3 stāvos 4000 kvadrātmetru platībā, notiek tematiskas izstādes, spēkratu prezentācijas, autobūves vēstures izpētes darbs un muzeja darbnīcās tiek restaurēti spēkrati. [Resurs: www.motormuzejs.lv] Motormuzejā ir pieejama kafejnīca, slēgtais kā arī āra bērnu laukums. Pie motormuzeja var ērti un bez maksas novietot automašīnu.",
         "placePhoto" : "motorMuzejs",
         "openingHours" : "Katru dienu no 10:00 līdz 18:00"
+    },
+    
+    {
+        "locationID" : 1,
+        "locationName" : "Mores Kaujas Muzejs",
+        "lat" : 57.079646,
+        "long" : 25.061521,
+        "locationInfo": "Mores kauju muzejs veidots kā kultūrvēstures, izglītības un tūrisma objekts. Tas izveidots vietā, kur II Pasaules kara laikā 1944. gadā no 26. septembra līdz 6. oktobrim notika sīvas cīņas starp latviešu leģionāriem un padomju armijas karavīriem. Sadarbībā ar Karavīru biedrību un Latvijas virsnieku apvienību tika noformēta pirmā ekspozīcija no priekšmetiem, kas atrasti kaujas laukā un dokumentētiem materiāliem par šo kara epizodi. Muzeja pirmajā stāvā var aplūkot kara tematikas ekspozīciju, otrā stāvā senu mājsaimniecības priekšmetu un amatniecības ekspozīciju, bet brīvdabas ekspozīcijā tanku T-34. Apskates objekti muzejā - Mores kauju makets, cīņu vietās atrastie ieroči, tanks T-34 un citas vēstures liecības, pagasta vēsturi raksturojoši priekšmeti. [Resurs: latvia.travel.lv] Mores kauju muzejā apskatāmas jaunas izstādes par 1.pasaules karu Vidzemes pusē, jaunās Latvijas valsts tapšanas notikumi 1919.gadā un Latvijas armijas 100gadei veltīts foto stends. Muzeja 2.stāvā plašs suvenīru piedāvājums un mājamatniecības darbarīku izstāde.",
+        "placePhoto" : "moresKaujasMuzejs",
+        "openingHours" : "No Maija līdz Oktobrim katru dienu no 10:00 līdz 16:00 \n No Novembra līdz Aprilim nepieciešams iepriekš pieteikties"
     },
     
     {
@@ -156,6 +156,26 @@
         "long" : 24.797940,
         "locationInfo": "Černausku ozols ir varenākais Allažu apkārtnes dižozols. 1977. gadā iekļauts dižkoku sarakstā. Tā dobumā mīt aizsargājamās spožās skudras (Lasius Fuliginosus Latreille.) Šobrīd šī koka apkārtmērs - 6,9 m, vainaga augstums - 22 m, vainaga projekcija - 390 m2, zaru garums - lidz 13,6 m.",
         "placePhoto" : "CernauskuDizozols",
+        "openingHours" : "Atvērts 24/7"
+    },
+    
+    {
+        "locationID" : 2,
+        "locationName" : "Mores kauju piemiņas parks",
+        "lat" : 57.082319,
+        "long" : 25.091228,
+        "locationInfo": "Izveidots vietā, kur II Pasaules kara laikā 1944. gadā no 26. septembra līdz 6. oktobrim notika sīvas cīņas starp latviešu leģionāriem un padomju armijas karavīriem. Mores kaujās piedalījās ap 11 000 latviešu leģionāru. Piemiņas parkā Memoriālās plāksnes granītā iekalti 186 Mores kaujās kritušo un bez vēsts pazudušo karavīru vārdi un krusts tiem karavīriem, kas vēl joprojām guļ kaujas laukā.",
+        "placePhoto" : "moresPieminasKaujasParks",
+        "openingHours" : "Atvērts 24/7"
+    },
+    
+    {
+        "locationID" : 2,
+        "locationName" : "Paula Jaunzema akmens skulptūru dārzs",
+        "lat" : 56.998155,
+        "long" : 23.952282,
+        "locationInfo": "Paula Jaunzema akmens skulptūru dārzs atrodas Vakarbuļos gleznainā vietā pašā ielas galā. Pauls Jaunzems plaši pazīstams visā pasaulē tēlnieks kurš izveidoja šo skulptūru dārzu tieši pie savas mājas. Katru gadu skulptūru daudzums pieaug. Skulptūru dārzu var apskatīt bez maksas un ja ir vēlēšanās ir iespējams pateikt paldies tēlniekam iemetot pateicību ziedojumu kastītē pie mājas.",
+        "placePhoto" : "paulaJaunzemaAkmensSkulpturas",
         "openingHours" : "Atvērts 24/7"
     },
 
@@ -277,5 +297,15 @@
         "locationInfo": "Skolas laukumā ir izveidots liels sporta kopleks kurā ietilpst: basketbola laukumi ar gumijotu segumu un metāla strītbola groziem, volejbola laukums ar gumijotu segumu, tenisa laukums, trenažieri, futbola laukums, galda tenisa galdi. Ziemas laikā ir pieejams arī hokeja laukums, vasaras laikā tas ir domāts skrituļošanai. Ir pieejams skriešanas celiņš ar gumijotu segumu. Laukuma teritorijā ir pieejams nomas punks inventāram. Pie laukuma ir pieejama bezmaksas autostāvvieta",
         "placePhoto" : "purvciemaSportaLaukums",
         "openingHours" : "Nezināms"
-    }
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Mālpils Muiža",
+        "lat" : 57.006663,
+        "long" : 24.949057,
+        "locationInfo": "Mālpils muižas (vācu: Lemburg) kungu māja atrodas Mālpils novada centrā Mālpilī, apmēram 60 km no Rīgas un 15 km no Siguldas. Tā celta klasicisma stilā 18. gadsimta vidū, bet pārbūvēta 1911. gadā pēc arhitekta Vilhelma Bokslafa projekta. Muižas pils ir valsts nozīmes kultūras piemineklis, tās restaurācija noslēdzās 2008. gada augustā. Tajā atrodas dizaina viesnīca, bārs un restorāns.",
+        "placePhoto" : "MalpilsMuiza",
+        "openingHours" : "Nezināms"
+    },
 ]

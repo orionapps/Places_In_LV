@@ -10,8 +10,6 @@ import UIKit
 
 class ContainerView: UIViewController {
 
-    
-    
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenuContainer: UIView!
     @IBOutlet weak var mapViewContainer: UIView!
@@ -22,10 +20,18 @@ class ContainerView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpView()
+    }
+    
+    //MARK: - Setting up views
+    
+    func setUpView() {
+        
         sideMenuLeadingConstraint.constant = -sideMenuContainer.frame.size.width
         listenToNotifications()
     }
     
+    //MARK: - Notifications
     
     func listenToNotifications(){
         NotificationCenter.default.addObserver(self,
@@ -33,6 +39,8 @@ class ContainerView: UIViewController {
                                                name: NSNotification.Name(rawValue: "ToggleSideMenu"),
                                                object: nil)
     }
+    
+    //MARK: - Action methods
     
     @objc func toggleSideMenu() {
         

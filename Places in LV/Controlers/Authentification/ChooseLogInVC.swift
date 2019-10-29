@@ -13,7 +13,6 @@ import FBSDKLoginKit
 
 class ChooseLogInVC: UIViewController, LoginButtonDelegate {
     
-    
     @IBOutlet weak var signInWithGoogleBtn: GIDSignInButton!
     @IBOutlet weak var signInWithFacebookBtn: UIButton!
     @IBOutlet weak var signInWithEmailBtn: UIButton!
@@ -24,8 +23,8 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
         setUpView()
     }
     
-    
     //MARK: - Seting up view
+    
     func setUpView() {
         
         signInWithGoogleBtn.layer.cornerRadius = 25.0
@@ -43,8 +42,8 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
         signInWithEmailBtn.backgroundColor = Helper().hexStringToUIColor(hex: "c4041F", alpha: 1.0)
     }
     
-    
     // MARK: - Google sign in methods
+    
     @IBAction func signInWithGooglePressed(_ sender: UIButton) {
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -52,6 +51,7 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
     }
     
     //MARK: - Facebook sign in methods
+    
     @objc func handleCustomFBLogin(){
         
         LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { (result, error) in
@@ -61,9 +61,10 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
             }
             self.showEmailAddress()
             Helper().transitionToMaps(view: self.view)
-
         }
     }
+    
+    //MARK: - Button methods
     
     func showEmailAddress() {
         
@@ -76,6 +77,7 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
         }
     }
     
+    
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if error != nil {
             print(error as Any)
@@ -84,13 +86,10 @@ class ChooseLogInVC: UIViewController, LoginButtonDelegate {
         print("Successfully logged in with facebook")
     }
     
+    
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("did log out of facebook")
     }
-    
-    
-    //MARK: - Transition to Maps
-    
 }
 
 

@@ -57,7 +57,6 @@
 		9FB93ABC225B859E00360E48 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93ABB225B859E00360E48 /* Helper.swift */; };
 		9FB93AC2225DF78300360E48 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AC1225DF78300360E48 /* CategoryList.swift */; };
 		9FB93AC4225DFDDC00360E48 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */; };
-		9FBBA31F22562F9E00A8FD2B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */; };
 		9FBE30012359D0D100F2337E /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE2FF72359D0CF00F2337E /* UIViewXRadialGradient.swift */; };
 		9FBE30022359D0D100F2337E /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE2FF82359D0CF00F2337E /* UISliderX.swift */; };
 		9FBE30032359D0D100F2337E /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE2FF92359D0D000F2337E /* UITextFieldX.swift */; };
@@ -181,7 +180,6 @@
 		9FB93ABB225B859E00360E48 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		9FB93AC1225DF78300360E48 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
-		9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		9FBE2FF72359D0CF00F2337E /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewXRadialGradient.swift; path = DesignableX/UIViewXRadialGradient.swift; sourceTree = SOURCE_ROOT; };
 		9FBE2FF82359D0CF00F2337E /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISliderX.swift; path = DesignableX/UISliderX.swift; sourceTree = SOURCE_ROOT; };
 		9FBE2FF92359D0D000F2337E /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextFieldX.swift; path = DesignableX/UITextFieldX.swift; sourceTree = SOURCE_ROOT; };
@@ -314,7 +312,6 @@
 				9F325795231FA29B001D738F /* Authentification */,
 				9FB93AB5225B5C8E00360E48 /* ContainerView.swift */,
 				9F4CD12C22537CA8001EBCD2 /* MapViewController.swift */,
-				9FBBA31E22562F9E00A8FD2B /* CategoryTableViewController.swift */,
 				9FB93AC3225DFDDC00360E48 /* DetailTableViewController.swift */,
 				9FB93AB3225B596900360E48 /* SideMenuVC.swift */,
 				9FB93AB7225B6AC800360E48 /* SearchBySeasonVC.swift */,
@@ -667,7 +664,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -684,7 +681,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LanguageManager_iOS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -774,7 +771,6 @@
 				9F256A86226088C5003D459A /* DetailVC.swift in Sources */,
 				9FBE300A2359D0D100F2337E /* UIViewX.swift in Sources */,
 				9F5D65632302A762007B2BF4 /* GMUSimpleClusterAlgorithm.m in Sources */,
-				9FBBA31F22562F9E00A8FD2B /* CategoryTableViewController.swift in Sources */,
 				9FFC7187231FEAD800E486D0 /* Constants.swift in Sources */,
 				9F5D65622302A762007B2BF4 /* GQTPointQuadTreeChild.m in Sources */,
 				9FBE30092359D0D100F2337E /* UIButtonX.swift in Sources */,

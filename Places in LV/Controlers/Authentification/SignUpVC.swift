@@ -24,6 +24,8 @@ class SignUpVC: UIViewController {
         setUpElements()
     }
     
+    //MARK: - Setting up elements
+    
     func setUpElements() {
         
         //Hide the error label
@@ -62,6 +64,7 @@ class SignUpVC: UIViewController {
         return nil
     }
     
+    //MARK: - Action methods
     
     @IBAction func signUpTapped(_ sender: UIButton) {
         
@@ -107,10 +110,10 @@ class SignUpVC: UIViewController {
         }
     }
     
+    
     func showError(_ message:String) {
         
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    
 }

@@ -15,13 +15,22 @@ class SideMenuVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpView()
+    }
+    
+    //MARK: - Setting up views
+    
+    func setUpView() {
+        
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
         swipeLeft.direction = .left
         self.categoriesTableView.addGestureRecognizer(swipeLeft)
         
         categoriesTableView.isScrollEnabled = false
     }
-
+    
+    //MARK: - Table view and Data source
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -37,8 +46,10 @@ class SideMenuVC: UITableViewController {
         }
     }
     
+    //MARK: - Action methods
+    
     @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
-       
+        
         NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("removeAlphaView"), object: nil)
     }

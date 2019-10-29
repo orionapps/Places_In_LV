@@ -18,13 +18,20 @@ class NewObjectAddingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Utilities.styleFilledButton(nextBtn)
+        setUpView()
+    }
+    
+    //MARK: - Setting up view
+    
+    func setUpView() {
+        
         Utilities.styleFilledButton(nextBtn)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDescriptionVC" {
@@ -40,7 +47,6 @@ class NewObjectAddingVC: UIViewController {
                 AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: Constants.ErrorMessages.pleaseAddPhoto.localiz())
             }
         }
-        
     }
 }
 
@@ -50,9 +56,8 @@ class NewObjectAddingVC: UIViewController {
 
 extension NewObjectAddingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        
         let chooseFromLibrary = "Choose from library"
         let photoLibraryAction = UIAlertAction(title: chooseFromLibrary.localiz(), style: .default) { (action) in
             self.showImagePickerController(sourceType: .photoLibrary)
@@ -79,6 +84,7 @@ extension NewObjectAddingVC: UIImagePickerControllerDelegate, UINavigationContro
         imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true, completion: nil)
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

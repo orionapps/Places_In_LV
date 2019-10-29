@@ -16,10 +16,8 @@ func + (left: CGPoint, right: CGPoint) -> CGPoint {
 
 class DetailVC: UIViewController, UIScrollViewDelegate {
     
-    
     @IBOutlet weak var viewForScrollView: UIViewX!
     @IBOutlet weak var backBtn: UIButton!
-    
     @IBOutlet weak var openingHoursLabel: UILabel!
     @IBOutlet weak var navigationBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -27,7 +25,7 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var hideViewBtn: UIButton!
-
+    
     
     var locationName: String = ""
     var locationInfo: String = ""
@@ -35,19 +33,20 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
     var locationLatitude: Double = 0
     var locationLongitude: Double = 0
     var openingHours: String = ""
-
     
     var oldContentOffset = CGPoint.zero
     var topConstraint:CGFloat = 0
     
-    
     var panGR: UIPanGestureRecognizer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpView()
     }
+    
+    //MARK: - Setting up view
     
     func setUpView() {
         
@@ -74,11 +73,13 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
         scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: locationInfoLabel.bottomAnchor).isActive = true
     }
     
+    
     override func viewDidLayoutSubviews() {
         
         scrollView.updateContentView()
     }
     
+    //MARK: - Action methods
     
     @IBAction func backPressed(_ sender: UIButton) {
         
@@ -125,6 +126,8 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
         present(actionSheet, animated: true, completion: nil)
     }
 }
+
+//MARK: - Extension
 
 extension UIScrollView {
     func updateContentView() {

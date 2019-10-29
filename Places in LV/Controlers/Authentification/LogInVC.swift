@@ -17,9 +17,10 @@ class LogInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpElements()
     }
+    
     
     func setUpElements() {
         
@@ -47,12 +48,14 @@ class LogInVC: UIViewController {
         return nil
     }
     
+    
     func showError(_ message:String) {
         
         errorLabel.text = message
         errorLabel.alpha = 1
     }
     
+    //MARK: - Action methods
     
     @IBAction func logInBtnPressed(_ sender: UIButton) {
         
@@ -67,8 +70,8 @@ class LogInVC: UIViewController {
             
             let password = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = self.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        // Signing in the user
+            
+            // Signing in the user
             
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 
@@ -78,7 +81,6 @@ class LogInVC: UIViewController {
                 }
             }
             Helper().transitionToMaps(view: self.view)
-
+        }
     }
-}
 }

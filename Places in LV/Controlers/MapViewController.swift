@@ -14,7 +14,7 @@ import FirebaseStorage
 import FirebaseAuth
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, GMUClusterManagerDelegate {
-
+    
     @IBOutlet weak var mapView: GMSMapView!
     private var clusterManager: GMUClusterManager!
     @IBOutlet weak var alphaView: UIView!
@@ -30,10 +30,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     let isCustom: Bool = true
     
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpView()
+    }
+    
+    //MARK: - Setting up view
+    
+    func setUpView() {
         
         addStyleToMap()
         listenToNotifications()
@@ -59,21 +66,20 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     }
     
     @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
-       
+        
         NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
         
         removeAlphaView()
     }
     
     @objc func tapAction(tap: UITapGestureRecognizer) {
-       
+        
         NotificationCenter.default.post(name: Notification.Name("ToggleSideMenu"), object: nil)
         
         removeAlphaView()
     }
     
-    
-    
+    //MARK: - Notifications
     
     func listenToNotifications() {
         
@@ -103,6 +109,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                                                object: nil)
     }
     
+    //MARK: - Action methods
     
     @objc func showCategories() {
         
@@ -124,6 +131,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         removeAlphaView()
     }
     
+    
     @objc func signOut() {
         
         removeAlphaView()
@@ -141,6 +149,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         view.window?.makeKeyAndVisible()
     }
     
+    
     @objc func removeAlphaView() {
         
         if UserDefaults.standard.bool(forKey: "sideMenuIsOpen") == true {
@@ -149,6 +158,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 self.alphaView.isHidden = false
             }
         } else {
+            
             UIView.animate(withDuration: 0.3) {
                 self.alphaView.alpha = 0
                 self.alphaView.isHidden = true
@@ -222,14 +232,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     //MARK: - Location manager delegates
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
         let camera = GMSCameraPosition.camera(withLatitude: centerOfLatviaLat, longitude: centerOfLatviaLong, zoom: 6)
         mapView.animate(to: camera)
         
         mapView.settings.myLocationButton = true
         self.locationManager.stopUpdatingLocation()
     }
-
+    
     
     // MARK: - Google maps delegate
     
@@ -269,16 +279,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     print("Got an error fetching data: \(error.localizedDescription)")
                     return
                 }
-
+                
                 if let data = data {
-
+                    
                     destVC.locationImage = UIImage(data: data)!
                     Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
                     
                     self!.navigationController?.pushViewController(destVC, animated: true)
                 }
             }
-                    
         } else {
             
             Helper().stopActivityIndicator(activityIndicator: activityIndicator)
@@ -288,33 +297,25 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             
             self.present(alert, animated: true, completion: nil)
-            }
-}
+        }
+    }
     
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
         if let poiItem = marker.userData as? POIItem {
-
-
+            
             marker.tracksInfoWindowChanges = true
             
             self.customInfoWindow?.contentView.layer.cornerRadius = 15
             self.customInfoWindow?.objectLabel.sizeToFit()
             self.customInfoWindow?.objectLabel.adjustsFontSizeToFitWidth = true
             self.customInfoWindow?.objectLabel.textAlignment = NSTextAlignment.center
-
-            self.customInfoWindow?.objectLabel.text = poiItem.name
-
-
-            //self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: <#T##String#>)
-//            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
             
-//
-//                self.customInfoWindow?.imageView.image = UIImage(contentsOfFile: path)!
-//            }
+            self.customInfoWindow?.objectLabel.text = poiItem.name
+            
             return self.customInfoWindow
-        }else {
+        } else {
             UIView.animate(withDuration: 0.5, delay: 0.2, options: [.curveEaseOut],
                            animations: {
                             let newCamera = GMSCameraPosition.camera(withTarget: marker.position,
@@ -338,11 +339,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             customMarkerView.contentView.layer.cornerRadius = 15
             customMarkerView.previewLabelName = poiItem.name
             
-            
-//            if let path = Bundle.main.path(forResource: poiItem.image, ofType: "jpg"){
-//
-//                customMarkerView.imageView.image = UIImage(contentsOfFile: path)!
-//            }
         } else {
             
             UIView.animate(withDuration: 0.5, delay: 0.2, options: [.curveEaseOut],
@@ -354,10 +350,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             }, completion: {
                 finished in
             })
-            NSLog("Did tap a normal marker")
         }
         return false
     }
+    
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         
@@ -369,7 +365,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
         
         let addNewObject = UIAlertAction(title: buttonTitle.localiz(), style: .default) { action in
-
+            
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "NewObjectAdding", bundle: nil)
             let newObjectVC = mainStoryboard.instantiateViewController(withIdentifier: "NewObjectAddingVC") as! NewObjectAddingVC
             
@@ -385,9 +381,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         present(actionSheet, animated: true, completion: nil)
     }
     
-       
+    
     // MARK: - Marker Clusetring methods
-
+    
     func clusterMarkers() {
         
         let iconGenerator = GMUDefaultClusterIconGenerator()

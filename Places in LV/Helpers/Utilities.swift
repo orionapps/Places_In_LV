@@ -17,7 +17,6 @@ class Utilities {
         let bottomLine = CALayer()
         
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
-        
         bottomLine.backgroundColor = Helper().navigationBarBackgroundColor().cgColor
         
         textfield.attributedPlaceholder = NSAttributedString(string: withText, attributes: [NSAttributedString.Key.foregroundColor : Helper().navigationBarBackgroundColor()])
@@ -30,8 +29,8 @@ class Utilities {
         
         // Add the line to the text field
         textfield.layer.addSublayer(bottomLine)
-        
     }
+    
     
     static func styleFilledButton(_ button:UIButton) {
         
@@ -41,6 +40,7 @@ class Utilities {
         button.tintColor = UIColor.white
     }
     
+    
     static func styleDarkFilledButton(_ button:UIButton) {
         
         // Dark Filled rounded corner style
@@ -48,6 +48,7 @@ class Utilities {
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
     }
+    
     
     static func styleHollowButton(_ button:UIButton) {
         
@@ -57,6 +58,7 @@ class Utilities {
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.black
     }
+    
     
     static func isPasswordValid(_ password : String) -> Bool {
         

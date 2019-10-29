@@ -38,7 +38,7 @@ class ObjectPreviewView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+
     
     private func commonInit() {
         

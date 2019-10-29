@@ -26,26 +26,29 @@ class NewObjectDescriptionVC: UIViewController {
     var tappedLatitude: String = ""
     var tappedLongitude: String = ""
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpView()
     }
     
+    //MARK: - View set up
+    
     func setUpView() {
         
         self.backgroundImageView.image = pickedImage
-    
+        
         Utilities.styleFilledButton(submitBtn)
         Utilities.styleDarkFilledButton(selectCategoryBtn)
         
         categoryCollection.forEach { (categoryItem) in
             
-        Utilities.styleFilledButton(categoryItem)
+            Utilities.styleFilledButton(categoryItem)
         }
     }
     
+    //MARK: - Networking
     
     func uploadObjectData() {
         
@@ -87,11 +90,11 @@ class NewObjectDescriptionVC: UIViewController {
         
         // Uploading object photo to firebase storage
         
-         let data = pickedImage.jpegData(compressionQuality: 1.0)
+        let data = pickedImage.jpegData(compressionQuality: 1.0)
         
-         let imageObjectRef = storageRef.child(Constants.MyKeys.userAddedImageFolderInFirebase).child(objectNameTxtField.text! + "-" + imageName)
-            
-            imageObjectRef.putData(data!, metadata: nil) { (metadata, error) in
+        let imageObjectRef = storageRef.child(Constants.MyKeys.userAddedImageFolderInFirebase).child(objectNameTxtField.text! + "-" + imageName)
+        
+        imageObjectRef.putData(data!, metadata: nil) { (metadata, error) in
             if let error = error {
                 Helper().stopActivityIndicator(activityIndicator: self.activityIndicator)
                 AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: error.localizedDescription)
@@ -148,41 +151,42 @@ class NewObjectDescriptionVC: UIViewController {
         }
     }
     
+    //MARK: - Action methods
     
     @IBAction func selectCategoryPressed(_ sender: UIButton) {
         
         categoryCollection.forEach { (categoryItem) in
             
             UIView.animate(withDuration: 0.3) {
-                 categoryItem.isHidden = !categoryItem.isHidden
+                categoryItem.isHidden = !categoryItem.isHidden
                 self.view.layoutIfNeeded()
             }
         }
     }
     
     
-        @IBAction func categoryItemPressed(_ sender: UIButton) {
+    @IBAction func categoryItemPressed(_ sender: UIButton) {
+        
+        guard let title = sender.currentTitle else {return}
+        
+        self.objectCategory = title
+        print(self.objectCategory)
+        
+        categoryCollection.forEach { (categoryItem) in
             
-            guard let title = sender.currentTitle else {return}
-            
-            self.objectCategory = title
-            print(self.objectCategory)
-            
-            categoryCollection.forEach { (categoryItem) in
-                
-                UIView.animate(withDuration: 0.3) {
-                    self.selectCategoryBtn.setTitle(title, for: .normal)
-                    self.selectCategoryBtn.setImage(nil, for: .normal)
-                    categoryItem.isHidden = !categoryItem.isHidden
-                    self.view.layoutIfNeeded()
-                }
+            UIView.animate(withDuration: 0.3) {
+                self.selectCategoryBtn.setTitle(title, for: .normal)
+                self.selectCategoryBtn.setImage(nil, for: .normal)
+                categoryItem.isHidden = !categoryItem.isHidden
+                self.view.layoutIfNeeded()
             }
-    }
-        
-        
-        @IBAction func submitPressed(_ sender: UIButton) {
-            
-            uploadObjectData()
         }
     }
+    
+    
+    @IBAction func submitPressed(_ sender: UIButton) {
+        
+        uploadObjectData()
+    }
+}
 

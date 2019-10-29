@@ -17,7 +17,7 @@ let imageCache = NSCache<NSString, UIImage>()
 
 
 class Helper: UIImageView {
-
+    
     var imageUrlString: String?
     
     // Navigation bar color for whole app
@@ -37,8 +37,6 @@ class Helper: UIImageView {
         
         return Helper().hexStringToUIColor(hex: "195D7A", alpha: 1)
     }
-    
-    
     
     
     func hexStringToUIColor (hex:String, alpha: Float) -> UIColor {
@@ -67,7 +65,6 @@ class Helper: UIImageView {
         )
     }
     
-    
     //Activity indicator methods
     
     func startActivityIndicator(view: UIView, activityIndicator: UIActivityIndicatorView) {
@@ -85,19 +82,20 @@ class Helper: UIImageView {
     //Cache images
     
     func stopActivityIndicator (activityIndicator: UIActivityIndicatorView) {
-
+        
         activityIndicator.stopAnimating()
         //UIApplication.shared.endIgnoringInteractionEvents()
     }
-        
+    
+    
     func transitionToMaps(view: UIView) {
-            
-            let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-            let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
-            
-            view.window?.rootViewController = mapsVC
-            view.window?.makeKeyAndVisible()
-        }
+        
+        let mapStoryboard : UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
+        let mapsVC =  mapStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.mapsVC) as! ContainerView
+        
+        view.window?.rootViewController = mapsVC
+        view.window?.makeKeyAndVisible()
+    }
     
     //Change Language
     
@@ -111,7 +109,5 @@ class Helper: UIImageView {
             view.alpha = 0
         }
     }
-    
-
 }
 

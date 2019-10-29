@@ -26,7 +26,7 @@ struct Constants {
     }
     
     struct FrequentlyUsedMessages {
-
+        
         static let cancel = "Cancel"
     }
     

@@ -11,8 +11,8 @@ import UIKit
 private let reuseIdentifier = "CategoryCell"
 var allLocations = [CategoryList]()
 
-var categoriesArray = ["Sightseeings", "Nature And Parks", "Museums", "Playgrounds", "Outdoor Sports"]
-var categoryImageNames = ["Sightseeings", "ParksAndNature", "Museums", "Playgrounds", "Sports"]
+var categoriesArray = ["Sightseeings", "Nature And Parks", "Museums", "Playgrounds", "Outdoor Sports", "Castles and Manors"]
+var categoryImageNames = ["Sightseeings", "ParksAndNature", "Museums", "Playgrounds", "Sports", "Castles"]
 
 var parallaxOffsetSpeed = 30
 var cellHeight: CGFloat = 172
@@ -25,20 +25,20 @@ class CategoryCollectionVC: UICollectionViewController {
         
         fetchData()
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return categoriesArray.count
     }
-
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -46,10 +46,10 @@ class CategoryCollectionVC: UICollectionViewController {
         
         cell.categoryBackgroundImg.image = UIImage(named: categoryImageNames[indexPath.row])
         cell.categoryLabel.text = categoriesArray[indexPath.row].localiz()
-    
+        
         return cell
     }
-
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -128,55 +128,38 @@ class CategoryCollectionVC: UICollectionViewController {
                 if let locationOpeningHours = location.openingHours {
                     destVC.openingHours.append(locationOpeningHours)
                 }
+            } else if indexPath.row == 5 && location.locationID == 5 {
+                
+                destVC.locationNamesArray.append(location.locationName)
+                destVC.locationInfoArray.append(location.locationInfo)
+                destVC.locationLatitude.append(location.lat)
+                destVC.locationLongitude.append(location.long)
+                
+                if let locationPhotos = location.placePhoto {
+                    destVC.locationImage.append(locationPhotos)
+                }
+                
+                if let locationOpeningHours = location.openingHours {
+                    destVC.openingHours.append(locationOpeningHours)
+                }
             }
-            
         }
         self.navigationController?.pushViewController(destVC, animated: true)
     }
-
-
-func fetchData() {
     
-    guard let urlPath = Bundle.main.url(forResource: "Data", withExtension: "json") else {
-        return
-    }
-    do {
-        let data = try Data(contentsOf: urlPath)
-        allLocations = try JSONDecoder().decode(Array<CategoryList>.self, from: data)
-    } catch {
-        print(error)
-    }
-}
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    //MARK: - Networking
     
+    func fetchData() {
+        
+        guard let urlPath = Bundle.main.url(forResource: "Data", withExtension: "json") else {
+            return
+        }
+        do {
+            let data = try Data(contentsOf: urlPath)
+            allLocations = try JSONDecoder().decode(Array<CategoryList>.self, from: data)
+        } catch {
+            print(error)
+        }
     }
-    */
-
+    
 }

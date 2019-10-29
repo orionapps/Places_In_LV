@@ -22,8 +22,8 @@ class AlertService {
             topVC.present(alert, animated: true, completion: completion)
         }
     }
-    
 }
+
 
 extension UIApplication {
     class func getTopMostViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
