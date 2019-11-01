@@ -19,6 +19,8 @@ class DetailCollectionVC: UICollectionViewController {
     var locationLatitude = [Double] ()
     var locationLongitude = [Double] ()
     var openingHours = [String]()
+    var imageArbitration = [String]()
+    var descriptionArbitration = [String]()
     
     var cellHeight: CGFloat = 370
     var parallaxOffsetSpeed: CGFloat = 40
@@ -28,6 +30,11 @@ class DetailCollectionVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = Helper().navigationBarBackgroundColor()
+        self.view.backgroundColor?.withAlphaComponent(0.7)
+        
+        print(locationNamesArray)
     }
     
     // MARK: UICollectionViewDataSource
@@ -104,6 +111,8 @@ class DetailCollectionVC: UICollectionViewController {
             destVC.locationLatitude = self.locationLatitude[indexPath.item]
             destVC.locationLongitude = self.locationLongitude[indexPath.item]
             destVC.openingHours = self.openingHours[indexPath.item]
+            destVC.descriptionArbitration = self.descriptionArbitration[indexPath.item]
+            destVC.imageArbitration = self.imageArbitration[indexPath.item]
             
             let storageRef = Storage.storage().reference(withPath: "Objects/\((locationImage[indexPath.row])).jpg")
             storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in

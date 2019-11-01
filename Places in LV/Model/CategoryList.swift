@@ -8,25 +8,6 @@
 
 import Foundation
 
-//struct CategoryList: Decodable {
-//    var Sightseeings : [LocationDetails]?
-//    var Museums : [LocationDetails]?
-//    var NatureAndParks : [LocationDetails]?
-//    var Playgrounds : [LocationDetails]?
-//    var sportsPlaygrounds : [LocationDetails]?
-//}
-//
-//struct LocationDetails: Decodable {
-//
-//
-//    var locationName: String
-//    var lat: Double
-//    var long: Double
-//    var locationInfo: String
-//    var placePhoto: String?
-//    var openingHours: String?
-//}
-
 struct CategoryList: Decodable {
 
     var locationID: Int
@@ -36,7 +17,8 @@ struct CategoryList: Decodable {
     var locationInfo: String
     var placePhoto: String?
     var openingHours: String?
-    
+    var descriptionArbitration: String?
+    var imageArbitration: String?
 }
 
 // Sightseeings locationID - 0
@@ -44,3 +26,4 @@ struct CategoryList: Decodable {
 // Nature and Parks locationID = 2
 // Playgrounds locationID = 3
 // sportsPlaygrounds locationID = 4
+// Castles and Mansons locationID = 5

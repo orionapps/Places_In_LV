@@ -38,18 +38,22 @@ class Helper: UIImageView {
         return Helper().hexStringToUIColor(hex: "195D7A", alpha: 1)
     }
     
+    // Light blue color
+    func lightBlueColor() -> UIColor {
+        
+        return Helper().hexStringToUIColor(hex: "5DA3C1", alpha: 0.7)
+    }
+    
     
     func hexStringToUIColor (hex:String, alpha: Float) -> UIColor {
         
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         if (cString.hasPrefix("#")) {
-            
             cString.remove(at: cString.startIndex)
         }
         
         if ((cString.count) != 6) {
-            
             return UIColor.gray
         }
         

@@ -17,14 +17,12 @@ func + (left: CGPoint, right: CGPoint) -> CGPoint {
 class DetailVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var viewForScrollView: UIViewX!
-    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var openingHoursLabel: UILabel!
     @IBOutlet weak var navigationBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var locationInfoLabel: UILabel!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationImageView: UIImageView!
-    @IBOutlet weak var hideViewBtn: UIButton!
     
     
     var locationName: String = ""
@@ -33,6 +31,8 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
     var locationLatitude: Double = 0
     var locationLongitude: Double = 0
     var openingHours: String = ""
+    var imageArbitration: String = ""
+    var descriptionArbitration: String = ""
     
     var oldContentOffset = CGPoint.zero
     var topConstraint:CGFloat = 0
@@ -79,11 +79,37 @@ class DetailVC: UIViewController, UIScrollViewDelegate {
         scrollView.updateContentView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toInfoVC" {
+            
+            let destVC = segue.destination as! InfoVC
+            
+            if let image = locationImageView.image {
+                destVC.image = image
+                destVC.imageInfoText = self.imageArbitration
+                destVC.descriptionInfoText = self.descriptionArbitration
+                
+            } else {
+                AlertService.showAlert(style: .alert, title: Constants.ErrorMessages.error.localiz(), message: Constants.ErrorMessages.pleaseAddPhoto.localiz())
+            }
+        }
+    }
+    
     //MARK: - Action methods
     
-    @IBAction func backPressed(_ sender: UIButton) {
+    @IBAction func infoBtnPressed(_ sender: UIButton) {
         
-        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func shareBtnPressed(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBAction func changeBtnPressed(_ sender: UIButton) {
+        
     }
     
     

@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseAuth
 
 
 class NewObjectDescriptionVC: UIViewController {
@@ -26,11 +27,16 @@ class NewObjectDescriptionVC: UIViewController {
     var tappedLatitude: String = ""
     var tappedLongitude: String = ""
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    var userUID:String = ""
+    var userDisplayName: String = ""
+    var userEmail: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpView()
+        fetchUserInfo()
     }
     
     //MARK: - View set up
@@ -43,6 +49,7 @@ class NewObjectDescriptionVC: UIViewController {
         Utilities.styleDarkFilledButton(selectCategoryBtn)
         
         categoryCollection.forEach { (categoryItem) in
+            
             
             Utilities.styleFilledButton(categoryItem)
         }
@@ -68,7 +75,7 @@ class NewObjectDescriptionVC: UIViewController {
             let objectDescription = String(describing: objectDescriptionTxtField.text)
             let objectWorkingHours = String(describing: objectWorkingHoursTxtField.text)
             
-            let newObjectDict = ["Image UUID" : imageName ,"Latitude" : tappedLatitude,"Longitude" : tappedLongitude ,"Object Category": objectCategory,"Object Name": objectName, "Object description": objectDescription, "Object working hours": objectWorkingHours]
+            let newObjectDict = ["Image UUID" : imageName , "UsersUID" : userUID,"UsersDisplayName" : userDisplayName,"UsersEmail" : userEmail,"Latitude" : tappedLatitude,"Longitude" : tappedLongitude ,"Object Category": objectCategory,"Object Name": objectName, "Object description": objectDescription, "Object working hours": objectWorkingHours]
             
             let jsonData = try! JSONSerialization.data(withJSONObject: newObjectDict, options: .prettyPrinted)
             
@@ -147,6 +154,27 @@ class NewObjectDescriptionVC: UIViewController {
                     AlertService.showAlert(style: .alert, title: success.localiz(), message: successfullyUploadedDataMessage.localiz(), actions: [ok]) {
                     }
                 }
+            }
+        }
+    }
+    
+    
+    func fetchUserInfo() {
+        
+        if let user = Auth.auth().currentUser {
+            
+            self.userUID = user.uid
+            
+            if let userDisplayNameExists = user.displayName {
+                self.userDisplayName = userDisplayNameExists
+            } else {
+                self.userDisplayName = "Unknown user Diplay name with UID: \(user.uid)"
+            }
+            
+            if let userEmailExists = user.email {
+                self.userEmail = userEmailExists
+            } else {
+                self.userEmail = "Unknown user Email with UID: \(user.uid)"
             }
         }
     }

@@ -47,9 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         // Checking if user is already signed in
-        if let alreadySignedIn = Auth.auth().currentUser {
-            
-            print("User \(alreadySignedIn) is already signed in")
+        if let _ = Auth.auth().currentUser {
             proceedToMaps()
         } else {
             print("Is not signed in yet")

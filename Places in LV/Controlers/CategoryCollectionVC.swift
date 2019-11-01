@@ -23,6 +23,8 @@ class CategoryCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = Helper().navigationBarBackgroundColor()
+        self.view.backgroundColor?.withAlphaComponent(0.7)
         fetchData()
     }
     
@@ -53,94 +55,64 @@ class CategoryCollectionVC: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if indexPath.row == 0 {
+            
+            appendDataWith(locationID: 0)
+        } else if indexPath.row == 1 {
+            
+            appendDataWith(locationID: 1)
+        } else if indexPath.row == 2 {
+            
+            appendDataWith(locationID: 2)
+        } else if indexPath.row == 3 {
+            
+            appendDataWith(locationID: 3)
+        } else if indexPath.row == 4 {
+            
+            appendDataWith(locationID: 4)
+        } else if indexPath.row == 5 {
+            
+            appendDataWith(locationID: 5)
+        }
+    }
+    
+    
+    func appendDataWith(locationID: Int) {
+        
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
         let destVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailCollectionVC") as! DetailCollectionVC
         
         for location in allLocations {
             
-            if indexPath.row == 0 && location.locationID == 0{
+            if location.locationID == locationID {
                 
                 destVC.locationNamesArray.append(location.locationName)
                 destVC.locationInfoArray.append(location.locationInfo)
                 destVC.locationLatitude.append(location.lat)
                 destVC.locationLongitude.append(location.long)
                 
+                if let imageArbitration = location.imageArbitration {
+                    destVC.imageArbitration.append(imageArbitration)
+                } else {
+                    destVC.imageArbitration.append("")
+                }
+                
+                if let descriptionArbitration = location.descriptionArbitration {
+                    destVC.descriptionArbitration.append(descriptionArbitration)
+                } else {
+                    destVC.descriptionArbitration.append("")
+                }
+                
                 if let locationPhotos = location.placePhoto {
                     destVC.locationImage.append(locationPhotos)
+                } else {
+                    destVC.locationImage.append("standartImage")
                 }
                 
                 if let locationOpeningHours = location.openingHours {
                     destVC.openingHours.append(locationOpeningHours)
-                }
-            } else if indexPath.row == 1 && location.locationID == 1{
-                
-                destVC.locationNamesArray.append(location.locationName)
-                destVC.locationInfoArray.append(location.locationInfo)
-                destVC.locationLatitude.append(location.lat)
-                destVC.locationLongitude.append(location.long)
-                
-                if let locationPhotos = location.placePhoto {
-                    destVC.locationImage.append(locationPhotos)
-                }
-                
-                if let locationOpeningHours = location.openingHours {
-                    destVC.openingHours.append(locationOpeningHours)
-                }
-            } else if indexPath.row == 2 && location.locationID == 2{
-                
-                destVC.locationNamesArray.append(location.locationName)
-                destVC.locationInfoArray.append(location.locationInfo)
-                destVC.locationLatitude.append(location.lat)
-                destVC.locationLongitude.append(location.long)
-                
-                if let locationPhotos = location.placePhoto {
-                    destVC.locationImage.append(locationPhotos)
-                }
-                
-                if let locationOpeningHours = location.openingHours {
-                    destVC.openingHours.append(locationOpeningHours)
-                }
-            } else if indexPath.row == 3 && location.locationID == 3{
-                
-                destVC.locationNamesArray.append(location.locationName)
-                destVC.locationInfoArray.append(location.locationInfo)
-                destVC.locationLatitude.append(location.lat)
-                destVC.locationLongitude.append(location.long)
-                
-                if let locationPhotos = location.placePhoto {
-                    destVC.locationImage.append(locationPhotos)
-                }
-                
-                if let locationOpeningHours = location.openingHours {
-                    destVC.openingHours.append(locationOpeningHours)
-                }
-            } else if indexPath.row == 4 && location.locationID == 4{
-                
-                destVC.locationNamesArray.append(location.locationName)
-                destVC.locationInfoArray.append(location.locationInfo)
-                destVC.locationLatitude.append(location.lat)
-                destVC.locationLongitude.append(location.long)
-                
-                if let locationPhotos = location.placePhoto {
-                    destVC.locationImage.append(locationPhotos)
-                }
-                
-                if let locationOpeningHours = location.openingHours {
-                    destVC.openingHours.append(locationOpeningHours)
-                }
-            } else if indexPath.row == 5 && location.locationID == 5 {
-                
-                destVC.locationNamesArray.append(location.locationName)
-                destVC.locationInfoArray.append(location.locationInfo)
-                destVC.locationLatitude.append(location.lat)
-                destVC.locationLongitude.append(location.long)
-                
-                if let locationPhotos = location.placePhoto {
-                    destVC.locationImage.append(locationPhotos)
-                }
-                
-                if let locationOpeningHours = location.openingHours {
-                    destVC.openingHours.append(locationOpeningHours)
+                } else {
+                    destVC.openingHours.append("Unknown")
                 }
             }
         }

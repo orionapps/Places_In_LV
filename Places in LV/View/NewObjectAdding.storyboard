@@ -19,7 +19,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SingInWithEmailImage" translatesAutoresizingMaskIntoConstraints="NO" id="KIB-Ef-D7E">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uo4-WB-7TD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImageEng" translatesAutoresizingMaskIntoConstraints="NO" id="Uo4-WB-7TD">
                                 <rect key="frame" x="10" y="124" width="394" height="648"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -236,6 +236,7 @@
     </scenes>
     <resources>
         <image name="SingInWithEmailImage" width="512" height="768"/>
+        <image name="addImageEng" width="200" height="200"/>
         <image name="arroeDownIcon" width="32" height="32"/>
     </resources>
 </document>

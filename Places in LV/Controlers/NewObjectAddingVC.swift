@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class NewObjectAddingVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
@@ -24,6 +25,17 @@ class NewObjectAddingVC: UIViewController {
     //MARK: - Setting up view
     
     func setUpView() {
+        
+        if nextBtn.titleLabel?.text == "Next" {
+            
+            imageView.image = UIImage(named: "addImageEng")
+        } else if nextBtn.titleLabel?.text == "Далее" {
+            
+            imageView.image = UIImage(named: "addImageRus")
+        } else if nextBtn.titleLabel?.text == "Tālāk" {
+            
+            imageView.image = UIImage(named: "addImageLv")
+        }
         
         Utilities.styleFilledButton(nextBtn)
         
@@ -89,9 +101,13 @@ extension NewObjectAddingVC: UIImagePickerControllerDelegate, UINavigationContro
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            imageView.contentMode = .scaleAspectFill
             imageView.image = editedImage
             imageView.alpha = 1.0
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            imageView.contentMode = .scaleAspectFill
             imageView.image = originalImage
             imageView.alpha = 1.0
         }

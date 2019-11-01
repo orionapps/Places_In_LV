@@ -15,10 +15,8 @@ class Utilities {
         
         // Create the bottom line
         let bottomLine = CALayer()
-        
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         bottomLine.backgroundColor = Helper().navigationBarBackgroundColor().cgColor
-        
         textfield.attributedPlaceholder = NSAttributedString(string: withText, attributes: [NSAttributedString.Key.foregroundColor : Helper().navigationBarBackgroundColor()])
         textfield.textColor = Helper().navigationBarBackgroundColor()
         textfield.tintColor = Helper().navigationBarBackgroundColor()

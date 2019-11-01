@@ -6,17 +6,9 @@
         "long" : 24.109323,
         "locationInfo": "Rīgas Svētā Pētera baznīca (vācu: Petrikirche) ir augstākā Rīgas baznīca, kā arī ievērojams gotikas stila 13. gadsimta valsts nozīmes arhitektūras piemineklis. Svētā Pētera baznīca atrodas Vecrīgā, Reformācijas laukumā 1. Pirmo reizi rakstos minēta 1209. gadā, bet no 13. gadsimta saglabājušās tagadējās ēkas sānu jomu ārsienas un daži pīlāri interjerā. Līdz 1524. gadam tas bija Romas Katoļu baznīcas dievnams, bet no 1526. līdz 1940. gadam bija Rīgas luterāņu Sv. Pētera vācu draudzes dievnams, kopš 1991. gada Pētera baznīca ir Latvijas Evaņģēliski luteriskā baznīcas Rīgas Sv. Pētera draudzes luterāņu dievnams. Reliģisko darbību Sv. Pētera baznīcā reglamentē Reliģisko organizāciju likums un citi normatīvie akti. Tā tiek izmantota kā kulta celtne, koncertu, tematisku izstāžu par pilsētas attīstību un arhitektūru, mākslas darbu izstāžu, kultūras pasākumu norises vieta, kā arī kā starptautiska kultūras tūrisma objekts, kas ikdienā ir pieejams apmeklētajiem. Ēka un zeme ap to ir Rīgas pilsētas īpašums.[1] Patlaban Svētā Pētera evaņģēliski luteriskā draudze bez maksas izmanto vairākas baznīcas telpas, bet Latvijas valsts turpina finansēt baznīcas izpētes, konservācijas un restaurācijas darbus.",
         "placePhoto" : "Peterabaznica",
-        "openingHours" : "Otrdien - sestdien   \nno 10.00 līdz 18.00, kase no 10.00 līdz 17.00 - no 1.septembra līdz 30.aprīlim \nno 10.00 līdz 19.00, kase no 10.00 līdz 18.00 - no 1.maija līdz 31.augustam        \nSvētdienās  \nno 12.00 līdz 18.00, kase no 10.00 līdz 17.00 - no 1.septembra līdz 30.aprīlim \nno 12.00 līdz 19.00, kase no 10.00 līdz 18.00 - no 1.maija līdz 31.augustam\nPirmdienās slēgts"
-    },
-    
-    {
-        "locationID" : 0,
-        "locationName" : "Rīgas pils",
-        "lat" : 56.950993,
-        "long" : 24.100592,
-        "locationInfo": "Rīgas pils (Rīgas ordeņpils) ir viduslaiku pils, Latvijas Republikas Valsts prezidenta rezidence Rīgā, Daugavas krastā. Livonijas ordeņa pils — mestra rezidence šajā vietā uzcelta 1340. gadu beigās[1] (Rīgas II ordeņpils), 1484. gadā nopostīta, un 1515. gadā uzcelta no jauna (Rīgas III ordeņpils). Vēlāk pilī atradās poļu un zviedru vietvalžu rezidences, pēc tam Krievijas impērijas Baltijas provinču (Rīgas) ģenerālgubernatoru un Vidzemes gubernatoru mītne. Kad Latvija kļuva par neatkarīgu valsti, pilī ierīkota Latvijas Republikas Valsts prezidenta rezidence. Padomju laikā pilī atradās Pionieru pils un dažādi muzeji, bet pēc Latvijas neatkarības atjaunošanas tā restaurēta. Pilī iekārtotas reprezentācijas telpas un Valsts prezidenta apartamenti. Valsts nozīmes arhitektūras piemineklis, viena no Vecrīgas dominantēm, viena no izcilākajām viduslaiku pilīm Latvijā. Rīgas pils Sūtņu akreditācijas zāles interjers iekļauts Latvijas kultūras kanona arhitektūras un dizaina sadaļā.",
-        "placePhoto" : "RigasPils",
-        "openingHours" : "Iespējams apskatīt tikai no ārpuses, ekskursijas Rīgas pilī nav pieejamas."
+        "openingHours" : "Otrdien - sestdien   \nno 10.00 līdz 18.00, kase no 10.00 līdz 17.00 - no 1.septembra līdz 30.aprīlim \nno 10.00 līdz 19.00, kase no 10.00 līdz 18.00 - no 1.maija līdz 31.augustam        \nSvētdienās  \nno 12.00 līdz 18.00, kase no 10.00 līdz 17.00 - no 1.septembra līdz 30.aprīlim \nno 12.00 līdz 19.00, kase no 10.00 līdz 18.00 - no 1.maija līdz 31.augustam\nPirmdienās slēgts",
+        "descriptionArbitration" : "Made by me",
+        "imageArbitration" : "Made by me"
     },
     
     {
@@ -308,4 +300,105 @@
         "placePhoto" : "MalpilsMuiza",
         "openingHours" : "Nezināms"
     },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Turaidas Pils",
+        "lat" : 57.182408,
+        "long" : 24.850319,
+        "locationInfo": "Turaidas pils ir viena no senākajām mūsdienās apskatāmajām viduslaiku pilīm Latvijā. Atrodas Gaujas labajā krastā, Siguldas pilsētas teritorijā, Turaidā. Celta 1214. gadā kā Rīgas bīskapa (vēlāk arhibīskapa) pils nodedzinātās līvu valdnieka Kaupo koka pils vietā. Turaidas pils tiek uzskatīta par arheoloģiski vislabāk pētīto viduslaiku pili Baltijas valstīs. Valsts nozīmes arheoloģijas piemineklis un valsts nozīmes arhitektūras piemineklis, iekļauts Turaidas muzejrezervāta un Gaujas nacionālā parka sastāvā. Vairāk informācijas par pili un muzejrezervātu, ekskursijām un cenām ir iespējams apskatīt mājas lapā [www.turaida-muzejs.lv]",
+        "placePhoto" : "turaidasPils",
+        "openingHours" : "Vasaras sezona: \n1.maijs - 30.septembris 09:00-20:00 \n1.oktobris - 31.oktobris 09:00 - 19:00 \nZiemas sezona: \n1.novembris - 31.marts 10:00 - 17:00 \n1.aprīlis - 30.aprīlis 13:00 - 19:00"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Rundāles Pils",
+        "lat" : 56.413516,
+        "long" : 24.024491,
+        "locationInfo": "Rundāles pils ir nozīmīgākā baroka stila pils Latvijā. Atrodas Rundāles novada Pilsrundālē. Krievijas impērijā strādājošā itāļu arhitekta Frančesko Bartolomeo Rastrelli projektētā pils celta no 1736. līdz 1768. gadam kā Kurzemes un Zemgales hercoga Ernsta Johana Bīrona vasaras rezidence. Rundāles pils ansamblī ietilpst arī saimiecības ēkas un parks. Kopš 1972. gada pilī atrodas Rundāles pils muzejs un notiek pils un parka restaurācija ar mērķi atjaunot to sākotnējo izskatu. Rundāles pils ir iekļauta Latvijas kultūras kanonā. Vairāk informācijas par pili, ekskursijām un cenām ir iespējams apskatīt mājas lapā [rundale.net]",
+        "placePhoto" : "rundalesPils",
+        "openingHours" : "Maijs, Oktobris 10:00 - 18:00 \nJūnijs - Septembris 10:00-18:00 \nNovembris - Aprīlis 10:00 - 17:00"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Cēsu Pils",
+        "lat" : 57.313486,
+        "long" : 25.270257,
+        "locationInfo": "Cēsu pils ir ievērojamākā un vislabāk saglabātā viduslaiku pils Latvijā. Zobenbrāļu ordenis pils celtniecību uzsāka pirms 1218. gada, taču spožākā uzplaukumu periodu tā piedzīvoja sava nākamā saimnieka – Vācu ordeņa – valdīšanas laikā. Postošo Livonijas karu Cēsu pils sagaidīja kā varenākais cietoksnis Livonijā. 1577. gada septembrī apmēram 300 pilī patvērumu meklējušie ļaudis, nevēlēdamies krist Ivana Bargā karaspēka gūstā, uzspridzinājās ar šaujampulveri. Pēc Lielā Ziemeļu kara Cēsu pili vairs neatjaunoja, vienīgi kādreizējo priekšpils vārtu ēku pārbūvēja par Cēsu pilsmuižas kungu māju jeb Cēsu Jauno pili. 19. gadsimta gaitā romantisma kustība modināja plašākas sabiedrības interesi par Cēsu pili kā senatnes pieminekli, tādējādi aizsākot pils saglabāšanas un izpētes vēsturi. Šodien Cēsu pils ir ceļotāju iecienītākais apskates objekts Cēsīs un viens no izcilākajiem kultūras tūrisma galamērķiem Latvijā. Vairāk informācijas mājas lapā [cesupils.lv]",
+        "placePhoto" : "cesuPils",
+        "openingHours" : "1.oktobris - 30.aprīlis \nO,T,C,Pk,Se 10:00 - 17:00, Sv. 10:00 - 16:00, P. Slēgts \n1.maijs - 30.septembris \n 10:00 - 18:00"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Stāmerienas Pils",
+        "lat" : 57.215818,
+        "long" : 26.900281,
+        "locationInfo": "Stāmerienas pils ir muižas pils Stāmerienas pagasta Vecstāmerienā, Gulbenes novadā, Latvijā. Muiža līdz 20. gadsimta 30. gadu beigām piederēja baroniem fon Volfiem. Muižas pils sākumā (1843. vai 1852. gadā) uzcelta neogotikas stilā, 1870.—1880. gados tā pārbūvēta neorenesanses stilā. Pilij ir divi stāvi, pati ēka ir asimetriska ar kvadrāta plāna torni, galvenās fasādes labajā pusē atrodas mazāks tornītis. Starp torņiem esošās sienas vidū galvenās ieejas portāls ar fon Volfu dzimtas ģerboni. Mūsdienās muižas teritorijā atrodas muižas pils, klēts, dažas saimniecības ēkas. Netālu Stāmerienas pareizticīgo baznīca. Ap pili starp Stāmerienas un Pogas ezeru izveidots ainavu parks 28,4 ha platībā pēc vēdekļveida principa.",
+        "placePhoto" : "stamrienasPils",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Rīgas pils",
+        "lat" : 56.950993,
+        "long" : 24.100592,
+        "locationInfo": "Rīgas pils (Rīgas ordeņpils) ir viduslaiku pils, Latvijas Republikas Valsts prezidenta rezidence Rīgā, Daugavas krastā. Livonijas ordeņa pils — mestra rezidence šajā vietā uzcelta 1340. gadu beigās[1] (Rīgas II ordeņpils), 1484. gadā nopostīta, un 1515. gadā uzcelta no jauna (Rīgas III ordeņpils). Vēlāk pilī atradās poļu un zviedru vietvalžu rezidences, pēc tam Krievijas impērijas Baltijas provinču (Rīgas) ģenerālgubernatoru un Vidzemes gubernatoru mītne. Kad Latvija kļuva par neatkarīgu valsti, pilī ierīkota Latvijas Republikas Valsts prezidenta rezidence. Padomju laikā pilī atradās Pionieru pils un dažādi muzeji, bet pēc Latvijas neatkarības atjaunošanas tā restaurēta. Pilī iekārtotas reprezentācijas telpas un Valsts prezidenta apartamenti. Valsts nozīmes arhitektūras piemineklis, viena no Vecrīgas dominantēm, viena no izcilākajām viduslaiku pilīm Latvijā. Rīgas pils Sūtņu akreditācijas zāles interjers iekļauts Latvijas kultūras kanona arhitektūras un dizaina sadaļā.",
+        "placePhoto" : "RigasPils",
+        "openingHours" : "Iespējams apskatīt tikai no ārpuses, ekskursijas Rīgas pilī nav pieejamas."
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Dundagas Pils",
+        "lat" : 57.510408,
+        "long" : 22.356090,
+        "locationInfo": "Dundagas pils ir viduslaiku pils Dundagā, ko cēlis Rīgas domkapituls 13. gadsimta beigās. Vēlāk pils piederēja Kurzemes bīskapijai (1434-1582) un Polijas karaļa vasaļiem (1585-1795) Piltenes apgabala sastāvā. 17. gadsimtā tā pārbūvēta par Dundagas muižas kungu māju, kas līdz 20. gadsimta sākumam piederēja Ostenzakeniem. Valsts nozīmes arheoloģijas piemineklis un valsts nozīmes arhitektūras piemineklis. Pils vietu no trim pusēm apņem ūdens (Dundagas dīķis), no ceturtās puses to sargāja vēlāk aizbērts aizsarggrāvis. Pils veido 48 x 69 metrus lielu četrstūri, ko ietver augsti aizsargmūri un pils korpusi. Līdz mūsdienām pils iekšpagalmā saglabājusies aka. Daudzajās pārbūvēs pils pārveidota, tai nav izteiktas noteikta arhitektūras stila pazīmes. Interesants mākslas piemineklis ir 1909. gadā abās pusēs ieejai Rīgas tēlnieka Augusta Folca veidotie ciļņi - viens ataino ordeņa mūku un otrs - bīskapu. Ar Dundagas pili saistīti savdabīgi nostāsti, kas savijas ar realitāti, nostāsti par rūķīšiem, mūsdienu spoku stāsti. Vairāk info [www.dundagaspils.lv]",
+        "placePhoto" : "dundagasPils",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Gaujienas Pilsmuiža",
+        "lat" : 57.516637,
+        "long" : 26.397804,
+        "locationInfo": "Ap 1830. gadu uzcēla muižkunga māju, 1838. gadā – muižas ļaužu dzīvokļu un saimniecības ēku ar uzbrauktuvi otrajā stāvā, jo ēkas dienvidu gals tika piemērots 1886. gada Vulfa nodibinātās Gaujienas brīvprātīgo ugunsdzēsēju biedrības vajadzībām. Visskaistākā un jaunākā no muižas ansambļa ēkām ir jaunā pils, kuru barons Jūliuss fon Vulfs uzcēla 1850. gadā un kurā kopš 1922. gada ir Gaujienas vidusskola. Pils celta klasicisma stilā un rotāta ar kolonām. Pirmajā stāvā daudzās telpās ir oriģinālās parketa grīdas. Savdabīgi veidots zāles interjers, bet kapelā ir saglabājies griestu gleznojums. Pils parādes durvju kāpnes apsargā 2 guļošas lauvas.",
+        "placePhoto" : "gaujienasPils",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Kokneses Pilsdrupas",
+        "lat" : 56.638284,
+        "long" : 25.417570,
+        "locationInfo": "Kokneses viduslaiku pils bija viduslaiku Kokneses pilskalnā celta mūra pils Koknesē, Daugavas krastā, Daugavas un Pērses satecē. Celta neilgi pēc 1209. gada, savulaik viena no lielākajām un labāk nocietinātajām pilīm, kas izvietojās nozīmīga tirdzniecības ceļa - Daugavas labajā krastā. Kokneses pilsēta bija Hanzas savienības dalībniece. Līdz 16. gadsimtam bija viena no Rīgas arhibīskapu rezidencēm. Līdz mūsdienām saglabājušās drupas, kuras apskalo Pļaviņu ūdenskrātuve. Valsts nozīmes arheoloģijas piemineklis un valsts nozīmes arhitektūras piemineklis. Vairāk info [www.pilis.lv]",
+        "placePhoto" : "koknesesPilsdrupas",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Cesvaines Pils",
+        "lat" : 56.969347,
+        "long" : 26.312606,
+        "locationInfo": "Romantiskā parka un seno muižas ēku ielokā savus torņus pret debesīm pacēlusi akmenī kaltā skulptūra - Cesvaines pils. Ādolfa fon Vulfa pils uzskatāma par vienu no spožākajiem 19.gs. 2.puses arhitektūras sasniegumiem. Tā ir eklektisma mākslas šedevrs, kurā apvienojas arhitektūra, tēlniecība, metālmāksla un glezniecība. Cesvaines pils ir valsts mēroga arhitektūras piemineklis un kopš 1997.gada iekļauta Eiropas kultūras mantojuma sarakstā. Pils celta no 1893.-1896.gadam. Kopš 1919.gada pilī atradās skola, bet 2002.gadā ugunsgrēks nopostīja pils jumtu. Cesvainē uzcelta jauna vidusskola, un pils pakāpeniski atgūst tās sākotnējo izskatu. 2003.gadā atjaunots pils kreisā spārna jumts, 2006.gadā - pils tornis. Atjaunošanas darbi turpinās. Vairāk info [www.cesvaine.lv]",
+        "placePhoto" : "cesvainesPils",
+        "openingHours" : "Nezināms"
+    },
+    
+    {
+        "locationID" : 5,
+        "locationName" : "Vecauces Pils",
+        "lat" : 56.468110,
+        "long" : 22.887386,
+        "locationInfo": "Vietā, kur robežojas Rietumkurzemes augstiene un Zemgales līdzenums, līdzās Auces pilsētiņai, 19.gs. ainavu parka ieskauta, slejas viena no pirmajām neogotikas stilā celtajām pilīm Latvijā - Vecauces pils. Vecauces muižas apbūve ar 19.gs celto pili, klētīm, zirgu stalli, dārznieka māju, skaisto ainavu parku, dīķiem un liepu aleju piešķir nesteidzīgajai un rāmajai mazpilsētas dzīvei īpašu šarmu un neuzkrītoši atgādina par nesaraujamo saiti, kas vieno Vecauces muižu un Auces pilsētu. Vecauces pils šobrīd darbojas kā tūrisma un kultūras centrs. Piedāvājam gida pavadībā apskatīt telpas un uzzināt vairāk par muižas vēsturi un ar to saistītajiem nostāstiem un leģendām, kā arī par mācību un pētījumu saimniecību Vecauce, kura saimnieko muižas zemēs jau no 1921.gada. Tornī apskatāma ekspozīcija par Vecauces muižu. Tiem, kas uzkāps 30 metrus augstajā pils tornī, pavērsies brīnišķīgs skats uz 13 ha lielo muižas parku ar vairākiem dīķiem un saliņām, krūmiem, pastaigu celiņiem. Parkā atrodas Pirmajā pasaules karā kritušo vācu un krievu karavīru kapi, piemineklis mācību un pētījumu saimniecības Vecauce dibinātājam un pirmajam vadītājam profesoram Jānim Bergam, kā arī piemineklis profesoram Jānim Apsītim. Uzmanīgam skatītājam nepaslīdēs garām Vecauces augļu dārzi un lauki, Auces pilsēta un varbūt pat 6 km netālie Lietuvas meži. Ir vērts aizstaigāt uz attālāko parka daļu, kur kādreiz atradās fazānu dārzs, bet šobrīd vecās mājas vietā uzcelts bērnudārzs, ko projektējis Modris Ģelzis. Šeit klusākajā parka daļā var pasēdēt uz soliņiem atpūtināt kājas un paklausīties putnu dziesmās. Pēc kārtīgas pastaigas pils pagrabstāvā varēsiet nobaudīt kārtīgas Vecauces pils saimnieču  pagatavotas pusdienas no pašu saimniecībā audzētiem dārzeņiem, augļiem un ogām. Pils ēdnīca atvērta darbadienās no plkst. 12:00- 14:00. Vairāk info [www.vecauce.lv]",
+        "placePhoto" : "vecaucesPils",
+        "openingHours" : "1.septembris - 31.maijam \nDarba dineās 10:00-16:00, S.,SV Slēgts \n1.jūnijs - 31.augusts \nP.O.T.C. 10:00-18:00, Pk.S.Sv 10:00-17:00"
+    },
+
 ]

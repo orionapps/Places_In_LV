@@ -211,13 +211,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     } else if location.locationID == 3 {
                         
                         marker.icon = UIImage(named: "kidsMarker")
+                    } else if location.locationID == 4{
+                        
+                        marker.icon = UIImage(named: "sportsMarker")
                     } else {
                         
                         marker.icon = UIImage(named: "sportsMarker")
                     }
                     
                     // Adding objects and info to cluster
-                    let item = POIItem(position: position, name: location.locationName, marker: marker, image: location.placePhoto!, locationInfo: location.locationInfo, lat: location.lat, long: location.long, openingHours: location.openingHours!)
+                    let item = POIItem(position: position, name: location.locationName, marker: marker, image: location.placePhoto, locationInfo: location.locationInfo, lat: location.lat, long: location.long, openingHours: location.openingHours, imageArbitration: location.imageArbitration, descriptionArbitration: location.descriptionArbitration)
                     
                     clusterManager.add(item)
                 }
@@ -267,13 +270,30 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         destVC.locationInfo = (marker.userData as! POIItem).locationInfo
         destVC.locationLatitude = (marker.userData as! POIItem).lat
         destVC.locationLongitude = (marker.userData as! POIItem).long
-        destVC.openingHours = (marker.userData as! POIItem).openingHours
+        
+        if let openingHoursExists = (marker.userData as! POIItem).openingHours {
+            destVC.openingHours = openingHoursExists
+        } else {
+            destVC.openingHours = "Unknown"
+        }
+        
+        if let imageArbitrationExists = (marker.userData as! POIItem).imageArbitration {
+            destVC.imageArbitration = imageArbitrationExists
+        } else {
+            destVC.imageArbitration = "Explore Latvia team"
+        }
+        
+        if let descriptionArbitrationExists = (marker.userData as! POIItem).descriptionArbitration {
+            destVC.descriptionArbitration = descriptionArbitrationExists
+        } else {
+            destVC.descriptionArbitration = "Explore Latvia team"
+        }
         
         Helper().startActivityIndicator(view: mapView, activityIndicator: activityIndicator)
         
         if Reachability.isConnectedToNetwork() {
             
-            let storageRef = Storage.storage().reference(withPath: "\(Constants.MyKeys.imageFolderInFirebase)/\((marker.userData as! POIItem).image).jpg")
+            let storageRef = Storage.storage().reference(withPath: "\(Constants.MyKeys.imageFolderInFirebase)/\((marker.userData as! POIItem).image!).jpg")
             storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
                 if let error = error {
                     print("Got an error fetching data: \(error.localizedDescription)")
@@ -284,7 +304,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     
                     destVC.locationImage = UIImage(data: data)!
                     Helper().stopActivityIndicator(activityIndicator: self!.activityIndicator)
-                    
                     self!.navigationController?.pushViewController(destVC, animated: true)
                 }
             }
@@ -295,7 +314,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             let alert = UIAlertController(title: Constants.ErrorMessages.internetConnectionErrorTitle.localiz(), message: Constants.ErrorMessages.internetConnectionErrorMessage.localiz(), preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -311,7 +329,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             self.customInfoWindow?.objectLabel.sizeToFit()
             self.customInfoWindow?.objectLabel.adjustsFontSizeToFitWidth = true
             self.customInfoWindow?.objectLabel.textAlignment = NSTextAlignment.center
-            
             self.customInfoWindow?.objectLabel.text = poiItem.name
             
             return self.customInfoWindow
@@ -360,7 +377,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         let title = "Add new object at this location"
         let cancelTitle = "Cancel"
         let buttonTitle = "Add new object"
-        
+    
         let actionSheet = UIAlertController(title: title.localiz(), message:nil, preferredStyle: .alert)
         let cancel = UIAlertAction(title: cancelTitle.localiz(), style: .cancel, handler: nil)
         

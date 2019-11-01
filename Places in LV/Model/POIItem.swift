@@ -13,14 +13,16 @@ class POIItem: NSObject, GMUClusterItem {
     var position: CLLocationCoordinate2D
     var name: String
     @objc var marker: GMSMarker
-    var image: String
+    var image: String?
     var locationInfo: String
     var lat: Double
     var long: Double
-    var openingHours: String
+    var openingHours: String?
+    var descriptionArbitration: String?
+    var imageArbitration: String?
     
     
-    init(position: CLLocationCoordinate2D, name: String, marker: GMSMarker, image: String, locationInfo: String, lat: Double, long: Double, openingHours: String) {
+    init(position: CLLocationCoordinate2D, name: String, marker: GMSMarker, image: String?, locationInfo: String, lat: Double, long: Double, openingHours: String?, imageArbitration: String?, descriptionArbitration: String?) {
         self.position = position
         self.name = name
         self.marker = marker
@@ -29,5 +31,7 @@ class POIItem: NSObject, GMUClusterItem {
         self.lat = lat
         self.long = long
         self.openingHours = openingHours
+        self.imageArbitration = imageArbitration
+        self.descriptionArbitration = descriptionArbitration
     }
 }

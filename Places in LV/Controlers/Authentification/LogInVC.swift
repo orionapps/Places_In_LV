@@ -21,6 +21,7 @@ class LogInVC: UIViewController {
         setUpElements()
     }
     
+    //MARK: - Setting up views
     
     func setUpElements() {
         
